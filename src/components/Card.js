@@ -21,8 +21,8 @@ const Card = ({ title, description, imageSrc, link }) => {
           </Heading>
           <Text>{description}</Text>
           <a href={link}>
-            <HStack spacing={2}>
-              <Text fontWeight="bold">Link / Live Demo</Text>
+            <HStack spacing={2} color="blue">
+              <Text fontWeight="bold">Github Link/Live Demo</Text>
               <FontAwesomeIcon icon={faArrowRight} size="1x" />
             </HStack>
           </a>
