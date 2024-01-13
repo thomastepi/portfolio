@@ -108,6 +108,12 @@ const Header = () => {
               >
                 Contact Me
               </a>
+              <a
+                style={{ cursor: "pointer" }}
+                href="https://drive.google.com/file/d/1GaKslOmWuUqxeudG85jOtK6CkyWz8R3H/view?usp=drive_link"
+              >
+                Download CV
+              </a>
             </HStack>
           </nav>
         </HStack>
