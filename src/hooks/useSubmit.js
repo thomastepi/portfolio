@@ -18,12 +18,10 @@ const useSubmit = () => {
       if (error) throw error;
       setResponse({
         type: 'success',
-        message: `Thanks for your submission ${data.firstName}, we will get back to you shortly!`,
       });
     } catch (error) {
       setResponse({
         type: 'error',
-        message: 'Something went wrong, please try again later!',
       })
 
     } finally {
