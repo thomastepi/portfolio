@@ -11,7 +11,7 @@ import { Box, HStack } from "@chakra-ui/react";
 const socials = [
   {
     icon: faEnvelope,
-    url: "mailto: thomastepi@hotmail.com",
+    url: "mailto: thomas-tepi@thomastepi.com",
   },
   {
     icon: faGithub,
@@ -110,7 +110,9 @@ const Header = () => {
               </a>
               <a
                 style={{ cursor: "pointer" }}
-                href="https://drive.google.com/file/d/1GaKslOmWuUqxeudG85jOtK6CkyWz8R3H/view?usp=drive_link"
+                href="https://drive.google.com/file/d/1_voPs4yYDbnkrWva2DQS340yRVgRGGv9/view?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 Download CV
               </a>
