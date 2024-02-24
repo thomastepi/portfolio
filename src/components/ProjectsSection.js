@@ -7,31 +7,30 @@ const projects = [
   {
     title: "AI Resume Builder",
     description:
-      "A Resume Builder powered by AI which helps you create a professional resume in minutes.",
+      "An innovative AI-powered resume builder, provides a secure platform for users to log in, update their profiles, and create professional resumes. With the option to choose from existing templates or generate a personalized one using advanced AI algorithms, ResumeCraft ensures that resumes are tailored to each user's unique profile. ",
     getImageSrc: () => require("../assets/images/resume-builder.png"),
     link: "https://resume-craft.onrender.com/",
   },
   {
-    title: "FlashFeeds",
+    title: "BookMart",
     description:
-      `This project is aimed at providing a unique platform for users to share intriguing and lesser known
+      "A secure and user-friendly book management application that allows users to log in securely and perform essential CRUD (Create, Read, Update, Delete) operations on their book inventory. With an intuitive interface, users can easily add new books, update existing entries, and remove items they no longer need.",
+    getImageSrc: () => require("../assets/images/bookmart.png"),
+    link: "https://github.com/thomastepi/book-management.git",
+  },
+  {
+    title: "FlashFeeds",
+    description: `This project is aimed at providing a unique platform for users to share intriguing and lesser known
       facts, fostering a sense of discovery and knowledge sharing.`,
     getImageSrc: () => require("../assets/images/flashfeeds.png"),
     link: "https://github.com/thomastepi/FactShare_React_App.git",
   },
   {
-    title: "Text Completion",
+    title: "Text Craft",
     description:
-      "Elevate your writing, transcend language barriers, and embrace the future of text generation and translation.",
+      "An advanced text completion tool, offers users a secure environment to fine-tune their text generation experience. Upon logging in, users can adjust token limits and set the randomness level, providing a personalized and controlled approach to generating text content. ",
     getImageSrc: () => require("../assets/images/text-completion.png"),
     link: "https://github.com/thomastepi/textCompletion-translation-OpenAI.git",
-  },
-  {
-    title: "BookHub",
-    description:
-      "This React application enables users to manage a book inventory by performing various actions like adding, updating, deleting, searching for books, and quitting the application.",
-    getImageSrc: () => require("../assets/images/bookhub.png"),
-    link: "https://github.com/thomastepi/book-management.git",
   },
 ];
 
