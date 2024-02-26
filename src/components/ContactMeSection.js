@@ -23,13 +23,13 @@ const LandingSection = () => {
   const [submittedFirstName, setSubmittedFirstName] = React.useState("");
 
   const formik = useFormik({
-    initialValues: { firstName: "", email: "", type: "", comment: "" },
+    initialValues: { name: "", email: "", type: "", comment: "" },
     onSubmit: async (values) => {
-      await submit("", values);
-      setSubmittedFirstName(values.firstName);
+      await submit(values);
+      setSubmittedFirstName(values.name);
     },
     validationSchema: Yup.object({
-      firstName: Yup.string().required("Required"),
+      name: Yup.string().required("Required"),
       email: Yup.string().email("Invalid email address").required("Required"),
       type: Yup.string(),
       comment: Yup.string()
@@ -44,7 +44,6 @@ const LandingSection = () => {
         var message = `Thanks for your submission ${submittedFirstName}, we will get back to you shortly!`;
         var type = "success";
         onOpen(type, message);
-        // reset the form if response is success
         formik.resetForm();
       } else if (response.type === "error") {
         var message = "Something went wrong, please try again later!";
@@ -69,15 +68,15 @@ const LandingSection = () => {
           <form onSubmit={formik.handleSubmit}>
             <VStack spacing={4}>
               <FormControl
-                isInvalid={formik.touched.firstName && formik.errors.firstName}
+                isInvalid={formik.touched.name && formik.errors.name}
               >
-                <FormLabel htmlFor="firstName">Name</FormLabel>
+                <FormLabel htmlFor="name">Name</FormLabel>
                 <Input
-                  id="firstName"
-                  name="firstName"
-                  {...formik.getFieldProps("firstName")}
+                  id="name"
+                  name="name"
+                  {...formik.getFieldProps("name")}
                 />
-                <FormErrorMessage>{formik.errors.firstName}</FormErrorMessage>
+                <FormErrorMessage>{formik.errors.name}</FormErrorMessage>
               </FormControl>
               <FormControl
                 isInvalid={formik.touched.email && formik.errors.email}
@@ -100,9 +99,7 @@ const LandingSection = () => {
                   bg="gray.200"
                   color="black"
                 >
-                  <option value="jobOpportunity">
-                    Job Opportunity
-                  </option>
+                  <option value="jobOpportunity">Job Opportunity</option>
                   <option value="hireMe">Freelance project proposal</option>
                   <option value="feedback">Feedback</option>
                   <option value="other">Other</option>

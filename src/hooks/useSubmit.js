@@ -1,35 +1,30 @@
-import {useState} from "react";
-import supabase from "../utils/supabase";
+import { useState } from "react";
+import axios from "axios";
 
-const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+const baseUrl = process.env.REACT_APP_BASE_URL;
 
 const useSubmit = () => {
   const [isLoading, setLoading] = useState(false);
   const [response, setResponse] = useState(null);
 
-  const submit = async (url, data) => {
+  const submit = async (data) => {
     setLoading(true);
     try {
-      await wait(2000);
-      const { data: contact, error } = await supabase
-        .from("portfolio")
-        .insert([{name: data.firstName, email: data.email, type: data.type, comment: data.comment}])
-        .select();
-      if (error) throw error;
+      await axios.post(`${baseUrl}/api/portfolio/add`, data);
       setResponse({
-        type: 'success',
+        type: "success",
       });
     } catch (error) {
+      console.error(error);
       setResponse({
-        type: 'error',
-      })
-
+        type: "error",
+      });
     } finally {
       setLoading(false);
     }
   };
 
   return { isLoading, response, submit };
-}
+};
 
 export default useSubmit;
