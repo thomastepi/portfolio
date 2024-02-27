@@ -57,14 +57,20 @@ const LandingSection = () => {
     <FullScreenSection
       isDarkBackground
       backgroundColor="#512DA8"
+      css={{
+        "@media (max-width: 768px)": {
+          width: "90%",
+        },
+        width: "50%",
+      }}
       py={16}
       spacing={8}
     >
-      <VStack w="1024px" p={32} alignItems="flex-start">
+      <VStack w="100%" alignItems="flex-start">
         <Heading as="h1" id="contactme-section">
           Contact me
         </Heading>
-        <Box p={6} rounded="md" w="100%">
+        <Box paddingTop={7} rounded="md" w="full">
           <form onSubmit={formik.handleSubmit}>
             <VStack spacing={4}>
               <FormControl
@@ -99,7 +105,7 @@ const LandingSection = () => {
                   bg="gray.200"
                   color="black"
                 >
-                  <option value="jobOpportunity">Job Opportunity</option>
+                  <option value="jobOpportunity">-- Select --</option>
                   <option value="hireMe">Freelance project proposal</option>
                   <option value="feedback">Feedback</option>
                   <option value="other">Other</option>

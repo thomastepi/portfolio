@@ -48,8 +48,14 @@ const ProjectsSection = () => {
       </Heading>
       <Box
         display="grid"
-        gridTemplateColumns="repeat(2,minmax(0,1fr))"
-        gridGap={8}
+        css={{
+          "@media (max-width: 768px)": {
+            gridTemplateColumns: "1fr",
+            gridGap: 20,
+          },
+          gridTemplateColumns: "repeat(2, minmax(0, 1fr))",
+          gridGap: 30,
+        }}
       >
         {projects.map((project) => (
           <Card
