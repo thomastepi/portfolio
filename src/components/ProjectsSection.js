@@ -16,7 +16,7 @@ const projects = [
     description:
       "A secure and user-friendly book management application that allows users to log in securely and perform essential CRUD (Create, Read, Update, Delete) operations on their book inventory. With an intuitive interface, users can easily add new books, update existing entries, and remove items they no longer need.",
     getImageSrc: () => require("../assets/images/bookmart.png"),
-    link: "https://github.com/thomastepi/book-management.git",
+    link: "https://bookmart-trw5.onrender.com",
   },
   {
     title: "FlashFeeds",
