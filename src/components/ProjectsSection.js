@@ -19,18 +19,18 @@ const projects = [
     link: "https://bookmart-trw5.onrender.com",
   },
   {
+    title: "Annette's Beauty Salon",
+    description:
+      "This application showcases a curated gallery of exquisite hairstyles and services offered at Annette's Beauty Salon. As users explore the diverse range of braids and weaves, they can effortlessly schedule appointments, making the experience seamless and tailored to their preferences. ",
+    getImageSrc: () => require("../assets/images/salon.png"),
+    link: "https://github.com/thomastepi/salon-app.git",
+  },
+  {
     title: "FlashFeeds",
     description: `This project is aimed at providing a unique platform for users to share intriguing and lesser known
       facts, fostering a sense of discovery and knowledge sharing.`,
     getImageSrc: () => require("../assets/images/flashfeeds.png"),
     link: "https://github.com/thomastepi/FactShare_React_App.git",
-  },
-  {
-    title: "Text Craft",
-    description:
-      "An advanced text completion tool, offers users a secure environment to fine-tune their text generation experience. Upon logging in, users can adjust token limits and set the randomness level, providing a personalized and controlled approach to generating text content. ",
-    getImageSrc: () => require("../assets/images/text-completion.png"),
-    link: "https://github.com/thomastepi/textCompletion-translation-OpenAI.git",
   },
 ];
 
