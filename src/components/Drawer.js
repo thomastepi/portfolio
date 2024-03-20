@@ -8,10 +8,13 @@ import {
   DrawerOverlay,
   DrawerContent,
   DrawerCloseButton,
+  Box,
+  VStack,
+  Button,
+  HStack,
   Text,
 } from "@chakra-ui/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Box, VStack, Button, HStack } from "@chakra-ui/react";
 import socials from "../utils/socials";
 
 const DrawerPanel = () => {
