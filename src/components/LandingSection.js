@@ -18,7 +18,7 @@ const LandingSection = () => (
       <Avatar size="2xl" name="Thomas" src={pic} />
       <Heading size="md">{greeting}</Heading>
       <Heading size="xl">{bio1}</Heading>
-      <Heading size="md">{bio2}</Heading>
+      <Heading align='center' size="md">{bio2}</Heading>
     </VStack>
   </FullScreenSection>
 );
