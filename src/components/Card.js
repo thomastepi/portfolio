@@ -1,9 +1,10 @@
-import { Heading, HStack, Image, Text, VStack } from "@chakra-ui/react";
+import { Heading, HStack, Image, Text, VStack, Link } from "@chakra-ui/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import React from "react";
 
-const Card = ({ title, description, imageSrc, link }) => {
+const Card = ({ title, description, imageSrc, link, github }) => {
   const [isHovered, setIsHovered] = React.useState(false);
 
   const handleMouseEnter = () => setIsHovered(true);
@@ -12,6 +13,7 @@ const Card = ({ title, description, imageSrc, link }) => {
   const linkStyle = {
     fontSize: isHovered ? "17.5px" : "16px",
     transition: "font-size 0.3s",
+    textDecoration: "none",
   };
   if (title && description && imageSrc) {
     return (
@@ -35,7 +37,11 @@ const Card = ({ title, description, imageSrc, link }) => {
             {title}
           </Heading>
           <Text>{description}</Text>
-          <a
+          <Link href={github} target="_blank" rel="noopener noreferrer">
+            <FontAwesomeIcon icon={faGithub} size="2x" />
+          </Link>
+          <Link
+            as="a"
             href={link}
             target="_blank"
             rel="noopener noreferrer"
@@ -44,10 +50,10 @@ const Card = ({ title, description, imageSrc, link }) => {
             onMouseLeave={handleMouseLeave}
           >
             <HStack spacing={2} color="blue">
-              <Text fontWeight="bold">Github Link/Live Demo</Text>
+              <Text fontWeight="bold">Live Demo</Text>
               <FontAwesomeIcon icon={faArrowRight} size="1x" />
             </HStack>
-          </a>
+          </Link>
         </VStack>
       </VStack>
     );
