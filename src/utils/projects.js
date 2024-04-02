@@ -26,7 +26,7 @@ const projects = [
     title: "Annette's Beauty Salon",
     description:
       "This application showcases a curated gallery of exquisite hairstyles and services offered at Annette's Beauty Salon. As users explore the diverse range of braids and weaves, they can effortlessly schedule appointments, making the experience seamless and tailored to their preferences. ",
-    getImageSrc: () => require("../assets/images/beauty-salon.png"),
+    getImageSrc: () => require("../assets/images/annette-beauty.png"),
     link: "https://github.com/thomastepi/beauty-salon-react-app.git",
     github: "https://github.com/thomastepi/beauty-salon-react-app.git",
   },
