@@ -2,6 +2,9 @@
   "name": "portfolio",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "18.x"
+  },
   "dependencies": {
     "@chakra-ui/react": "^2.3.2",
     "@emotion/react": "^11.10.4",
