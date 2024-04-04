@@ -66,13 +66,13 @@ const LandingSection = () => {
       py={16}
       spacing={8}
     >
-      <VStack w="100%" alignItems="flex-start">
+      <VStack bg="#492E87" p="30px" w="100%" alignItems="flex-start">
         <Heading as="h1" id="contactme-section">
           Contact me
         </Heading>
-        <Box paddingTop={7} rounded="md" w="full">
+        <Box paddingTop={7} w="full">
           <form onSubmit={formik.handleSubmit}>
-            <VStack spacing={4}>
+            <VStack spacing={5}>
               <FormControl
                 isInvalid={formik.touched.name && formik.errors.name}
               >
@@ -81,6 +81,7 @@ const LandingSection = () => {
                   id="name"
                   name="name"
                   {...formik.getFieldProps("name")}
+                  borderBottom={formik.errors.name ? "none!important" : "white"}
                 />
                 <FormErrorMessage>{formik.errors.name}</FormErrorMessage>
               </FormControl>
@@ -93,6 +94,7 @@ const LandingSection = () => {
                   name="email"
                   type="email"
                   {...formik.getFieldProps("email")}
+                  borderBottom={formik.errors.email ? "none!important" : "white"}
                 />
                 <FormErrorMessage>{formik.errors.email}</FormErrorMessage>
               </FormControl>
@@ -102,13 +104,20 @@ const LandingSection = () => {
                   id="type"
                   name="type"
                   {...formik.getFieldProps("type")}
-                  bg="gray.200"
-                  color="black"
+                  color="white"
                 >
-                  <option value="jobOpportunity">-- Select --</option>
-                  <option value="hireMe">Freelance project proposal</option>
-                  <option value="feedback">Feedback</option>
-                  <option value="other">Other</option>
+                  <option style={{ color: "black" }} value="jobOpportunity">
+                    -- Select --
+                  </option>
+                  <option style={{ color: "black" }} value="hireMe">
+                    Freelance project proposal
+                  </option>
+                  <option style={{ color: "black" }} value="feedback">
+                    Feedback
+                  </option>
+                  <option style={{ color: "black" }} value="other">
+                    Other
+                  </option>
                 </Select>
               </FormControl>
               <FormControl
@@ -120,6 +129,7 @@ const LandingSection = () => {
                   name="comment"
                   height={250}
                   {...formik.getFieldProps("comment")}
+                  borderBottom={formik.errors.comment ? "none!important" : "white"}
                 />
                 <FormErrorMessage>{formik.errors.comment}</FormErrorMessage>
               </FormControl>

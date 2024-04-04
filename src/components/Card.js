@@ -20,18 +20,11 @@ const Card = ({ title, description, imageSrc, link, github }) => {
       <VStack
         spacing={8}
         backgroundColor="white"
-        borderRadius="md"
         boxShadow="lg"
         alignItems="flex-start"
         color="black"
       >
-        <Image
-          src={imageSrc}
-          alt={title}
-          borderRadius="md"
-          width="100%"
-          height="100%"
-        />
+        <Image src={imageSrc} alt={title} width="100%" height="100%" />
         <VStack padding="3" alignItems="flex-start" spacing={2}>
           <Heading as="h3" size="md">
             {title}
