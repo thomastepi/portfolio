@@ -8,7 +8,7 @@ const bio1 = "A frontend developer";
 const bio2 = "Bridging the Frontend & Backend with React & Node.js";
 
 const Greeting = styled.div`
-  h2 {
+  .greeting {
     font-family: "sacramento", cursive;
   }
 `;
@@ -25,7 +25,7 @@ const LandingSection = () => {
       >
         <Center py="55px">
           <Greeting>
-            <Heading size="3xl">{greeting}</Heading>
+            <Heading className="greeting" size="3xl">{greeting}</Heading>
           </Greeting>
         </Center>
         <VStack px="10px">
