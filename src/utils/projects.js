@@ -2,7 +2,7 @@ const projects = [
   {
     title: "Sawyer-Camp Farmers CIG",
     description: `Developed and launched a website for Sawyer Camp Farmers Common Initiative Group, empowering local farmers in Cameroon by showcasing their products and sustainable farming practices. Implemented user-friendly design and seamless navigation to enhance user experience and engagement.`,
-    getImageSrc: () => require("../assets/images/sawyer-camp.png"),
+    getImageSrc: () => require("../assets/images/sawyer.png"),
     link: "https://sawyer-camp-farmers.onrender.com/",
     github: "https://github.com/thomastepi/sawyer-camp",
   },
@@ -10,7 +10,7 @@ const projects = [
     title: "AI Resume Builder",
     description:
       "An innovative AI-powered resume builder, provides a secure platform for users to log in, update their profiles, and create professional resumes. With the option to choose from existing templates or generate a personalized one using advanced AI algorithms, ResumeCraft ensures that resumes are tailored to each user's unique profile. ",
-    getImageSrc: () => require("../assets/images/resume-builder.png"),
+    getImageSrc: () => require("../assets/images/craft.png"),
     link: "https://resume-craft.onrender.com/",
     github: "https://github.com/thomastepi/resume-craft.git",
   },
