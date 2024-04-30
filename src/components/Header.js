@@ -88,7 +88,7 @@ const Header = () => {
                   style={{ cursor: "pointer" }}
                   onClick={handleClick("contactme")}
                 >
-                  Resume
+                  Contact Me
                 </a>
                 {!isMobile && (
                   <a
@@ -97,7 +97,7 @@ const Header = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    Download CV
+                    Resume
                   </a>
                 )}
               </HStack>
