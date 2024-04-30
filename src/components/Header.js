@@ -88,7 +88,7 @@ const Header = () => {
                   style={{ cursor: "pointer" }}
                   onClick={handleClick("contactme")}
                 >
-                  Contact Me
+                  Resume
                 </a>
                 {!isMobile && (
                   <a
