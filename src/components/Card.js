@@ -1,4 +1,4 @@
-import { Heading, HStack, Image, Text, VStack, Link } from "@chakra-ui/react";
+import { Heading, HStack, Image, Text, VStack, Link, Tooltip, } from "@chakra-ui/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
@@ -30,9 +30,11 @@ const Card = ({ title, description, imageSrc, link, github }) => {
             {title}
           </Heading>
           <Text>{description}</Text>
-          <Link href={github} target="_blank" rel="noopener noreferrer">
-            <FontAwesomeIcon icon={faGithub} size="2x" />
-          </Link>
+          <Tooltip hasArrow label="GitHub Repo" placement="right">
+            <Link href={github} target="_blank" rel="noopener noreferrer">
+              <FontAwesomeIcon icon={faGithub} size="2x" />
+            </Link>
+          </Tooltip>
           <Link
             as="a"
             href={link}
