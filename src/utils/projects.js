@@ -23,10 +23,10 @@ const projects = [
     github: "https://github.com/thomastepi/book-mart-react-app.git",
   },
   {
-    title: "Annette's Beauty Salon",
+    title: "Annette's Beauty & SPA",
     description:
-      "This application showcases a curated gallery of exquisite hairstyles and services offered at Annette's Beauty Salon. As users explore the diverse range of braids and weaves, they can effortlessly schedule appointments, making the experience seamless and tailored to their preferences. ",
-    getImageSrc: () => require("../assets/images/annette-beauty.png"),
+      "This application showcases a curated gallery of exquisite hairstyles and services offered at Annette's Beauty & SPA. As users explore the diverse range of braids and weaves, they can effortlessly schedule appointments, making the experience seamless and tailored to their preferences. ",
+    getImageSrc: () => require("../assets/images/salon.png"),
     link: "https://github.com/thomastepi/beauty-salon-react-app.git",
     github: "https://github.com/thomastepi/beauty-salon-react-app.git",
   },
