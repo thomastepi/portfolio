@@ -30,7 +30,7 @@ const Card = ({ title, description, imageSrc, link, github }) => {
             {title}
           </Heading>
           <Text>{description}</Text>
-          <Tooltip label="GitHub Repo">
+          <Tooltip label="GitHub Repo" placement="right">
             <Link href={github} target="_blank" rel="noopener noreferrer">
               <FontAwesomeIcon icon={faGithub} size="2x" />
             </Link>
