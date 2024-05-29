@@ -7,6 +7,9 @@ import Footer from "./components/Footer";
 import { AlertProvider } from "./context/alertContext";
 import Alert from "./components/Alert";
 import styled from "styled-components";
+import ReactGA from "react-ga4";
+
+ReactGA.initialize(process.env.REACT_APP_GA_MEASUREMENT_ID);
 
 const Wrapper = styled.main`
   font-family: "Montserrat", sans-serif;

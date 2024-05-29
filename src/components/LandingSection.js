@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Avatar, Heading, VStack, Center } from "@chakra-ui/react";
 import FullScreenSection from "./FullScreenSection";
 import pic from "../assets/images/pic.jpg";
 import styled from "styled-components";
+import ReactGA from "react-ga4";
 const greeting = "Hello, I am Thomas!";
 const bio1 = "A frontend developer";
 const bio2 = "Bridging the Frontend & Backend with React & Node.js";
@@ -14,6 +15,12 @@ const Greeting = styled.div`
 `;
 
 const LandingSection = () => {
+  useEffect(() => {
+    ReactGA.send({
+      hitType: "pageview",
+      page: window.location.pathname + window.location.search,
+    });
+  }, []);
   return (
     <>
       <FullScreenSection
@@ -25,7 +32,9 @@ const LandingSection = () => {
       >
         <Center py="55px">
           <Greeting>
-            <Heading className="greeting" size="3xl">{greeting}</Heading>
+            <Heading className="greeting" size="3xl">
+              {greeting}
+            </Heading>
           </Greeting>
         </Center>
         <VStack px="10px">

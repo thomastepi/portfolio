@@ -45,21 +45,19 @@ const DrawerPanel = () => {
                 <nav>
                   <VStack spacing={7} align="left">
                     {socials.map((social) => (
-                      <>
-                        <a
-                          key={social.url}
-                          href={social.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          <HStack spacing={4}>
-                            <Text width={20} as="p" align="right">
-                              {social.name}
-                            </Text>
-                            <FontAwesomeIcon icon={social.icon} size="2x" />
-                          </HStack>
-                        </a>
-                      </>
+                      <a
+                        key={social.url}
+                        href={social.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <HStack spacing={4}>
+                          <Text width={20} as="p" align="right">
+                            {social.name}
+                          </Text>
+                          <FontAwesomeIcon icon={social.icon} size="2x" />
+                        </HStack>
+                      </a>
                     ))}
                     <a
                       style={{ cursor: "pointer" }}
