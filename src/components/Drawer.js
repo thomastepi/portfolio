@@ -16,10 +16,19 @@ import {
 } from "@chakra-ui/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import socials from "../utils/socials";
+import ReactGA from "react-ga4";
 
 const DrawerPanel = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = React.useRef();
+
+  const handleClick = (name) => {
+    ReactGA.event({
+      category: "Link",
+      action: `Clicked Drawer ${name} Link`,
+    });
+  };
+
   return (
     <>
       <Button ref={btnRef} colorScheme="teal" onClick={onOpen} bg="#18181b">
@@ -50,6 +59,7 @@ const DrawerPanel = () => {
                         href={social.url}
                         target="_blank"
                         rel="noopener noreferrer"
+                        onClick={handleClick(social.name)}
                       >
                         <HStack spacing={4}>
                           <Text width={20} as="p" align="right">
@@ -64,6 +74,7 @@ const DrawerPanel = () => {
                       href="https://drive.google.com/file/d/1_voPs4yYDbnkrWva2DQS340yRVgRGGv9/view?usp=sharing"
                       target="_blank"
                       rel="noopener noreferrer"
+                      onClick={handleClick("CV")}
                     >
                       <HStack spacing={4}>
                         <Text width={20} as="p" align="right">

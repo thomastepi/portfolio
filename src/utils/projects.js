@@ -25,7 +25,7 @@ const projects = [
   {
     title: "Annette's Beauty & SPA",
     description:
-      "This application showcases a curated gallery of exquisite hairstyles and services offered at Annette's Beauty Salon. As users explore the diverse range of braids and weaves, they can effortlessly schedule appointments, making the experience seamless and tailored to their preferences. ",
+      "Transformed Annette's online presence with a user-friendly website. Clients can explore a curated gallery of styles and services, effortlessly book appointments, and discover Annette's offerings. Pamper loved ones with secure gift card purchases (powered by Stripe). This comprehensive platform enhances the overall customer experience.",
     getImageSrc: () => require("../assets/images/salon.png"),
     link: "https://annette-beauty-spa.onrender.com/",
     github: "https://github.com/thomastepi/beauty-salon-react-app.git",

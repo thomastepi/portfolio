@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Box, HStack, useBreakpointValue } from "@chakra-ui/react";
 import DrawerPanel from "./Drawer";
 import socials from "../utils/socials";
+import ReactGA from "react-ga4";
 
 const Header = () => {
   const [prevScrollPos, setPrevScrollPos] = useState(0);
@@ -19,6 +20,13 @@ const Header = () => {
         block: "start",
       });
     }
+  };
+
+  const handleSocialsClick = (name) => {
+    ReactGA.event({
+      category: "Link",
+      action: `Clicked ${name} link`,
+    });
   };
 
   useEffect(() => {
@@ -68,6 +76,7 @@ const Header = () => {
                     href={social.url}
                     target="_blank"
                     rel="noopener noreferrer"
+                    onClick={handleSocialsClick(social.name)}
                   >
                     {!isMobile && (
                       <FontAwesomeIcon icon={social.icon} size="2x" />
@@ -93,9 +102,10 @@ const Header = () => {
                 {!isMobile && (
                   <a
                     style={{ cursor: "pointer" }}
-                    href="https://drive.google.com/file/d/1_voPs4yYDbnkrWva2DQS340yRVgRGGv9/view?usp=sharing"
+                    href="https://drive.google.com/file/d/1qq4EXVJoe9Jh-GD1WIhVFCFt8yl909d3/view?usp=drive_link"
                     target="_blank"
                     rel="noopener noreferrer"
+                    onClick={handleSocialsClick("CV")}
                   >
                     Resume
                   </a>
