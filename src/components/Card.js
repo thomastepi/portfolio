@@ -10,15 +10,10 @@ import {
 } from "@chakra-ui/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
-import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { faGlobe } from "@fortawesome/free-solid-svg-icons";
 import ReactGA from "react-ga4";
 
 const Card = ({ title, description, imageSrc, link, github }) => {
-  const [isHovered, setIsHovered] = React.useState(false);
-
-  const handleMouseEnter = () => setIsHovered(true);
-  const handleMouseLeave = () => setIsHovered(false);
-
   const handleGitHubClick = () => {
     ReactGA.event({
       category: "Link",
@@ -33,11 +28,6 @@ const Card = ({ title, description, imageSrc, link, github }) => {
     });
   };
 
-  const linkStyle = {
-    fontSize: isHovered ? "17.5px" : "16px",
-    transition: "font-size 0.3s",
-    textDecoration: "none",
-  };
   if (title && description && imageSrc) {
     return (
       <VStack
@@ -63,21 +53,16 @@ const Card = ({ title, description, imageSrc, link, github }) => {
               <FontAwesomeIcon icon={faGithub} size="2x" />
             </Link>
           </Tooltip>
-          <Link
-            as="a"
-            href={link}
-            target="_blank"
-            rel="noopener noreferrer"
-            style={linkStyle}
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
-            onClick={handleLiveDemoClick}
-          >
-            <HStack spacing={2} color="blue">
-              <Text fontWeight="bold">Live Demo</Text>
-              <FontAwesomeIcon icon={faArrowRight} size="1x" />
-            </HStack>
-          </Link>
+          <Tooltip hasArrow label="Website" placement="right">
+            <Link
+              href={link}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={handleLiveDemoClick}
+            >
+              <FontAwesomeIcon icon={faGlobe} size="2x" />
+            </Link>
+          </Tooltip>
         </VStack>
       </VStack>
     );

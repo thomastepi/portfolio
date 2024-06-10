@@ -94,7 +94,9 @@ const LandingSection = () => {
                   name="email"
                   type="email"
                   {...formik.getFieldProps("email")}
-                  borderBottom={formik.errors.email ? "none!important" : "white"}
+                  borderBottom={
+                    formik.errors.email ? "none!important" : "white"
+                  }
                 />
                 <FormErrorMessage>{formik.errors.email}</FormErrorMessage>
               </FormControl>
@@ -129,7 +131,9 @@ const LandingSection = () => {
                   name="comment"
                   height={250}
                   {...formik.getFieldProps("comment")}
-                  borderBottom={formik.errors.comment ? "none!important" : "white"}
+                  borderBottom={
+                    formik.errors.comment ? "none!important" : "white"
+                  }
                 />
                 <FormErrorMessage>{formik.errors.comment}</FormErrorMessage>
               </FormControl>

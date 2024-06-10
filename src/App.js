@@ -1,3 +1,4 @@
+import React, { useEffect } from "react";
 import { ChakraProvider } from "@chakra-ui/react";
 import Header from "./components/Header";
 import LandingSection from "./components/LandingSection";
@@ -21,6 +22,13 @@ const Wrapper = styled.main`
 `;
 
 function App() {
+  useEffect(() => {
+    ReactGA.send({
+      hitType: "pageview",
+      page: window.location.pathname + window.location.search,
+    });
+  }, []);
+
   return (
     <ChakraProvider>
       <AlertProvider>
