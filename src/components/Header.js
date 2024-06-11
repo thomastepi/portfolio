@@ -94,7 +94,7 @@ const Header = () => {
                   Projects
                 </a>
                 <a
-                  style={{ cursor: "pointer" }}
+                  style={{ cursor: "pointer", textAlign: "center" }}
                   onClick={handleClick("contactme")}
                 >
                   Contact Me

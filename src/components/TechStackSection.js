@@ -31,7 +31,7 @@ const TechStackSection = () => {
           <Heading size="lg" mb={4}>
             Tech Stack
           </Heading>
-          <Text mb={6}>
+          <Text align="center" mb={6}>
             Here are some of the technologies I have experience with:
           </Text>
           <Grid
