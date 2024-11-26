@@ -13,14 +13,20 @@ import { AlertProvider } from "./context/alertContext";
 import styled from "styled-components";
 import ReactGA from "react-ga4";
 
-ReactGA.initialize(process.env.REACT_APP_GA_MEASUREMENT_ID);
+if (process.env.REACT_APP_GA_MEASUREMENT_ID) {
+  ReactGA.initialize(process.env.REACT_APP_GA_MEASUREMENT_ID);
+} else {
+  console.warn("Google Analytics Measurement ID is not defined");
+}
+
+const FONT_FAMILY = "'Montserrat', sans-serif";
 
 const Wrapper = styled.main`
-  font-family: "Montserrat", sans-serif;
+  font-family: ${FONT_FAMILY};
   h2,
   h1,
   h3 {
-    font-family: "montserrat", sans-serif;
+    font-family: ${FONT_FAMILY};
   }
 `;
 
