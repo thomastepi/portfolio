@@ -18,6 +18,7 @@ const Card = ({ title, description, imageSrc, link, github }) => {
     ReactGA.event({
       category: "Link",
       action: `Clicked GitHub link for ${title} project`,
+      label: `GitHub - ${title}`,
     });
   };
 
@@ -25,6 +26,7 @@ const Card = ({ title, description, imageSrc, link, github }) => {
     ReactGA.event({
       category: "Link",
       action: `Clicked Live Demo link for ${title} project`,
+      label: `Live Demo - ${title}`,
     });
   };
 
@@ -37,7 +39,7 @@ const Card = ({ title, description, imageSrc, link, github }) => {
         alignItems="flex-start"
         color="black"
       >
-        <Image src={imageSrc} alt={title} width="100%" height="100%" />
+        <Image src={imageSrc} alt={`Preview of the ${title} project`} width="100%" height="100%" />
         <VStack padding="3" alignItems="flex-start" spacing={2}>
           <Heading as="h3" size="md">
             {title}
