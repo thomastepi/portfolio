@@ -15,6 +15,11 @@ const Header = () => {
     const id = `${anchor}-section`;
     const element = document.getElementById(id);
     if (element) {
+        ReactGA.event({
+        category: "Navigation",
+        action: `Scrolled to ${anchor}`,
+        label: `${anchor}-section`,
+      });
       element.scrollIntoView({
         behavior: "smooth",
         block: "start",
@@ -26,6 +31,15 @@ const Header = () => {
     ReactGA.event({
       category: "Link",
       action: `Clicked ${name} link`,
+      label: name,
+    });
+  };
+
+  const handleSocialsHover = (name) => {
+    ReactGA.event({
+      category: "Hover",
+      action: `Hovered over ${name} link`,
+      label: name,
     });
   };
 
@@ -76,7 +90,9 @@ const Header = () => {
                     href={social.url}
                     target="_blank"
                     rel="noopener noreferrer"
+                    aria-label={`Visit my ${social.name} profile`}
                     onClick={handleSocialsClick(social.name)}
+                    onMouseEnter={() => handleSocialsHover(social.name)}
                   >
                     {!isMobile && (
                       <FontAwesomeIcon icon={social.icon} size="2x" />
@@ -105,7 +121,7 @@ const Header = () => {
                     href="https://drive.google.com/file/d/1qq4EXVJoe9Jh-GD1WIhVFCFt8yl909d3/view?usp=drive_link"
                     target="_blank"
                     rel="noopener noreferrer"
-                    onClick={handleSocialsClick("CV")}
+                    onClick={handleSocialsClick("Resume")}
                   >
                     Resume
                   </a>
