@@ -31,7 +31,12 @@ const LandingSection = () => {
           </Greeting>
         </Center>
         <VStack px="10px">
-          <Avatar size="2xl" name="Thomas" src={pic} borderRadius={0} />
+          <Avatar
+            size="2xl"
+            name="Thomas"
+            src={"https://ik.imagekit.io/thormars/profile_photos/profile.jpg"}
+            borderRadius={8}
+          />
           <Heading size="xl">{bio1}</Heading>
           <Heading align="center" size="md">
             {bio2}
