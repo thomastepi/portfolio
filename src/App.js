@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import { ChakraProvider } from "@chakra-ui/react";
 import {
   Header,
   LandingSection,
@@ -9,7 +8,6 @@ import {
   Alert,
   Footer,
 } from "./components";
-import { AlertProvider } from "./context/alertContext";
 import styled from "styled-components";
 import ReactGA from "react-ga4";
 
@@ -39,19 +37,15 @@ function App() {
   }, []);
 
   return (
-    <ChakraProvider>
-      <AlertProvider>
-        <Wrapper>
-          <Header />
-          <LandingSection />
-          <ProjectsSection />
-          <TechStackSection />
-          <ContactMeSection />
-          <Footer />
-          <Alert />
-        </Wrapper>
-      </AlertProvider>
-    </ChakraProvider>
+    <Wrapper>
+      <Header />
+      <LandingSection />
+      <ProjectsSection />
+      <TechStackSection />
+      <ContactMeSection />
+      <Footer />
+      <Alert />
+    </Wrapper>
   );
 }
 

@@ -1,39 +1,8 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-html {
-  background-color: #18181b;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-}
-
 input,
 textarea,
 select {
   border-radius: 0 !important;
   border: none !important;
-  border-bottom: solid 1px #ccc !important;
-}
-
-input:focus,
-textarea:focus,
-select:focus {
-  border: solid 1px #ccc !important;
-}
-
-input:hover,
-textarea:hover,
-select:hover {
-  border: solid 1px #ccc !important;
 }
 
 button {

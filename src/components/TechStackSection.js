@@ -25,7 +25,7 @@ const TechStackSection = () => {
   const columns = useBreakpointValue({ base: 1, md: 3 });
 
   return (
-    <Center py="100px" w="100%" bg="#163f27" color="white">
+    <Center py="100px" w="100%">
       <Center w="100%">
         <VStack w="80%">
           <Heading size="lg" mb={4}>

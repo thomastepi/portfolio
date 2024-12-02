@@ -8,7 +8,6 @@ const ProjectsSection = () => {
   return (
     <>
       <FullScreenSection
-        backgroundColor="#14532d"
         isDarkBackground
         p={8}
         spacing={8}
@@ -24,7 +23,7 @@ const ProjectsSection = () => {
               gridGap: 20,
             },
             gridTemplateColumns: "repeat(2, minmax(0, 1fr))",
-            gridGap: 30,
+            gridGap: 40,
           }}
         >
           {projects.map((project) => (

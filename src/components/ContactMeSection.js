@@ -11,6 +11,7 @@ import {
   Select,
   Textarea,
   VStack,
+  useColorModeValue,
 } from "@chakra-ui/react";
 import * as Yup from "yup";
 import FullScreenSection from "./FullScreenSection";
@@ -21,6 +22,16 @@ const LandingSection = () => {
   const { isLoading, response, submit } = useSubmit();
   const { onOpen } = useAlertContext();
   const [submittedFirstName, setSubmittedFirstName] = React.useState("");
+
+  const inputBg = useColorModeValue("white", "gray.700");
+  const borderColor = useColorModeValue("gray.400", "gray.500");
+  const focusBorderColor = useColorModeValue("blue.500", "blue.300");
+
+   const btnBgColor = useColorModeValue("blue.500", "blue.300");
+   const hoverBgColor = useColorModeValue("blue.600", "blue.400");
+   const activeBgColor = useColorModeValue("blue.700", "blue.500");
+   const textColor = useColorModeValue("white", "gray.900");
+
 
   const formik = useFormik({
     initialValues: { name: "", email: "", type: "", comment: "" },
@@ -56,7 +67,6 @@ const LandingSection = () => {
   return (
     <FullScreenSection
       isDarkBackground
-      backgroundColor="#512DA8"
       css={{
         "@media (max-width: 768px)": {
           width: "90%",
@@ -66,7 +76,7 @@ const LandingSection = () => {
       py={16}
       spacing={8}
     >
-      <VStack bg="#492E87" p="30px" w="100%">
+      <VStack p="30px" w="100%">
         <Heading as="h1" id="contactme-section">
           Contact me
         </Heading>
@@ -81,7 +91,10 @@ const LandingSection = () => {
                   id="name"
                   name="name"
                   {...formik.getFieldProps("name")}
-                  borderBottom={formik.errors.name ? "none!important" : "white"}
+                  bg={inputBg}
+                  borderColor={borderColor}
+                  _hover={{ borderColor: focusBorderColor }}
+                  _focus={{ borderColor: focusBorderColor }}
                 />
                 <FormErrorMessage>{formik.errors.name}</FormErrorMessage>
               </FormControl>
@@ -94,9 +107,10 @@ const LandingSection = () => {
                   name="email"
                   type="email"
                   {...formik.getFieldProps("email")}
-                  borderBottom={
-                    formik.errors.email ? "none!important" : "white"
-                  }
+                  bg={inputBg}
+                  borderColor={borderColor}
+                  _hover={{ borderColor: focusBorderColor }}
+                  _focus={{ borderColor: focusBorderColor }}
                 />
                 <FormErrorMessage>{formik.errors.email}</FormErrorMessage>
               </FormControl>
@@ -106,20 +120,15 @@ const LandingSection = () => {
                   id="type"
                   name="type"
                   {...formik.getFieldProps("type")}
-                  color="white"
+                  bg={inputBg}
+                  borderColor={borderColor}
+                  _hover={{ borderColor: focusBorderColor }}
+                  _focus={{ borderColor: focusBorderColor }}
                 >
-                  <option style={{ color: "black" }} value="jobOpportunity">
-                    -- Select --
-                  </option>
-                  <option style={{ color: "black" }} value="hireMe">
-                    Freelance project proposal
-                  </option>
-                  <option style={{ color: "black" }} value="feedback">
-                    Feedback
-                  </option>
-                  <option style={{ color: "black" }} value="other">
-                    Other
-                  </option>
+                  <option value="jobOpportunity">-- Select --</option>
+                  <option value="hireMe">Freelance project proposal</option>
+                  <option value="feedback">Feedback</option>
+                  <option value="other">Other</option>
                 </Select>
               </FormControl>
               <FormControl
@@ -131,17 +140,21 @@ const LandingSection = () => {
                   name="comment"
                   height={250}
                   {...formik.getFieldProps("comment")}
-                  borderBottom={
-                    formik.errors.comment ? "none!important" : "white"
-                  }
+                  bg={inputBg}
+                  borderColor={borderColor}
+                  _hover={{ borderColor: focusBorderColor }}
+                  _focus={{ borderColor: focusBorderColor }}
                 />
                 <FormErrorMessage>{formik.errors.comment}</FormErrorMessage>
               </FormControl>
               <Button
                 type="submit"
-                colorScheme="purple"
                 width="full"
                 isLoading={isLoading}
+                bg={btnBgColor}
+                color={textColor}
+                _hover={{ bg: hoverBgColor }}
+                _active={{ bg: activeBgColor }}
               >
                 Submit
               </Button>

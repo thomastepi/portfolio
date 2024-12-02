@@ -1,7 +1,6 @@
 import React from "react";
 import {
   Heading,
-  HStack,
   Image,
   Text,
   VStack,
@@ -11,9 +10,12 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faGlobe } from "@fortawesome/free-solid-svg-icons";
+import { useColorMode } from "@chakra-ui/react";
 import ReactGA from "react-ga4";
 
 const Card = ({ title, description, imageSrc, link, github }) => {
+  const { colorMode } = useColorMode();
+
   const handleGitHubClick = () => {
     ReactGA.event({
       category: "Link",
@@ -33,13 +35,17 @@ const Card = ({ title, description, imageSrc, link, github }) => {
   if (title && description && imageSrc) {
     return (
       <VStack
+        w="90%"
         spacing={8}
-        backgroundColor="white"
-        boxShadow="lg"
         alignItems="flex-start"
-        color="black"
+        bg={colorMode === "light" ? "gray.200" : "gray.700"}
       >
-        <Image src={imageSrc} alt={`Preview of the ${title} project`} width="100%" height="100%" />
+        <Image
+          src={imageSrc}
+          alt={`Preview of the ${title} project`}
+          width="100%"
+          height="100%"
+        />
         <VStack padding="3" alignItems="flex-start" spacing={2}>
           <Heading as="h3" size="md">
             {title}

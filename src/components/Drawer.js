@@ -31,7 +31,7 @@ const DrawerPanel = () => {
 
   return (
     <>
-      <Button ref={btnRef} colorScheme="teal" onClick={onOpen} bg="#18181b">
+      <Button ref={btnRef} onClick={onOpen}>
         {<FontAwesomeIcon icon={faBars} size="2x" />}
       </Button>
       <Drawer
@@ -41,10 +41,10 @@ const DrawerPanel = () => {
         finalFocusRef={btnRef}
       >
         <DrawerOverlay />
-        <DrawerContent bg="#18181b">
-          <DrawerCloseButton padding={5} size={3} color="white" />
+        <DrawerContent>
+          <DrawerCloseButton padding={5} size={3} />
           <DrawerBody marginTop={20}>
-            <Box color="white" maxWidth="1280px" margin="0 auto">
+            <Box maxWidth="1280px" margin="0 auto">
               <VStack
                 px={16}
                 py={4}

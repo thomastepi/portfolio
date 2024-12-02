@@ -1,7 +1,6 @@
 import React from "react";
 import { Avatar, Heading, VStack, Center } from "@chakra-ui/react";
 import FullScreenSection from "./FullScreenSection";
-import pic from "../assets/images/pic.jpg";
 import styled from "styled-components";
 const greeting = "Hello, I am Thomas!";
 const bio1 = "A Full Stack Developer";
@@ -14,13 +13,13 @@ const Greeting = styled.div`
 `;
 
 const LandingSection = () => {
+
   return (
     <>
       <FullScreenSection
         justifyContent="center"
         alignItems="center"
         isDarkBackground
-        backgroundColor="#2A4365"
         w="100%"
       >
         <Center py="55px">
@@ -32,6 +31,7 @@ const LandingSection = () => {
         </Center>
         <VStack px="10px">
           <Avatar
+          zIndex={-1}
             size="2xl"
             name="Thomas"
             src={"https://ik.imagekit.io/thormars/profile_photos/profile.jpg"}
