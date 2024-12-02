@@ -13,7 +13,6 @@ const Greeting = styled.div`
 `;
 
 const LandingSection = () => {
-
   return (
     <>
       <FullScreenSection
@@ -31,7 +30,7 @@ const LandingSection = () => {
         </Center>
         <VStack px="10px">
           <Avatar
-          zIndex={-1}
+            zIndex={-1}
             size="2xl"
             name="Thomas"
             src={"https://ik.imagekit.io/thormars/profile_photos/profile.jpg"}

@@ -26,8 +26,7 @@ const projects = [
     title: "Annette's Beauty & SPA",
     description:
       "Transformed Annette's online presence with a user-friendly website. Clients can explore a curated gallery of styles and services, effortlessly book appointments, and discover Annette's offerings. Pamper loved ones with secure gift card purchases (powered by Stripe). This comprehensive platform enhances the overall customer experience.",
-    imageSrc:
-      "https://ik.imagekit.io/thormars/portfolio/salon.png",
+    imageSrc: "https://ik.imagekit.io/thormars/portfolio/salon.png",
     link: "https://annette-beauty-spa.onrender.com/",
     github: "https://github.com/thomastepi/beauty-salon-react-app.git",
   },

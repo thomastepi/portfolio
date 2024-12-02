@@ -27,11 +27,10 @@ const LandingSection = () => {
   const borderColor = useColorModeValue("gray.400", "gray.500");
   const focusBorderColor = useColorModeValue("blue.500", "blue.300");
 
-   const btnBgColor = useColorModeValue("blue.500", "blue.300");
-   const hoverBgColor = useColorModeValue("blue.600", "blue.400");
-   const activeBgColor = useColorModeValue("blue.700", "blue.500");
-   const textColor = useColorModeValue("white", "gray.900");
-
+  const btnBgColor = useColorModeValue("blue.500", "blue.300");
+  const hoverBgColor = useColorModeValue("blue.600", "blue.400");
+  const activeBgColor = useColorModeValue("blue.700", "blue.500");
+  const textColor = useColorModeValue("white", "gray.900");
 
   const formik = useFormik({
     initialValues: { name: "", email: "", type: "", comment: "" },
@@ -52,7 +51,7 @@ const LandingSection = () => {
   useEffect(() => {
     if (response) {
       if (response.type === "success" && submittedFirstName) {
-        var message = `Thanks for your submission ${submittedFirstName}, we will get back to you shortly!`;
+        var message = `Thanks for your submission ${submittedFirstName}, I will get back to you shortly!`;
         var type = "success";
         onOpen(type, message);
         formik.resetForm();
@@ -73,7 +72,8 @@ const LandingSection = () => {
         },
         width: "50%",
       }}
-      py={16}
+      pt={5}
+      pb={16}
       spacing={8}
     >
       <VStack p="30px" w="100%">
