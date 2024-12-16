@@ -86,7 +86,9 @@ const LandingSection = () => {
               <FormControl
                 isInvalid={formik.touched.name && formik.errors.name}
               >
-                <FormLabel htmlFor="name">Name</FormLabel>
+                <FormLabel htmlFor="name">
+                  <span className="required-asterisk">* </span>Your Name
+                </FormLabel>
                 <Input
                   id="name"
                   name="name"
@@ -101,7 +103,9 @@ const LandingSection = () => {
               <FormControl
                 isInvalid={formik.touched.email && formik.errors.email}
               >
-                <FormLabel htmlFor="email">Email Address</FormLabel>
+                <FormLabel htmlFor="email">
+                  <span className="required-asterisk">* </span>Your Email
+                </FormLabel>
                 <Input
                   id="email"
                   name="email"
@@ -115,7 +119,10 @@ const LandingSection = () => {
                 <FormErrorMessage>{formik.errors.email}</FormErrorMessage>
               </FormControl>
               <FormControl>
-                <FormLabel htmlFor="type">Type of enquiry</FormLabel>
+                <FormLabel htmlFor="type">
+                  Type of inquiry{" "}
+                  <span style={{ fontStyle: "italic" }}>(Optional)</span>
+                </FormLabel>
                 <Select
                   id="type"
                   name="type"
@@ -134,7 +141,9 @@ const LandingSection = () => {
               <FormControl
                 isInvalid={formik.touched.comment && formik.errors.comment}
               >
-                <FormLabel htmlFor="comment">Your message</FormLabel>
+                <FormLabel htmlFor="comment">
+                  <span className="required-asterisk">* </span>Your Message
+                </FormLabel>
                 <Textarea
                   id="comment"
                   name="comment"
@@ -156,7 +165,7 @@ const LandingSection = () => {
                 _hover={{ bg: hoverBgColor }}
                 _active={{ bg: activeBgColor }}
               >
-                Submit
+                Send
               </Button>
             </VStack>
           </form>

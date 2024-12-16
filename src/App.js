@@ -8,6 +8,7 @@ import {
   Alert,
   Footer,
 } from "./components";
+import "./App.css";
 import styled from "styled-components";
 import ReactGA from "react-ga4";
 
