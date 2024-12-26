@@ -1,15 +1,27 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Box, HStack, useBreakpointValue } from "@chakra-ui/react";
+import { Box, HStack, useBreakpointValue, Button } from "@chakra-ui/react";
 import DrawerPanel from "./Drawer";
 import ToggleColorMode from "./ToggleColorMode";
 import { useColorMode } from "@chakra-ui/react";
+import { useTranslation } from "react-i18next";
 import socials from "../utils/socials";
 import ReactGA from "react-ga4";
 
 const Header = () => {
   const isMobile = useBreakpointValue({ base: true, md: false });
   const { colorMode } = useColorMode();
+  const { i18n, t } = useTranslation();
+
+  const toggleLanguage = () => {
+    const newLanguage = i18n.language === "en" ? "fr" : "en";
+    i18n.changeLanguage(newLanguage);
+    ReactGA.event({
+      category: "Language",
+      action: `Changed language to ${newLanguage}`,
+      label: newLanguage,
+    });
+  };
 
   const handleClick = (anchor) => () => {
     const id = `${anchor}-section`;
@@ -45,9 +57,7 @@ const Header = () => {
 
   return (
     <>
-      <Box
-        backgroundColor={colorMode === "light" ? "gray.200" : "gray.900"}
-      >
+      <Box backgroundColor={colorMode === "light" ? "gray.200" : "gray.900"}>
         <Box maxWidth="1280px" margin="0 auto">
           <HStack
             px={isMobile ? 5 : 16}
@@ -83,13 +93,13 @@ const Header = () => {
                       style={{ cursor: "pointer" }}
                       onClick={handleClick("projects")}
                     >
-                      Projects
+                      {t("header.projects")}
                     </a>
                     <a
                       style={{ cursor: "pointer", textAlign: "center" }}
                       onClick={handleClick("contactme")}
                     >
-                      Contact Me
+                      {t("header.contactMe")}
                     </a>
                     <a
                       style={{ cursor: "pointer" }}
@@ -98,11 +108,14 @@ const Header = () => {
                       rel="noopener noreferrer"
                       onClick={handleSocialsClick("Resume")}
                     >
-                      Resume
+                      {t("header.resume")}
                     </a>
                   </>
                 )}
                 <ToggleColorMode />
+                <Button size="sm" onClick={toggleLanguage}>
+                  {i18n.language === "en" ? "FR" : "EN"}
+                </Button>
               </HStack>
             </nav>
           </HStack>

@@ -9,7 +9,6 @@ import {
   Footer,
 } from "./components";
 import "./App.css";
-import styled from "styled-components";
 import ReactGA from "react-ga4";
 
 if (process.env.REACT_APP_GA_MEASUREMENT_ID) {
@@ -17,17 +16,6 @@ if (process.env.REACT_APP_GA_MEASUREMENT_ID) {
 } else {
   console.warn("Google Analytics Measurement ID is not defined");
 }
-
-const FONT_FAMILY = "'Montserrat', sans-serif";
-
-const Wrapper = styled.main`
-  font-family: ${FONT_FAMILY};
-  h2,
-  h1,
-  h3 {
-    font-family: ${FONT_FAMILY};
-  }
-`;
 
 function App() {
   useEffect(() => {
@@ -38,7 +26,7 @@ function App() {
   }, []);
 
   return (
-    <Wrapper>
+    <>
       <Header />
       <LandingSection />
       <ProjectsSection />
@@ -46,7 +34,7 @@ function App() {
       <ContactMeSection />
       <Footer />
       <Alert />
-    </Wrapper>
+    </>
   );
 }
 

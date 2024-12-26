@@ -1,20 +1,15 @@
 import React from "react";
-import {
-  Heading,
-  Image,
-  Text,
-  VStack,
-  Link,
-  Tooltip,
-} from "@chakra-ui/react";
+import { Heading, Image, Text, VStack, Link, Tooltip } from "@chakra-ui/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faGlobe } from "@fortawesome/free-solid-svg-icons";
 import { useColorMode } from "@chakra-ui/react";
+import { useTranslation } from "react-i18next";
 import ReactGA from "react-ga4";
 
 const Card = ({ title, description, imageSrc, link, github }) => {
   const { colorMode } = useColorMode();
+  const { t } = useTranslation();
 
   const handleGitHubClick = () => {
     ReactGA.event({
@@ -51,7 +46,7 @@ const Card = ({ title, description, imageSrc, link, github }) => {
             {title}
           </Heading>
           <Text>{description}</Text>
-          <Tooltip hasArrow label="GitHub Repo" placement="right">
+          <Tooltip hasArrow label={t("card.githubTooltip")} placement="right">
             <Link
               href={github}
               target="_blank"
@@ -61,7 +56,7 @@ const Card = ({ title, description, imageSrc, link, github }) => {
               <FontAwesomeIcon icon={faGithub} size="2x" />
             </Link>
           </Tooltip>
-          <Tooltip hasArrow label="Website" placement="right">
+          <Tooltip hasArrow label={t("card.websiteTooltip")} placement="right">
             <Link
               href={link}
               target="_blank"

@@ -4,6 +4,8 @@ import App from "./App";
 import { ChakraProvider, ColorModeScript } from "@chakra-ui/react";
 import theme from "./theme";
 import { AlertProvider } from "./context/alertContext";
+import "./index.css";
+import "./config/i18n";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

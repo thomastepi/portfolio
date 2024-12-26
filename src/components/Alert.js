@@ -8,10 +8,12 @@ import {
 } from "@chakra-ui/react";
 import { useAlertContext } from "../context/alertContext";
 import { useRef } from "react";
+import { useTranslation } from "react-i18next";
 
 function Alert() {
   const { isOpen, type, message, onClose } = useAlertContext();
   const cancelRef = useRef();
+  const { t } = useTranslation();
   const isSuccess = type === "success";
 
   const successBgColor = useColorModeValue("green.100", "green.700");
@@ -29,7 +31,7 @@ function Alert() {
           backgroundColor={isSuccess ? successBgColor : errorBgColor}
         >
           <AlertDialogHeader fontSize="lg" fontWeight="bold">
-            {isSuccess ? "All good!" : "Oops!"}
+            {isSuccess ? t("alert.successHeader") : t("alert.errorHeader")}
           </AlertDialogHeader>
           <AlertDialogBody>{message}</AlertDialogBody>
         </AlertDialogContent>

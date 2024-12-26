@@ -2,19 +2,15 @@ import React from "react";
 import FullScreenSection from "./FullScreenSection";
 import { Box, Heading } from "@chakra-ui/react";
 import Card from "./Card";
+import { useTranslation } from "react-i18next";
 import projects from "../utils/projects";
 
 const ProjectsSection = () => {
+  const { t } = useTranslation();
   return (
     <>
-      <FullScreenSection
-        isDarkBackground
-        p={8}
-        spacing={8}
-      >
-        <Heading id="projects-section">
-          Featured Projects
-        </Heading>
+      <FullScreenSection isDarkBackground p={8} spacing={8}>
+        <Heading id="projects-section">{t("projects.heading")}</Heading>
         <Box
           display="grid"
           css={{
@@ -26,11 +22,11 @@ const ProjectsSection = () => {
             gridGap: 40,
           }}
         >
-          {projects.map((project) => (
+          {projects.map((project, index) => (
             <Card
-              key={project.title}
-              title={project.title}
-              description={project.description}
+              key={index}
+              title={t(project.title)}
+              description={t(project.description)}
               imageSrc={project.imageSrc}
               link={project.link}
               github={project.github}

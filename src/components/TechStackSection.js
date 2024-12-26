@@ -20,19 +20,56 @@ import {
   faNpm,
   faWordpress,
 } from "@fortawesome/free-brands-svg-icons";
+import { useTranslation } from "react-i18next";
 
 const TechStackSection = () => {
-  const columns = useBreakpointValue({ base: 1, md: 3 });
+  const columns = useBreakpointValue({ base: 1, sm: 2, md: 3 });
+  const { t } = useTranslation();
+
+  const techStack = [
+    {
+      title: t("techStack.frontend"),
+      items: [
+        { name: "React.js", icon: faReact },
+        { name: "Next.js", icon: faReact },
+        { name: "Gatsby.js", icon: faReact },
+        { name: "HTML", icon: faHtml5 },
+        { name: "CSS", icon: faCss3Alt },
+        { name: "JavaScript", icon: faJs },
+      ],
+    },
+    {
+      title: t("techStack.backend"),
+      items: [
+        { name: "Node.js", icon: faNodeJs },
+        { name: "Express.js", icon: faNodeJs },
+        { name: "MongoDB", icon: faNodeJs },
+        { name: "PostgreSQL", icon: faNodeJs },
+        { name: "Firebase", icon: faNodeJs },
+      ],
+    },
+    {
+      title: t("techStack.tools"),
+      items: [
+        { name: "Git", icon: faGitAlt },
+        { name: "GitHub", icon: faGithub },
+        { name: "Heroku", icon: faNpm },
+        { name: "Netlify", icon: faNpm },
+        { name: "Vercel", icon: faNpm },
+        { name: "WordPress", icon: faWordpress },
+      ],
+    },
+  ];
 
   return (
     <Center py="100px" w="100%">
       <Center w="100%">
         <VStack w="80%">
           <Heading size="lg" mb={4}>
-            Tech Stack
+            {t("techStack.techStackTitle")}
           </Heading>
           <Text align="center" mb={6}>
-            Here are some of the technologies I have experience with:
+            {t("techStack.techStackSubtitle")}
           </Text>
           <Grid
             pt="50px"
@@ -40,95 +77,21 @@ const TechStackSection = () => {
             templateColumns={`repeat(${columns}, 1fr)`}
             gap={6}
           >
-            <VStack>
-              <Heading size="md" mb={4}>
-                Frontend
-              </Heading>
-              <VStack align="start">
-                <HStack>
-                  <FontAwesomeIcon icon={faReact} />
-                  <Text ml={2}>React.js</Text>
-                </HStack>
-                <HStack>
-                  <FontAwesomeIcon icon={faReact} />
-                  <Text ml={2}>Next.js</Text>
-                </HStack>
-                <HStack>
-                  <FontAwesomeIcon icon={faReact} />
-                  <Text ml={2}>Gatsby.js</Text>
-                </HStack>
-                <HStack>
-                  <FontAwesomeIcon icon={faHtml5} />
-                  <Text ml={2}>HTML</Text>
-                </HStack>
-                <HStack>
-                  <FontAwesomeIcon icon={faCss3Alt} />
-                  <Text ml={2}>CSS</Text>
-                </HStack>
-                <HStack>
-                  <FontAwesomeIcon icon={faJs} />
-                  <Text ml={2}>JavaScript</Text>
-                </HStack>
+            {techStack.map((category, index) => (
+              <VStack key={index}>
+                <Heading size="md" mb={4}>
+                  {category.title}
+                </Heading>
+                <VStack align="start">
+                  {category.items.map((item, idx) => (
+                    <HStack key={idx}>
+                      <FontAwesomeIcon icon={item.icon} />
+                      <Text ml={2}>{item.name}</Text>
+                    </HStack>
+                  ))}
+                </VStack>
               </VStack>
-            </VStack>
-            <VStack>
-              <Heading size="md" mb={4}>
-                Backend
-              </Heading>
-              <VStack align="start">
-                <HStack>
-                  <FontAwesomeIcon icon={faNodeJs} />
-                  <Text ml={2}>Node.js</Text>
-                </HStack>
-                <HStack>
-                  <FontAwesomeIcon icon={faNodeJs} />
-                  <Text ml={2}>Express.js</Text>
-                </HStack>
-                <HStack>
-                  <FontAwesomeIcon icon={faNodeJs} />
-                  <Text ml={2}>MongoDB</Text>
-                </HStack>
-                <HStack>
-                  <FontAwesomeIcon icon={faNodeJs} />
-                  <Text ml={2}>PostgreSQL</Text>
-                </HStack>
-                <HStack>
-                  <FontAwesomeIcon icon={faNodeJs} />
-                  <Text ml={2}>Firebase</Text>
-                </HStack>
-              </VStack>
-            </VStack>
-            <VStack>
-              <Heading size="md" mb={4}>
-                Tools
-              </Heading>
-              <VStack align="start">
-                <HStack>
-                  <FontAwesomeIcon icon={faGitAlt} />
-                  <Text ml={2}>Git</Text>
-                </HStack>
-                <HStack>
-                  <FontAwesomeIcon icon={faGithub} />
-                  <Text ml={2}>GitHub</Text>
-                </HStack>
-                <HStack>
-                  <FontAwesomeIcon icon={faNpm} />
-                  <Text ml={2}>Heroku</Text>
-                </HStack>
-                <HStack>
-                  <FontAwesomeIcon icon={faNpm} />
-                  <Text ml={2}>Netlify</Text>
-                </HStack>
-                <HStack>
-                  <FontAwesomeIcon icon={faNpm} />
-                  <Text ml={2}>Vercel</Text>
-                </HStack>
-                <HStack>
-                  <FontAwesomeIcon icon={faWordpress} />
-                  <Text ml={2}>WordPress</Text>
-                </HStack>
-              </VStack>
-            </VStack>
+            ))}
           </Grid>
         </VStack>
       </Center>

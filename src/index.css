@@ -1,0 +1,22 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Montserrat", sans-serif !important;
+}
+
+.required-asterisk {
+  color: #fc8181;
+}
+
+.landing-greeting {
+  font-family: "Sacramento", cursive !important;
+  font-size: 5rem;
+  font-style: bold;
+}
+
+.bio {
+  font-size: 1.5rem;
+}

@@ -1,0 +1,83 @@
+{
+  "header": {
+    "projects": "Projets",
+    "contactMe": "Contactez-moi",
+    "resume": "CV"
+  },
+
+  "landing": {
+    "greeting": "Bonjour, je suis Thomas!",
+    "bio1": "Développeur Full Stack",
+    "bio2": "Connecter le Frontend et le Backend avec React et Node.js"
+  },
+
+  "alert": {
+    "successHeader": "Tout va bien!",
+    "errorHeader": "Oups!"
+  },
+
+  "contactMe": {
+    "heading": "Envoyez-moi un message",
+    "required": "*",
+    "optional": "(Facultatif)",
+    "labels": {
+      "name": "Votre Nom",
+      "email": "Votre Email",
+      "type": "Type de demande",
+      "message": "Votre Message"
+    },
+    "placeholders": {
+      "select": "-- Sélectionner --",
+      "hireMe": "Proposition de projet freelance",
+      "feedback": "Retour d'information",
+      "other": "Autre"
+    },
+    "buttons": {
+      "send": "Envoyer"
+    },
+    "alerts": {
+      "success": "Merci pour votre soumission {{name}}, je vous répondrai sous peu!",
+      "error": "Quelque chose s'est mal passé, veuillez réessayer plus tard!"
+    },
+    "validation": {
+      "requiredName": "Le nom est requis",
+      "invalidEmail": "Adresse e-mail invalide",
+      "requiredEmail": "L'e-mail est requis",
+      "requiredComment": "Le message est requis",
+      "minComment": "Le message doit comporter au moins 25 caractères"
+    }
+  },
+
+  "techStack": {
+    "techStackTitle": "Technologies",
+    "techStackSubtitle": "Voici quelques-unes des technologies avec lesquelles j'ai de l'expérience:",
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "tools": "Outils"
+  },
+
+  "projects": {
+    "heading": "Projets en vedette",
+    "sawyerCamp": {
+      "title": "Sawyer-Camp Farmers CIG",
+      "description": "Développé et lancé un site web pour Sawyer Camp Farmers Common Initiative Group, permettant aux agriculteurs locaux au Cameroun de présenter leurs produits et leurs pratiques agricoles durables. Conception conviviale et navigation fluide pour améliorer l'expérience utilisateur."
+    },
+    "resumeBuilder": {
+      "title": "Générateur de CV AI",
+      "description": "Un générateur de CV alimenté par l'IA, offrant une plateforme sécurisée pour se connecter, mettre à jour les profils et créer des CV professionnels. Avec des modèles existants ou une personnalisation via des algorithmes avancés, ResumeCraft garantit des CV adaptés à chaque profil utilisateur."
+    },
+    "bookMart": {
+      "title": "BookMart",
+      "description": "Une application de gestion de livres sécurisée et conviviale permettant aux utilisateurs de se connecter et d'effectuer des opérations CRUD essentielles sur leur inventaire de livres. Une interface intuitive pour ajouter, mettre à jour et supprimer facilement les livres."
+    },
+    "beautySpa": {
+      "title": "Annette's Beauty & SPA",
+      "description": "Amélioration de la présence en ligne d'Annette avec un site web convivial. Les clients peuvent explorer une galerie de styles, réserver des rendez-vous et découvrir les services proposés. Achetez des cartes-cadeaux en toute sécurité grâce à Stripe. Cette plateforme complète améliore l'expérience globale des clients."
+    }
+  },
+
+  "card": {
+    "githubTooltip": "Répertoire GitHub",
+    "websiteTooltip": "Site Web"
+  }
+}
