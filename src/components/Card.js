@@ -1,5 +1,5 @@
 import React from "react";
-import { Heading, Image, Text, VStack, Link, Tooltip } from "@chakra-ui/react";
+import { Heading, Image, Text, VStack, Link, HStack } from "@chakra-ui/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faGlobe } from "@fortawesome/free-solid-svg-icons";
@@ -46,26 +46,37 @@ const Card = ({ title, description, imageSrc, link, github }) => {
             {title}
           </Heading>
           <Text>{description}</Text>
-          <Tooltip hasArrow label={t("card.githubTooltip")} placement="right">
+          <HStack gap="5" py="2">
             <Link
+              className="card-links github-link"
               href={github}
               target="_blank"
               rel="noopener noreferrer"
               onClick={handleGitHubClick}
             >
-              <FontAwesomeIcon icon={faGithub} size="2x" />
+              <FontAwesomeIcon
+                className="github-icon"
+                icon={faGithub}
+                size="lg"
+              />
+              {t("card.githubTooltip")}
             </Link>
-          </Tooltip>
-          <Tooltip hasArrow label={t("card.websiteTooltip")} placement="right">
+
             <Link
+              className="card-links live-demo-link"
               href={link}
               target="_blank"
               rel="noopener noreferrer"
               onClick={handleLiveDemoClick}
             >
-              <FontAwesomeIcon icon={faGlobe} size="2x" />
+              <FontAwesomeIcon
+                className="globe-icon"
+                icon={faGlobe}
+                size="lg"
+              />
+              {t("card.websiteTooltip")}
             </Link>
-          </Tooltip>
+          </HStack>
         </VStack>
       </VStack>
     );

@@ -20,3 +20,20 @@ h6 {
 .bio {
   font-size: 1.5rem;
 }
+
+html {
+  scroll-padding-top: 80px;
+}
+
+.github-icon,
+.globe-icon {
+  padding-right: 0.5rem;
+}
+
+.card-links {
+  text-decoration: underline !important;
+}
+
+.card-links:hover {
+  text-decoration: none !important;
+}
