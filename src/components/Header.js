@@ -124,7 +124,7 @@ const Header = () => {
                 </>
               )}
               <ToggleColorMode />
-              <Button size="sm" onClick={toggleLanguage}>
+              <Button p="0" size="sm" onClick={toggleLanguage}>
                 {i18n.language === "en" ? "FR" : "EN"}
               </Button>
             </HStack>
