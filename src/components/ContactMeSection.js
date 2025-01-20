@@ -13,11 +13,17 @@ import {
   VStack,
   useColorModeValue,
 } from "@chakra-ui/react";
+import { motion } from "framer-motion";
 import * as Yup from "yup";
 import FullScreenSection from "./FullScreenSection";
 import { useTranslation } from "react-i18next";
 import useSubmit from "../hooks/useSubmit";
 import { useAlertContext } from "../context/alertContext";
+
+const MotionBox = motion(Box);
+const MotionHeading = motion(Heading);
+const MotionFormControl = motion(FormControl);
+const MotionButton = motion(Button);
 
 const ContactMeSection = () => {
   const { isLoading, response, submit } = useSubmit();
@@ -29,9 +35,6 @@ const ContactMeSection = () => {
   const borderColor = useColorModeValue("gray.400", "gray.500");
   const focusBorderColor = useColorModeValue("blue.500", "blue.300");
 
-  const btnBgColor = useColorModeValue("blue.500", "blue.300");
-  const hoverBgColor = useColorModeValue("blue.600", "blue.400");
-  const activeBgColor = useColorModeValue("blue.700", "blue.500");
   const textColor = useColorModeValue("white", "gray.900");
 
   const formik = useFormik({
@@ -82,115 +85,139 @@ const ContactMeSection = () => {
       pb={16}
       spacing={8}
     >
-      <VStack p="30px" w="100%">
-        <Heading textAlign={"center"} as="h1" id="contactme-section">
-          {t("contactMe.heading")}
-        </Heading>
-        <Box paddingTop={7} w="full">
-          <form onSubmit={formik.handleSubmit}>
-            <VStack spacing={5}>
-              <FormControl
-                isInvalid={formik.touched.name && formik.errors.name}
+      <MotionHeading
+        textAlign={"center"}
+        as="h1"
+        id="contactme-section"
+        initial={{ opacity: 0, y: -20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.5 }}
+        transition={{ duration: 0.8 }}
+      >
+        {t("contactMe.heading")}
+      </MotionHeading>
+      <MotionBox
+        p="30px"
+        w="100%"
+        initial={{ opacity: 0, scale: 0.95 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true, amount: 0.5 }}
+        transition={{ duration: 0.8 }}
+      >
+        <form onSubmit={formik.handleSubmit}>
+          <VStack spacing={5}>
+            <MotionFormControl
+              isInvalid={formik.touched.name && formik.errors.name}
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >
+              <FormLabel htmlFor="name">
+                <span className="required-asterisk">* </span>
+                {t("contactMe.labels.name")}
+              </FormLabel>
+              <Input
+                id="name"
+                name="name"
+                {...formik.getFieldProps("name")}
+                bg={inputBg}
+                borderColor={borderColor}
+                _hover={{ borderColor: focusBorderColor }}
+                _focus={{ borderColor: focusBorderColor }}
+              />
+              <FormErrorMessage>{formik.errors.name}</FormErrorMessage>
+            </MotionFormControl>
+            <MotionFormControl
+              isInvalid={formik.touched.email && formik.errors.email}
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+            >
+              <FormLabel htmlFor="email">
+                <span className="required-asterisk">* </span>
+                {t("contactMe.labels.email")}
+              </FormLabel>
+              <Input
+                id="email"
+                name="email"
+                type="email"
+                {...formik.getFieldProps("email")}
+                bg={inputBg}
+                borderColor={borderColor}
+                _hover={{ borderColor: focusBorderColor }}
+                _focus={{ borderColor: focusBorderColor }}
+              />
+              <FormErrorMessage>{formik.errors.email}</FormErrorMessage>
+            </MotionFormControl>
+            <MotionFormControl
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{ duration: 0.5, delay: 0.6 }}
+            >
+              <FormLabel htmlFor="type">{t("contactMe.labels.type")}</FormLabel>
+              <Select
+                id="type"
+                name="type"
+                {...formik.getFieldProps("type")}
+                bg={inputBg}
+                borderColor={borderColor}
+                _hover={{ borderColor: focusBorderColor }}
+                _focus={{ borderColor: focusBorderColor }}
               >
-                <FormLabel htmlFor="name">
-                  <span className="required-asterisk">* </span>
-                  {t("contactMe.labels.name")}
-                </FormLabel>
-                <Input
-                  id="name"
-                  name="name"
-                  {...formik.getFieldProps("name")}
-                  bg={inputBg}
-                  borderColor={borderColor}
-                  _hover={{ borderColor: focusBorderColor }}
-                  _focus={{ borderColor: focusBorderColor }}
-                />
-                <FormErrorMessage>{formik.errors.name}</FormErrorMessage>
-              </FormControl>
-              <FormControl
-                isInvalid={formik.touched.email && formik.errors.email}
-              >
-                <FormLabel htmlFor="email">
-                  <span className="required-asterisk">* </span>
-                  {t("contactMe.labels.email")}
-                </FormLabel>
-                <Input
-                  id="email"
-                  name="email"
-                  type="email"
-                  {...formik.getFieldProps("email")}
-                  bg={inputBg}
-                  borderColor={borderColor}
-                  _hover={{ borderColor: focusBorderColor }}
-                  _focus={{ borderColor: focusBorderColor }}
-                />
-                <FormErrorMessage>{formik.errors.email}</FormErrorMessage>
-              </FormControl>
-              <FormControl>
-                <FormLabel htmlFor="type">
-                  {t("contactMe.labels.type")}{" "}
-                  <span style={{ fontStyle: "italic" }}>
-                    {" "}
-                    {t("contactMe.optional")}
-                  </span>
-                </FormLabel>
-                <Select
-                  id="type"
-                  name="type"
-                  {...formik.getFieldProps("type")}
-                  bg={inputBg}
-                  borderColor={borderColor}
-                  _hover={{ borderColor: focusBorderColor }}
-                  _focus={{ borderColor: focusBorderColor }}
-                >
-                  <option value="jobOpportunity">
-                    {t("contactMe.placeholders.select")}
-                  </option>
-                  <option value="hireMe">
-                    {t("contactMe.placeholders.hireMe")}
-                  </option>
-                  <option value="feedback">
-                    {t("contactMe.placeholders.feedback")}
-                  </option>
-                  <option value="other">
-                    {t("contactMe.placeholders.other")}
-                  </option>
-                </Select>
-              </FormControl>
-              <FormControl
-                isInvalid={formik.touched.comment && formik.errors.comment}
-              >
-                <FormLabel htmlFor="comment">
-                  <span className="required-asterisk">* </span>
-                  {t("contactMe.labels.message")}
-                </FormLabel>
-                <Textarea
-                  id="comment"
-                  name="comment"
-                  height={250}
-                  {...formik.getFieldProps("comment")}
-                  bg={inputBg}
-                  borderColor={borderColor}
-                  _hover={{ borderColor: focusBorderColor }}
-                  _focus={{ borderColor: focusBorderColor }}
-                />
-                <FormErrorMessage>{formik.errors.comment}</FormErrorMessage>
-              </FormControl>
-              <Button
-                type="submit"
-                width="full"
-                isLoading={isLoading}
-                bg={btnBgColor}
-                color={textColor}
-                _hover={{ bg: hoverBgColor }}
-                _active={{ bg: activeBgColor }}
-              >
-                {t("contactMe.buttons.send")}
-              </Button>
-            </VStack>
-          </form>
-        </Box>
-      </VStack>
+                <option value="">{t("contactMe.placeholders.select")}</option>
+                <option value="hireMe">
+                  {t("contactMe.placeholders.hireMe")}
+                </option>
+                <option value="feedback">
+                  {t("contactMe.placeholders.feedback")}
+                </option>
+                <option value="other">
+                  {t("contactMe.placeholders.other")}
+                </option>
+              </Select>
+            </MotionFormControl>
+            <MotionFormControl
+              isInvalid={formik.touched.comment && formik.errors.comment}
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{ duration: 0.5, delay: 0.8 }}
+            >
+              <FormLabel htmlFor="comment">
+                <span className="required-asterisk">* </span>
+                {t("contactMe.labels.message")}
+              </FormLabel>
+              <Textarea
+                id="comment"
+                name="comment"
+                height={250}
+                {...formik.getFieldProps("comment")}
+                bg={inputBg}
+                borderColor={borderColor}
+                _hover={{ borderColor: focusBorderColor }}
+                _focus={{ borderColor: focusBorderColor }}
+              />
+              <FormErrorMessage>{formik.errors.comment}</FormErrorMessage>
+            </MotionFormControl>
+            <MotionButton
+              type="submit"
+              width="full"
+              colorScheme="teal"
+              isLoading={isLoading}
+              color={textColor}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{ duration: 0.5, delay: 1 }}
+            >
+              {t("contactMe.buttons.send")}
+            </MotionButton>
+          </VStack>
+        </form>
+      </MotionBox>
     </FullScreenSection>
   );
 };

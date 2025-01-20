@@ -32,9 +32,6 @@ const TechStackSection = () => {
       items: [
         { name: "React.js", icon: faReact },
         { name: "Next.js", icon: faReact },
-        { name: "Gatsby.js", icon: faReact },
-        { name: "HTML", icon: faHtml5 },
-        { name: "CSS", icon: faCss3Alt },
         { name: "JavaScript", icon: faJs },
       ],
     },
@@ -43,9 +40,6 @@ const TechStackSection = () => {
       items: [
         { name: "Node.js", icon: faNodeJs },
         { name: "Express.js", icon: faNodeJs },
-        { name: "MongoDB", icon: faNodeJs },
-        { name: "PostgreSQL", icon: faNodeJs },
-        { name: "Firebase", icon: faNodeJs },
       ],
     },
     {
@@ -53,16 +47,12 @@ const TechStackSection = () => {
       items: [
         { name: "Git", icon: faGitAlt },
         { name: "GitHub", icon: faGithub },
-        { name: "Heroku", icon: faNpm },
-        { name: "Netlify", icon: faNpm },
-        { name: "Vercel", icon: faNpm },
-        { name: "WordPress", icon: faWordpress },
       ],
     },
   ];
 
   return (
-    <Center py="100px" w="100%">
+    <Center pb="100px" w="100%">
       <Center w="100%">
         <VStack w="80%">
           <Heading size="lg" mb={4}>

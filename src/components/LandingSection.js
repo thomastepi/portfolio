@@ -6,6 +6,9 @@ import {
   Center,
   Box,
   useBreakpointValue,
+  useColorMode,
+  Text,
+  Button,
 } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
@@ -13,9 +16,23 @@ import FullScreenSection from "./FullScreenSection";
 
 const MotionHeading = motion(Heading);
 const MotionAvatar = motion(Avatar);
+const MotionText = motion(Text);
+const MotionButton = motion(Button);
 
 const LandingSection = () => {
   const { t } = useTranslation();
+
+  const handleClick = (anchor) => () => {
+    const id = `${anchor}-section`;
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  };
+
   return (
     <Box>
       <FullScreenSection
@@ -25,57 +42,65 @@ const LandingSection = () => {
         w="100%"
       >
         <Center py="55px">
-          <>
-            <MotionHeading
-              className="landing-greeting"
-              size={useBreakpointValue({ base: "2xl", md: "4xl" })}
-              align="center"
-              initial={{ opacity: 0, x: -100 }}
-              animate={{
-                opacity: 1,
-                x: 0,
-              }}
-              transition={{ duration: 0.9, delay: 2 }}
-            >
-              {t("landing.greeting")}
-            </MotionHeading>
-          </>
+          <MotionHeading
+            size={useBreakpointValue({ base: "2xl", md: "4xl" })}
+            align="center"
+            initial={{ opacity: 0, y: -50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
+            mb="4"
+          >
+            {t("landing.greeting")}
+          </MotionHeading>
         </Center>
-        <VStack px="10px">
+        <VStack spacing={6} px="10px">
           <MotionAvatar
-            zIndex={-1}
             size="2xl"
             name="Thomas"
-            src={"https://ik.imagekit.io/thormars/profile_photos/profile.jpg"}
-            borderRadius={8}
+            src="https://ik.imagekit.io/thormars/profile_photos/profile.jpg"
+            borderRadius="full"
+            shadow="xl"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 2, delay: 1 }}
+            transition={{ duration: 1.5, delay: 0.5 }}
           />
-          <MotionHeading
-            initial={{ opacity: 0, x: 100 }}
-            animate={{
-              opacity: 1,
-              x: 0,
-            }}
-            transition={{ duration: 0.9, delay: 2 }}
-            align="center"
-            size="xl"
+          <MotionText
+            fontSize={useBreakpointValue({ base: "lg", md: "xl" })}
+            color={
+              useColorMode().colorMode === "light" ? "gray.600" : "gray.400"
+            }
+            textAlign="center"
+            maxW="600px"
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1, delay: 1 }}
           >
-            {t("landing.bio1")}
-          </MotionHeading>
-          <MotionHeading
-            initial={{ opacity: 0, x: 100 }}
-            animate={{
-              opacity: 1,
-              x: 0,
-            }}
-            transition={{ duration: 0.9, delay: 2 }}
-            align="center"
-            size="md"
+            {t("landing.bio1")}{" "}
+          </MotionText>
+          <MotionText
+            fontSize={useBreakpointValue({ base: "md", md: "lg" })}
+            color={
+              useColorMode().colorMode === "light" ? "gray.500" : "gray.300"
+            }
+            textAlign="center"
+            maxW="600px"
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1, delay: 1.2 }}
           >
-            {t("landing.bio2")}
-          </MotionHeading>
+            {t("landing.bio2")}{" "}
+          </MotionText>
+          <MotionButton
+            mt={4}
+            colorScheme="teal"
+            size="lg"
+            initial={{ scale: 0.9, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.8, delay: 1.5 }}
+            onClick={handleClick("contactme")}
+          >
+            {t("landing.btnText")}
+          </MotionButton>
         </VStack>
       </FullScreenSection>
     </Box>

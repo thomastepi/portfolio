@@ -5,6 +5,7 @@ import {
   ProjectsSection,
   ContactMeSection,
   TechStackSection,
+  AboutMe,
   Alert,
   Footer,
 } from "./components";
@@ -30,6 +31,7 @@ function App() {
       <Header />
       <LandingSection />
       <ProjectsSection />
+      <AboutMe />
       <TechStackSection />
       <ContactMeSection />
       <Footer />

@@ -1,14 +1,16 @@
 {
   "header": {
     "projects": "Projets",
-    "contactMe": "Contactez-moi",
+    "aboutMe": "À propos",
+    "contactMe": "Contact",
     "resume": "CV"
   },
 
   "landing": {
     "greeting": "Bonjour, je suis Thomas!",
     "bio1": "Développeur Full Stack",
-    "bio2": "Connecter le Frontend et le Backend avec React et Node.js"
+    "bio2": "Connecter le Frontend et le Backend avec React et Node.js",
+    "btnText": "Contactez-moi"
   },
 
   "alert": {
@@ -48,6 +50,14 @@
     }
   },
 
+  "aboutMe": {
+    "heading": "À propos de moi",
+    "paragraph1-phase1": "En tant que développeur web passionné et contributeur open source, j'ai consacré mon parcours à perfectionner mes compétences en React, Node.js et aux frameworks modernes de développement web. Mes contributions à des projets open source, tels que",
+    "paragraph1-phase2": " ont renforcé à la fois mon expertise technique et ma compréhension de la création de solutions évolutives et centrées sur l'utilisateur.",
+    "paragraph2": "Je me spécialise dans la gestion du développement de fonctionnalités, l'amélioration des interactions UI/UX et la rédaction de code clair et réutilisable qui améliore la fonctionnalité et l'accessibilité des projets. Mon travail allie profondeur technique et application pratique, assurant que des fonctionnalités complexes soient intuitives pour les utilisateurs et faciles à maintenir pour les équipes.",
+    "paragraph3": "Cette combinaison de codage pratique et de travail d'équipe me permet de collaborer, de communiquer et de contribuer efficacement à des solutions web percutantes qui résonnent auprès des parties prenantes techniques et non techniques."
+  },
+
   "techStack": {
     "techStackTitle": "Technologies",
     "techStackSubtitle": "Voici quelques-unes des technologies avec lesquelles j'ai de l'expérience:",
@@ -78,6 +88,8 @@
 
   "card": {
     "githubTooltip": "Répertoire GitHub",
-    "websiteTooltip": "Site Web"
+    "websiteTooltip": "Site Web",
+    "isExpanded": "Afficher moins",
+    "isCollapsed": "Afficher plus"
   }
 }

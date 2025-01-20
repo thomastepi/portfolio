@@ -9,7 +9,6 @@ import {
 } from "@chakra-ui/react";
 import DrawerPanel from "./Drawer";
 import ToggleColorMode from "./ToggleColorMode";
-//import { useColorMode } from "@chakra-ui/react";
 import { useTranslation } from "react-i18next";
 import socials from "../utils/socials";
 import ReactGA from "react-ga4";
@@ -105,6 +104,12 @@ const Header = () => {
                     onClick={handleClick("projects")}
                   >
                     {t("header.projects")}
+                  </a>
+                  <a
+                    style={{ cursor: "pointer" }}
+                    onClick={handleClick("about-me")}
+                  >
+                    {t("header.aboutMe")}
                   </a>
                   <a
                     style={{ cursor: "pointer", textAlign: "center" }}
