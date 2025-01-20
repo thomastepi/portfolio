@@ -19,6 +19,7 @@ import FullScreenSection from "./FullScreenSection";
 import { useTranslation } from "react-i18next";
 import useSubmit from "../hooks/useSubmit";
 import { useAlertContext } from "../context/alertContext";
+import { use } from "react";
 
 const MotionBox = motion(Box);
 const MotionHeading = motion(Heading);
@@ -29,7 +30,9 @@ const ContactMeSection = () => {
   const { isLoading, response, submit } = useSubmit();
   const { onOpen } = useAlertContext();
   const [submittedFirstName, setSubmittedFirstName] = React.useState("");
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+
+  const language = i18n.language;
 
   const inputBg = useColorModeValue("white", "gray.700");
   const borderColor = useColorModeValue("gray.400", "gray.500");
@@ -40,7 +43,7 @@ const ContactMeSection = () => {
   const formik = useFormik({
     initialValues: { name: "", email: "", type: "", comment: "" },
     onSubmit: async (values) => {
-      await submit(values);
+      await submit({ ...values, language });
       setSubmittedFirstName(values.name);
     },
     validationSchema: Yup.object({
