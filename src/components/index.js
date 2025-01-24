@@ -6,6 +6,7 @@ import LandingSection from "./LandingSection";
 import ProjectsSection from "./ProjectsSection";
 import AboutMe from "./AboutMe";
 import TechStackSection from "./TechStackSection";
+import PrivacyPolicy from "./PrivacyPolicy";
 
 export {
   Alert,
@@ -16,4 +17,5 @@ export {
   ProjectsSection,
   AboutMe,
   TechStackSection,
+  PrivacyPolicy,
 };

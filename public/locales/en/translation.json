@@ -91,5 +91,22 @@
     "websiteTooltip": "Website",
     "isExpanded": "Show less",
     "isCollapsed": "Read more"
+  },
+
+  "consent": {
+    "message": "This website uses cookies to collect data for analytics purposes to help improve your experience.",
+    "span": "By clicking 'Accept', you consent to the use of these cookies.",
+    "policyButtonText": "Learn more in my Privacy Policy.",
+    "accept": "Accept",
+    "decline": "Decline"
+  },
+
+  "policy": {
+    "title": "Privacy Policy",
+    "text1": "This website uses Google Analytics to collect anonymized data about website traffic, such as page views, browser types, and user interactions. This data helps me improve the content and functionality of the website.",
+    "text2": "Google Analytics may collect your approximate geographic location and anonymized IP address. No personally identifiable information (PII) is collected or stored.",
+    "text3": "For more details, please refer to",
+    "linkText": "Google's Privacy Policy.",
+    "modalCloseButton": "Close"
   }
 }

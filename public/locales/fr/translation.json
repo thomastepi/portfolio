@@ -91,5 +91,22 @@
     "websiteTooltip": "Site Web",
     "isExpanded": "Afficher moins",
     "isCollapsed": "Afficher plus"
+  },
+
+  "consent": {
+    "message": "Ce site utilise des cookies pour collecter des données à des fins d'analyse afin d'améliorer votre expérience.",
+    "span": "En cliquant sur 'Accepter', vous consentez à l'utilisation de ces cookies.",
+    "policyButtonText": "En savoir plus dans ma Politique de Confidentialité.",
+    "accept": "Accepter",
+    "decline": "Refuser"
+  },
+
+  "policy": {
+    "title": "Politique de Confidentialité",
+    "text1": "Ce site utilise Google Analytics pour collecter des données anonymisées sur le trafic du site, telles que les pages visitées, les types de navigateurs et les interactions des utilisateurs. Ces données m'aident à améliorer le contenu et la fonctionnalité du site.",
+    "text2": "Google Analytics peut collecter votre localisation géographique approximative et une adresse IP anonymisée. Aucune information personnellement identifiable (PII) n'est collectée ou stockée.",
+    "text3": "Pour plus de détails, veuillez consulter",
+    "linkText": "la Politique de Confidentialité de Google.",
+    "modalCloseButton": "Fermer"
   }
 }

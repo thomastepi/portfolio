@@ -19,7 +19,6 @@ import FullScreenSection from "./FullScreenSection";
 import { useTranslation } from "react-i18next";
 import useSubmit from "../hooks/useSubmit";
 import { useAlertContext } from "../context/alertContext";
-import { use } from "react";
 
 const MotionBox = motion(Box);
 const MotionHeading = motion(Heading);
