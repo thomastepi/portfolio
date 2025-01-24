@@ -9,7 +9,7 @@ const socials = [
   {
     name: "Email",
     icon: faEnvelope,
-    url: "mailto: email@thomastepi.com",
+    url: "mailto: thomastepi@hotmail.com",
   },
   {
     name: "GitHub",

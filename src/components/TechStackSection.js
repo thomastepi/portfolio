@@ -12,13 +12,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faReact,
   faNodeJs,
-  faHtml5,
-  faCss3Alt,
   faJs,
   faGitAlt,
   faGithub,
-  faNpm,
-  faWordpress,
 } from "@fortawesome/free-brands-svg-icons";
 import { useTranslation } from "react-i18next";
 
