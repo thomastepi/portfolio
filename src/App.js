@@ -6,35 +6,45 @@ import {
   ContactMeSection,
   TechStackSection,
   AboutMe,
+  PrivacyPolicy,
+  ManageCookies,
   Alert,
   Footer,
 } from "./components";
-import {
-  Modal,
-  ModalOverlay,
-  ModalContent,
-  ModalHeader,
-  ModalBody,
-  ModalFooter,
-  Button,
-  Text,
-  useDisclosure,
-} from "@chakra-ui/react";
+import { Button, useDisclosure, useBreakpointValue } from "@chakra-ui/react";
 import "./App.css";
 import ReactGA from "react-ga4";
 import CookieConsent from "react-cookie-consent";
-import { useTranslation } from "react-i18next";  
-
-if (process.env.REACT_APP_GA_MEASUREMENT_ID) {
-  ReactGA.initialize(process.env.REACT_APP_GA_MEASUREMENT_ID);
-} else {
-  console.warn("Google Analytics Measurement ID is not defined");
-}
+import { useTranslation } from "react-i18next";
 
 function App() {
   const [analyticsEnabled, setAnalyticsEnabled] = useState(false);
-  const { isOpen, onOpen, onClose } = useDisclosure();
+  const {
+    isOpen: isPrivacyPolicyOpen,
+    onOpen: openPrivacyPolicy,
+    onClose: closePrivacyPolicy,
+  } = useDisclosure();
+
+  const {
+    isOpen: isManageCookiesOpen,
+    onOpen: openManageCookies,
+    onClose: closeManageCookies,
+  } = useDisclosure();
   const { t } = useTranslation();
+
+  const initializeAnalytics = () => {
+    if (process.env.REACT_APP_GA_MEASUREMENT_ID) {
+      ReactGA.initialize(process.env.REACT_APP_GA_MEASUREMENT_ID, {
+        gaOptions: { anonymizeIp: true },
+      });
+      ReactGA.send({
+        hitType: "pageview",
+        page: window.location.pathname + window.location.search,
+      });
+    } else {
+      console.warn("Google Analytics Measurement ID is not defined");
+    }
+  };
 
   useEffect(() => {
     const consentGiven = document.cookie.includes("cookieConsent=true");
@@ -44,12 +54,8 @@ function App() {
   }, []);
 
   useEffect(() => {
-    if (analyticsEnabled && process.env.REACT_APP_GA_MEASUREMENT_ID) {
-      ReactGA.initialize(process.env.REACT_APP_GA_MEASUREMENT_ID);
-      ReactGA.send({
-        hitType: "pageview",
-        page: window.location.pathname + window.location.search,
-      });
+    if (analyticsEnabled) {
+      initializeAnalytics();
     }
   }, [analyticsEnabled]);
 
@@ -66,6 +72,7 @@ function App() {
           color: "#E2E8F0",
           fontSize: "14px",
           padding: "5px",
+          zIndex: 2000,
         }}
         buttonStyle={{
           background: "#61DAFB",
@@ -83,8 +90,12 @@ function App() {
           marginLeft: "8px",
         }}
         expires={30}
-        onAccept={() => setAnalyticsEnabled(true)}
-        onDecline={() => setAnalyticsEnabled(false)}
+        onAccept={() => {
+          setAnalyticsEnabled(true);
+        }}
+        onDecline={() => {
+          setAnalyticsEnabled(false);
+        }}
       >
         {t("consent.message")}{" "}
         <span style={{ fontSize: "10px" }}>
@@ -92,7 +103,7 @@ function App() {
           <Button
             variant="link"
             color="teal.200"
-            onClick={onOpen}
+            onClick={openPrivacyPolicy}
             style={{ textDecoration: "underline", fontSize: "10px" }}
           >
             {t("consent.policyButtonText")}
@@ -100,33 +111,32 @@ function App() {
         </span>
       </CookieConsent>
 
-      <Modal isOpen={isOpen} onClose={onClose}>
-        <ModalOverlay />
-        <ModalContent>
-          <ModalHeader>{t("policy.title")}</ModalHeader>
-          <ModalBody>
-            <Text mb={4}>{t("policy.text1")}</Text>
-            <Text mb={4}>{t("policy.text2")}</Text>
-            <Text>
-              {t("policy.text3")}{" "}
-              <a
-                href="https://policies.google.com/privacy"
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{ color: "teal" }}
-              >
-                {t("policy.linkText")}
-              </a>
-              .
-            </Text>
-          </ModalBody>
-          <ModalFooter>
-            <Button colorScheme="blue" onClick={onClose}>
-              {t("policy.modalCloseButton")}
-            </Button>
-          </ModalFooter>
-        </ModalContent>
-      </Modal>
+      <Button
+        className="manage-cookies-button"
+        onClick={openManageCookies}
+        size={useBreakpointValue({ base: "xs", md: "md" })}
+        style={{
+          position: "fixed",
+          bottom: "20px",
+          right: "20px",
+          cursor: "pointer",
+          zIndex: 1000,
+        }}
+      >
+        {t("consent.manage")}
+      </Button>
+      <PrivacyPolicy
+        t={t}
+        isOpen={isPrivacyPolicyOpen}
+        onClose={closePrivacyPolicy}
+      />
+      <ManageCookies
+        t={t}
+        isOpen={isManageCookiesOpen}
+        onClose={closeManageCookies}
+        setAnalyticsEnabled={setAnalyticsEnabled}
+      />
+
       <Header />
       <LandingSection />
       <ProjectsSection />

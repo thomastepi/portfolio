@@ -98,15 +98,29 @@
     "span": "By clicking 'Accept', you consent to the use of these cookies.",
     "policyButtonText": "Learn more in my Privacy Policy.",
     "accept": "Accept",
-    "decline": "Decline"
+    "decline": "Decline",
+    "manage": "Manage Cookies"
   },
 
   "policy": {
     "title": "Privacy Policy",
-    "text1": "This website uses Google Analytics to collect anonymized data about website traffic, such as page views, browser types, and user interactions. This data helps me improve the content and functionality of the website.",
+    "text1": "This website uses Google Analytics to collect anonymized website traffic data, including page views, browser types, and user interactions. The data helps improve website design, usability, and user experience.",
     "text2": "Google Analytics may collect your approximate geographic location and anonymized IP address. No personally identifiable information (PII) is collected or stored.",
     "text3": "For more details, please refer to",
     "linkText": "Google's Privacy Policy.",
     "modalCloseButton": "Close"
+  },
+
+  "manageCookie": {
+    "title": "Manage Cookies",
+    "message": {
+      "hadAccepted": "You have accepted cookies. Cookies are used for analytics to improve your experience.",
+      "hadDeclined": "You have declined cookies. Cookies are used for analytics to improve your experience.",
+      "cookieDescription": "Cookies are small pieces of data stored on your device to help analyze site usage and improve functionality.",
+      "updatePreference": "Would you like to update your cookie preferences?"
+    },
+    "accept": "Accept Cookies",
+    "decline": "Decline Cookies",
+    "keepCurrent": "Keep Current Preference"
   }
 }

@@ -98,15 +98,29 @@
     "span": "En cliquant sur 'Accepter', vous consentez à l'utilisation de ces cookies.",
     "policyButtonText": "En savoir plus dans ma Politique de Confidentialité.",
     "accept": "Accepter",
-    "decline": "Refuser"
+    "decline": "Refuser",
+    "manage": "Gérer les cookies"
   },
 
   "policy": {
     "title": "Politique de Confidentialité",
-    "text1": "Ce site utilise Google Analytics pour collecter des données anonymisées sur le trafic du site, telles que les pages visitées, les types de navigateurs et les interactions des utilisateurs. Ces données m'aident à améliorer le contenu et la fonctionnalité du site.",
+    "text1": "Ce site utilise Google Analytics pour collecter des données anonymisées sur le trafic du site, y compris les pages vues, les types de navigateurs et les interactions des utilisateurs. Ces données aident à améliorer la conception, l’utilisabilité et l’expérience utilisateur du site.",
     "text2": "Google Analytics peut collecter votre localisation géographique approximative et une adresse IP anonymisée. Aucune information personnellement identifiable (PII) n'est collectée ou stockée.",
     "text3": "Pour plus de détails, veuillez consulter",
     "linkText": "la Politique de Confidentialité de Google.",
     "modalCloseButton": "Fermer"
+  },
+
+  "manageCookie": {
+    "title": "Gérer les cookies",
+    "message": {
+      "hadAccepted": "Vous avez accepté les cookies. Les cookies sont utilisés pour l'analyse afin d'améliorer votre expérience.",
+      "hadDeclined": "Vous avez refusé les cookies. Les cookies sont utilisés pour l'analyse afin d'améliorer votre expérience.",
+      "cookieDescription": "Les cookies sont de petits morceaux de données stockés sur votre appareil pour aider à analyser l'utilisation du site et améliorer sa fonctionnalité.",
+      "updatePreference": "Souhaitez-vous mettre à jour vos préférences de cookies ?"
+    },
+    "accept": "Accepter les cookies",
+    "decline": "Refuser les cookies",
+    "keepCurrent": "Conserver la préférence actuelle"
   }
 }

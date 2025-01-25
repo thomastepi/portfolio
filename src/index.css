@@ -37,3 +37,11 @@ html {
 .card-links:hover {
   text-decoration: none !important;
 }
+
+.manage-cookies-button {
+  background-color: #649379 !important;
+  color: white !important;
+  border-radius: 2px !important;
+  padding: 0.5rem 1rem !important;
+  cursor: pointer;
+}
