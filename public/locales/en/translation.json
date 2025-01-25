@@ -95,7 +95,7 @@
 
   "consent": {
     "message": "This website uses cookies to collect data for analytics purposes to help improve your experience.",
-    "span": "By clicking 'Accept', you consent to the use of these cookies.",
+    "span": "By clicking 'Accept' or by continuing to use this site (including scrolling), you consent to the use of these cookies.",
     "policyButtonText": "Learn more in my Privacy Policy.",
     "accept": "Accept",
     "decline": "Decline",

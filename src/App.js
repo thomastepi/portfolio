@@ -67,6 +67,8 @@ function App() {
         declineButtonText={t("consent.decline")}
         enableDeclineButton
         cookieName="cookieConsent"
+        acceptOnScroll={true}
+        acceptOnScrollPercentage={25}
         style={{
           background: "#2C2F33",
           color: "#E2E8F0",
@@ -82,16 +84,21 @@ function App() {
           borderRadius: "4px",
         }}
         declineButtonStyle={{
-          background: "#E53E3E",
-          color: "#FFFFFF",
-          fontSize: "14px",
-          padding: "8px 16px",
-          borderRadius: "4px",
+          background: "transparent",
+          color: "#A0AEC0",
+          fontSize: "12px",
+          padding: "6px 12px",
+          borderRadius: "0px",
           marginLeft: "8px",
+          border: "1px solid #A0AEC0",
         }}
         expires={30}
-        onAccept={() => {
-          setAnalyticsEnabled(true);
+        onAccept={(acceptedByScrolling) => {
+          if (acceptedByScrolling) {
+            setAnalyticsEnabled(true);
+          } else {
+            setAnalyticsEnabled(true);
+          }
         }}
         onDecline={() => {
           setAnalyticsEnabled(false);

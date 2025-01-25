@@ -8,6 +8,7 @@ import {
   ModalFooter,
   Button,
   Text,
+  Link,
 } from "@chakra-ui/react";
 
 const PrivacyPolicy = ({ t, isOpen, onClose }) => {
@@ -22,14 +23,13 @@ const PrivacyPolicy = ({ t, isOpen, onClose }) => {
             <Text mb={4}>{t("policy.text2")}</Text>
             <Text>
               {t("policy.text3")}{" "}
-              <a
+              <Link
                 href="https://policies.google.com/privacy"
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{ color: "teal" }}
+                color= "teal.400"
+                isExternal
               >
                 {t("policy.linkText")}
-              </a>
+              </Link>
               .
             </Text>
           </ModalBody>

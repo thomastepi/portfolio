@@ -61,7 +61,7 @@ const ManageCookies = ({ t, isOpen, onClose, setAnalyticsEnabled }) => {
           <ModalFooter>
             {getCookieConsentValue("cookieConsent") === "true" ? (
               <Button
-                colorScheme="red"
+                size="sm"
                 mr={3}
                 onClick={() => {
                   resetCookieConsentValue("cookieConsent");
@@ -74,6 +74,7 @@ const ManageCookies = ({ t, isOpen, onClose, setAnalyticsEnabled }) => {
               </Button>
             ) : (
               <Button
+                size="sm"
                 colorScheme="green"
                 mr={3}
                 onClick={() => {
@@ -85,7 +86,7 @@ const ManageCookies = ({ t, isOpen, onClose, setAnalyticsEnabled }) => {
                 {t("manageCookie.accept")}
               </Button>
             )}
-            <Button variant="ghost" onClick={onClose}>
+            <Button variant="ghost" size="sm" onClick={onClose}>
               {t("manageCookie.keepCurrent")}
             </Button>
           </ModalFooter>
