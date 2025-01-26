@@ -99,12 +99,13 @@
     "policyButtonText": "Learn more in my Privacy Policy.",
     "accept": "Accept",
     "decline": "Decline",
-    "manage": "Manage Cookies"
+    "manage": "Cookie Preferences"
   },
 
   "policy": {
     "title": "Privacy Policy",
     "text1": "This website uses Google Analytics to collect anonymized website traffic data, including page views, browser types, and user interactions. The data helps improve website design, usability, and user experience.",
+    "text11": "Google Analytics tracking is enabled only if you accept cookies. If you decline cookies, no tracking occurs, and no data is collected by Google Analytics during your visit.",
     "text2": "Google Analytics may collect your approximate geographic location and anonymized IP address. No personally identifiable information (PII) is collected or stored.",
     "text3": "For more details, please refer to",
     "linkText": "Google's Privacy Policy.",
@@ -112,7 +113,7 @@
   },
 
   "manageCookie": {
-    "title": "Manage Cookies",
+    "title": "Cookie Preferences",
     "message": {
       "hadAccepted": "You have accepted cookies. Cookies are used for analytics to improve your experience.",
       "hadDeclined": "You have declined cookies. Cookies are used for analytics to improve your experience.",

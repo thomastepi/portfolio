@@ -14,18 +14,19 @@ import {
 const PrivacyPolicy = ({ t, isOpen, onClose }) => {
   return (
     <>
-      <Modal isOpen={isOpen} onClose={onClose} isCentered>
+      <Modal isOpen={isOpen} onClose={onClose} isCentered size="xl">
         <ModalOverlay />
         <ModalContent>
           <ModalHeader>{t("policy.title")}</ModalHeader>
           <ModalBody>
             <Text mb={4}>{t("policy.text1")}</Text>
+            <Text mb={4}>{t("policy.text11")}</Text>
             <Text mb={4}>{t("policy.text2")}</Text>
             <Text>
               {t("policy.text3")}{" "}
               <Link
                 href="https://policies.google.com/privacy"
-                color= "teal.400"
+                color="teal.400"
                 isExternal
               >
                 {t("policy.linkText")}

@@ -11,7 +11,7 @@ import {
   Alert,
   Footer,
 } from "./components";
-import { Button, useDisclosure, useBreakpointValue } from "@chakra-ui/react";
+import { Button, useDisclosure } from "@chakra-ui/react";
 import "./App.css";
 import ReactGA from "react-ga4";
 import CookieConsent from "react-cookie-consent";
@@ -19,6 +19,7 @@ import { useTranslation } from "react-i18next";
 
 function App() {
   const [analyticsEnabled, setAnalyticsEnabled] = useState(false);
+  const [isCookiesDeclined, setIsCookiesDeclined] = useState(false);
   const {
     isOpen: isPrivacyPolicyOpen,
     onOpen: openPrivacyPolicy,
@@ -61,77 +62,67 @@ function App() {
 
   return (
     <>
-      <CookieConsent
-        location="bottom"
-        buttonText={t("consent.accept")}
-        declineButtonText={t("consent.decline")}
-        enableDeclineButton
-        cookieName="cookieConsent"
-        acceptOnScroll={true}
-        acceptOnScrollPercentage={25}
-        style={{
-          background: "#2C2F33",
-          color: "#E2E8F0",
-          fontSize: "14px",
-          padding: "5px",
-          zIndex: 2000,
-        }}
-        buttonStyle={{
-          background: "#61DAFB",
-          color: "#1A202C",
-          fontSize: "14px",
-          padding: "8px 16px",
-          borderRadius: "4px",
-        }}
-        declineButtonStyle={{
-          background: "transparent",
-          color: "#A0AEC0",
-          fontSize: "12px",
-          padding: "6px 12px",
-          borderRadius: "0px",
-          marginLeft: "8px",
-          border: "1px solid #A0AEC0",
-        }}
-        expires={30}
-        onAccept={(acceptedByScrolling) => {
-          if (acceptedByScrolling) {
+      {!isCookiesDeclined && (
+        <CookieConsent
+          location="bottom"
+          buttonText={t("consent.accept")}
+          declineButtonText={t("consent.decline")}
+          enableDeclineButton
+          cookieName="cookieConsent"
+          acceptOnScroll={true}
+          acceptOnScrollPercentage={25}
+          style={{
+            background: "#2C2F33",
+            color: "#E2E8F0",
+            fontSize: "14px",
+            padding: "5px",
+            zIndex: 2000,
+          }}
+          buttonStyle={{
+            background: "#61DAFB",
+            color: "#1A202C",
+            fontSize: "14px",
+            padding: "8px 16px",
+            borderRadius: "4px",
+          }}
+          declineButtonStyle={{
+            background: "transparent",
+            color: "#A0AEC0",
+            fontSize: "12px",
+            padding: "6px 12px",
+            borderRadius: "0px",
+            marginLeft: "8px",
+            border: "1px solid #A0AEC0",
+          }}
+          expires={30}
+          onAccept={(acceptedByScrolling) => {
+            if (acceptedByScrolling) {
+              console.log("Cookies accepted by scrolling.");
+            } else {
+              console.log("Cookies explicitly accepted.");
+            }
             setAnalyticsEnabled(true);
-          } else {
-            setAnalyticsEnabled(true);
-          }
-        }}
-        onDecline={() => {
-          setAnalyticsEnabled(false);
-        }}
-      >
-        {t("consent.message")}{" "}
-        <span style={{ fontSize: "10px" }}>
-          {t("consent.span")}{" "}
-          <Button
-            variant="link"
-            color="teal.200"
-            onClick={openPrivacyPolicy}
-            style={{ textDecoration: "underline", fontSize: "10px" }}
-          >
-            {t("consent.policyButtonText")}
-          </Button>
-        </span>
-      </CookieConsent>
+          }}
+          onDecline={() => {
+            setIsCookiesDeclined(true);
+            setAnalyticsEnabled(false);
+          }}
+        >
+          {t("consent.message")}{" "}
+          <span style={{ fontSize: "10px" }}>
+            {t("consent.span")}{" "}
+            <Button
+              variant="link"
+              color="teal.200"
+              onClick={openPrivacyPolicy}
+              style={{ textDecoration: "underline", fontSize: "10px" }}
+            >
+              {t("consent.policyButtonText")}
+            </Button>
+          </span>
+        </CookieConsent>
+      )}
 
-      <Button
-        className="manage-cookies-button"
-        onClick={openManageCookies}
-        size={useBreakpointValue({ base: "xs", md: "md" })}
-        style={{
-          position: "fixed",
-          bottom: "20px",
-          right: "20px",
-          cursor: "pointer",
-          zIndex: 1000,
-        }}
-      >
-        {t("consent.manage")}
-      </Button>
       <PrivacyPolicy
         t={t}
         isOpen={isPrivacyPolicyOpen}
@@ -150,7 +141,11 @@ function App() {
       <AboutMe />
       <TechStackSection />
       <ContactMeSection />
-      <Footer />
+      <Footer
+        t={t}
+        openManageCookies={openManageCookies}
+        openPrivacyPolicy={openPrivacyPolicy}
+      />
       <Alert />
     </>
   );

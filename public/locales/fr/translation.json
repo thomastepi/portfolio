@@ -99,12 +99,13 @@
     "policyButtonText": "En savoir plus dans ma Politique de Confidentialité.",
     "accept": "Accepter",
     "decline": "Refuser",
-    "manage": "Gérer les cookies"
+    "manage": "Préférences de cookies"
   },
 
   "policy": {
     "title": "Politique de Confidentialité",
     "text1": "Ce site utilise Google Analytics pour collecter des données anonymisées sur le trafic du site, y compris les pages vues, les types de navigateurs et les interactions des utilisateurs. Ces données aident à améliorer la conception, l’utilisabilité et l’expérience utilisateur du site.",
+    "text11": "Le suivi Google Analytics est activé uniquement si vous acceptez les cookies. Si vous refusez les cookies, aucun suivi n'a lieu et aucune donnée n'est collectée par Google Analytics pendant votre visite.",
     "text2": "Google Analytics peut collecter votre localisation géographique approximative et une adresse IP anonymisée. Aucune information personnellement identifiable (PII) n'est collectée ou stockée.",
     "text3": "Pour plus de détails, veuillez consulter",
     "linkText": "la Politique de Confidentialité de Google.",
@@ -112,7 +113,7 @@
   },
 
   "manageCookie": {
-    "title": "Gérer les cookies",
+    "title": "Préférences de cookies",
     "message": {
       "hadAccepted": "Vous avez accepté les cookies. Les cookies sont utilisés pour l'analyse afin d'améliorer votre expérience.",
       "hadDeclined": "Vous avez refusé les cookies. Les cookies sont utilisés pour l'analyse afin d'améliorer votre expérience.",

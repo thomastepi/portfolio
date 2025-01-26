@@ -18,7 +18,6 @@ import {
 const ManageCookies = ({ t, isOpen, onClose, setAnalyticsEnabled }) => {
   const deleteAllAnalyticsCookies = () => {
     window["ga-disable-" + process.env.REACT_APP_GA_MEASUREMENT_ID] = true;
-
     const currentDomain = window.location.hostname;
 
     const cookies = document.cookie.split(";");
@@ -38,6 +37,7 @@ const ManageCookies = ({ t, isOpen, onClose, setAnalyticsEnabled }) => {
       }
     });
   };
+
   return (
     <>
       <Modal
@@ -63,6 +63,8 @@ const ManageCookies = ({ t, isOpen, onClose, setAnalyticsEnabled }) => {
               <Button
                 size="sm"
                 mr={3}
+                bgColor="#FF7777"
+                _hover={{ bgColor: "#FF5555" }}
                 onClick={() => {
                   resetCookieConsentValue("cookieConsent");
                   deleteAllAnalyticsCookies();

@@ -8,6 +8,7 @@ const theme = extendTheme({
   colors: {
     lightModeBg: "#f7f7f7",
     darkModeBg: "#1a202c",
+    modalDarkBg: "#344955",
   },
   styles: {
     global: (props) => ({
@@ -45,6 +46,17 @@ const theme = extendTheme({
           'source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace',
       },
     }),
+  },
+  components: {
+    Modal: {
+      baseStyle: (props) => ({
+        dialog: {
+          bg: props.colorMode === "dark" ? "modalDarkBg" : "white",
+          color: props.colorMode === "dark" ? "whiteAlpha.900" : "gray.800",
+          boxShadow: "lg",
+        },
+      }),
+    },
   },
 });
 
