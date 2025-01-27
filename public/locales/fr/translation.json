@@ -104,11 +104,12 @@
 
   "policy": {
     "title": "Politique de Confidentialité",
+    "name": "Google Analytics",
     "text1": "Ce site utilise Google Analytics pour collecter des données anonymisées sur le trafic du site, y compris les pages vues, les types de navigateurs et les interactions des utilisateurs. Ces données aident à améliorer la conception, l’utilisabilité et l’expérience utilisateur du site.",
     "text11": "Le suivi Google Analytics est activé uniquement si vous acceptez les cookies. Si vous refusez les cookies, aucun suivi n'a lieu et aucune donnée n'est collectée par Google Analytics pendant votre visite.",
     "text2": "Google Analytics peut collecter votre localisation géographique approximative et une adresse IP anonymisée. Aucune information personnellement identifiable (PII) n'est collectée ou stockée.",
     "text3": "Pour plus de détails, veuillez consulter",
-    "linkText": "la Politique de Confidentialité de Google.",
+    "linkText": "la Politique de Confidentialité de Google",
     "modalCloseButton": "Fermer"
   },
 
@@ -123,5 +124,16 @@
     "accept": "Accepter les cookies",
     "decline": "Refuser les cookies",
     "keepCurrent": "Conserver la préférence actuelle"
+  },
+
+  "localStorage": {
+    "title": "Utilisation de LocalStorage",
+    "intro": "En plus des cookies, ce site web utilise localStorage pour stocker certaines préférences sur votre appareil afin d'améliorer votre expérience. Plus précisément :",
+    "preferences": {
+      "colorMode": "Préférence de mode de couleur : Enregistre votre choix entre le mode clair ou sombre pour une apparence cohérente du site.",
+      "language": "Préférence de langue : Enregistre votre langue sélectionnée pour afficher le site dans votre langue préférée."
+    },
+    "disclaimer": "Les données stockées dans localStorage ne sont pas transmises ni collectées par mes serveurs et sont uniquement utilisées pour fournir une expérience utilisateur personnalisée. Elles restent sur votre appareil et peuvent être effacées à tout moment via les paramètres de votre navigateur.",
+    "lastUpdated": "Dernière mise à jour : Janvier 2025"
   }
 }
