@@ -8,7 +8,6 @@ import {
   ModalFooter,
   Button,
   Text,
-  useBreakpointValue,
 } from "@chakra-ui/react";
 import {
   resetCookieConsentValue,
@@ -44,7 +43,7 @@ const ManageCookies = ({ t, isOpen, onClose, setAnalyticsEnabled }) => {
         isOpen={isOpen}
         onClose={onClose}
         isCentered
-        size={useBreakpointValue({ base: "sm", md: "xl" })}
+        size="xl"
       >
         <ModalOverlay />
         <ModalContent>

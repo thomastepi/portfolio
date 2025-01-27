@@ -1,143 +1,18 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
+import { BrowserRouter as Router, Routes, Route, } from "react-router-dom";
 import {
-  Header,
-  LandingSection,
-  ProjectsSection,
-  ContactMeSection,
-  TechStackSection,
-  AboutMe,
-  PrivacyPolicy,
-  ManageCookies,
-  Alert,
-  Footer,
-} from "./components";
-import { Button, useDisclosure } from "@chakra-ui/react";
-import "./App.css";
-import ReactGA from "react-ga4";
-import CookieConsent from "react-cookie-consent";
-import { useTranslation } from "react-i18next";
+  Home,
+} from "./scenes";
 
 function App() {
-  const [analyticsEnabled, setAnalyticsEnabled] = useState(false);
-  const {
-    isOpen: isPrivacyPolicyOpen,
-    onOpen: openPrivacyPolicy,
-    onClose: closePrivacyPolicy,
-  } = useDisclosure();
-
-  const {
-    isOpen: isManageCookiesOpen,
-    onOpen: openManageCookies,
-    onClose: closeManageCookies,
-  } = useDisclosure();
-  const { t } = useTranslation();
-
-  const initializeAnalytics = () => {
-    if (process.env.REACT_APP_GA_MEASUREMENT_ID) {
-      ReactGA.initialize(process.env.REACT_APP_GA_MEASUREMENT_ID, {
-        gaOptions: { anonymizeIp: true },
-      });
-      ReactGA.send({
-        hitType: "pageview",
-        page: window.location.pathname + window.location.search,
-      });
-    } else {
-      console.warn("Google Analytics Measurement ID is not defined");
-    }
-  };
-
-  useEffect(() => {
-    const consentGiven = document.cookie.includes("cookieConsent=true");
-    if (consentGiven) {
-      setAnalyticsEnabled(true);
-    }
-  }, []);
-
-  useEffect(() => {
-    if (analyticsEnabled) {
-      initializeAnalytics();
-    }
-  }, [analyticsEnabled]);
-
   return (
-    <>
-      <CookieConsent
-        location="bottom"
-        buttonText={t("consent.accept")}
-        declineButtonText={t("consent.decline")}
-        enableDeclineButton
-        cookieName="cookieConsent"
-        style={{
-          background: "#2C2F33",
-          color: "#E2E8F0",
-          fontSize: "14px",
-          padding: "5px",
-          zIndex: 2000,
-        }}
-        buttonStyle={{
-          background: "#61DAFB",
-          color: "#1A202C",
-          fontSize: "14px",
-          padding: "8px 16px",
-          borderRadius: "4px",
-        }}
-        declineButtonStyle={{
-          background: "#F6DED8",
-          color: "#1A202C",
-          fontSize: "14px",
-          padding: "6px 12px",
-          borderRadius: "0px",
-          marginLeft: "8px",
-          border: "1px solid #A0AEC0",
-        }}
-        expires={30}
-        onAccept={() => {
-          setAnalyticsEnabled(true);
-        }}
-        onDecline={() => {
-          setAnalyticsEnabled(false);
-        }}
-      >
-        {t("consent.message")}{" "}
-        <span style={{ fontSize: "14px" }}>
-          {t("consent.span")}{" "}
-          <Button
-            variant="link"
-            color="teal.200"
-            onClick={openPrivacyPolicy}
-            style={{ textDecoration: "underline", fontSize: "12px" }}
-          >
-            {t("consent.policyButtonText")}
-          </Button>
-        </span>
-      </CookieConsent>
-
-      <PrivacyPolicy
-        t={t}
-        isOpen={isPrivacyPolicyOpen}
-        onClose={closePrivacyPolicy}
-      />
-      <ManageCookies
-        t={t}
-        isOpen={isManageCookiesOpen}
-        onClose={closeManageCookies}
-        setAnalyticsEnabled={setAnalyticsEnabled}
-      />
-
-      <Header />
-      <LandingSection />
-      <ProjectsSection />
-      <AboutMe />
-      <TechStackSection />
-      <ContactMeSection />
-      <Footer
-        t={t}
-        openManageCookies={openManageCookies}
-        openPrivacyPolicy={openPrivacyPolicy}
-      />
-      <Alert />
-    </>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+      </Routes>
+    </Router>
   );
+
 }
 
 export default App;
