@@ -110,7 +110,7 @@ const Header = () => {
           <nav>
             <HStack spacing={8}>
               <a style={{ cursor: "pointer" }} onClick={handleGoHome}>
-                Home
+                {t("header.home")}
               </a>
               {!isMobile && (
                 <>
