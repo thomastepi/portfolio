@@ -9,17 +9,12 @@ import {
   CookieConsentComponent,
 } from "../components";
 
-import { useNavigate, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
-import { Button } from "@chakra-ui/react";
 import ReactGA from "react-ga4";
-import CookieConsent from "react-cookie-consent";
-import { useTranslation } from "react-i18next";
 
 function Home() {
   const [analyticsEnabled, setAnalyticsEnabled] = useState(false);
-  const { t } = useTranslation();
-  const navigate = useNavigate();
   const location = useLocation();
 
   const initializeAnalytics = () => {
