@@ -1,15 +1,12 @@
 import React from "react";
-import {
-  Box,
-  Flex,
-  Button,
-  HStack,
-  useBreakpointValue,
-} from "@chakra-ui/react";
+import { Box, Flex, Button } from "@chakra-ui/react";
 import { useColorMode } from "@chakra-ui/react";
+import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 
-const Footer = ({ openManageCookies, openPrivacyPolicy, t }) => {
+const Footer = () => {
   const { colorMode } = useColorMode();
+  const { t } = useTranslation();
   return (
     <Box backgroundColor={colorMode === "light" ? "gray.200" : "gray.900"}>
       <Flex
@@ -19,35 +16,20 @@ const Footer = ({ openManageCookies, openPrivacyPolicy, t }) => {
         justifyContent="center"
         alignItems="center"
         maxWidth="1024px"
-        //height={20}
         paddingY={4}
         flexDir="column"
       >
         <p>Thomas Tepi • © 2024 - {new Date().getFullYear()}</p>
-        <HStack
-          maxW="50%"
-          justify="space-between"
-          spacing={useBreakpointValue({ base: 2, md: 7 })}
+        <Button
           mt={2}
-          flexDir={useBreakpointValue({ base: "column", md: "row" })}
+          as={Link}
+          size="sm"
+          variant="link"
+          color={colorMode === "light" ? "gray.700" : "gray.500"}
+          to="/privacy-policy"
         >
-          <Button
-            size="sm"
-            variant="link"
-            color={colorMode === "light" ? "gray.700" : "gray.500"}
-            onClick={openPrivacyPolicy}
-          >
-            {t("policy.title")}
-          </Button>
-          <Button
-            size="sm"
-            variant="link"
-            color={colorMode === "light" ? "gray.700" : "gray.500"}
-            onClick={openManageCookies}
-          >
-            {t("consent.manage")}
-          </Button>
-        </HStack>
+          {t("privacyPolicy.title")}
+        </Button>
       </Flex>
     </Box>
   );

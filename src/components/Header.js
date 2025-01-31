@@ -10,6 +10,7 @@ import {
 import DrawerPanel from "./Drawer";
 import ToggleColorMode from "./ToggleColorMode";
 import { useTranslation } from "react-i18next";
+import { useNavigate, useLocation } from "react-router-dom";
 import socials from "../utils/socials";
 import ReactGA from "react-ga4";
 
@@ -17,6 +18,8 @@ const Header = () => {
   const isMobile = useBreakpointValue({ base: true, md: false });
   const { colorMode } = useColorMode();
   const { i18n, t } = useTranslation();
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const toggleLanguage = () => {
     const newLanguage = i18n.language === "en" ? "fr" : "en";
@@ -30,17 +33,16 @@ const Header = () => {
 
   const handleClick = (anchor) => () => {
     const id = `${anchor}-section`;
-    const element = document.getElementById(id);
-    if (element) {
-      ReactGA.event({
-        category: "Navigation",
-        action: `Scrolled to ${anchor}`,
-        label: `${anchor}-section`,
-      });
-      element.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
+    if (location.pathname !== "/") {
+      navigate("/", { state: { scrollTo: id } });
+    } else {
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }
     }
   };
 
@@ -58,6 +60,10 @@ const Header = () => {
       action: `Hovered over ${name} link`,
       label: name,
     });
+  };
+
+  const handleGoHome = () => {
+    navigate("/");
   };
 
   return (
@@ -97,6 +103,9 @@ const Header = () => {
           </nav>
           <nav>
             <HStack spacing={8}>
+              <a style={{ cursor: "pointer" }} onClick={handleGoHome}>
+                Home
+              </a>
               {!isMobile && (
                 <>
                   <a

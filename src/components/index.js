@@ -6,9 +6,7 @@ import LandingSection from "./LandingSection";
 import ProjectsSection from "./ProjectsSection";
 import AboutMe from "./AboutMe";
 import TechStackSection from "./TechStackSection";
-import PrivacyPolicy from "./PrivacyPolicy";
-import CookieConsentManager from "./CookieConsentManager";
-import ManageCookies from "./ManageCookies";
+import CookieConsentComponent from "./CookieConsentComponent";
 
 export {
   Alert,
@@ -19,7 +17,5 @@ export {
   ProjectsSection,
   AboutMe,
   TechStackSection,
-  CookieConsentManager,
-  PrivacyPolicy,
-  ManageCookies,
+  CookieConsentComponent,
 };

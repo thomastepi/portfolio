@@ -102,38 +102,83 @@
     "manage": "Cookie Preferences"
   },
 
-  "policy": {
+  "privacyPolicy": {
     "title": "Privacy Policy",
-    "name": "Google Analytics",
-    "text1": "This website uses Google Analytics to collect anonymized website traffic data, including page views, browser types, and user interactions. The data helps improve website design, usability, and user experience.",
-    "text11": "Google Analytics tracking is enabled only if you accept cookies. If you decline cookies, no tracking occurs, and no data is collected by Google Analytics during your visit.",
-    "text2": "Google Analytics may collect your approximate geographic location and anonymized IP address. No personally identifiable information (PII) is collected or stored.",
-    "text3": "For more details, please refer to",
-    "linkText": "Google's Privacy Policy",
-    "modalCloseButton": "Close"
-  },
-
-  "manageCookie": {
-    "title": "Cookie Preferences",
-    "message": {
-      "hadAccepted": "You have accepted cookies. Cookies are used for analytics to improve your experience.",
-      "hadDeclined": "You have declined cookies. Cookies are used for analytics to improve your experience.",
-      "cookieDescription": "Cookies are small pieces of data stored on your device to help analyze site usage and improve functionality.",
-      "updatePreference": "Would you like to update your cookie preferences?"
+    "effectiveDate": "Effective Date",
+    "introduction": {
+      "title": "Introduction",
+      "text": "This Privacy Policy describes how I collect, use, and disclose your information when you use this website."
     },
-    "accept": "Accept Cookies",
-    "decline": "Decline Cookies",
-    "keepCurrent": "Keep Current Preference"
-  },
-
-  "localStorage": {
-    "title": "LocalStorage Usage",
-    "intro": "In addition to cookies, this website uses localStorage to store certain preferences on your device to enhance your experience. Specifically:",
-    "preferences": {
-      "colorMode": "Color Mode Preference: Stores your choice of light or dark mode for consistent website appearance.",
-      "language": "Language Preference: Stores your selected language to display the website in your preferred language."
+    "informationCollected": {
+      "title": "Information I Collect",
+      "description": "I use Google Analytics to collect anonymized data about website traffic.",
+      "descriptionText": "Google Analytics tracking is enabled only if you accept cookies. If accepted, it uses cookies (small data files placed on your device) to track and analyze visitor activity. The data collected may include:",
+      "list": [
+        "Masked (anonymized) IP address",
+        "Approximate geographic location",
+        "Browser type and version",
+        "Pages visited on this Website",
+        "Time spent on each page",
+        "User interactions with the website"
+      ],
+      "usage": "The information collected is used for the following purposes:",
+      "usageList": [
+        "Analyze how visitors interact with the website",
+        "Improve website performance and user experience",
+        "Monitor website traffic and usage trends"
+      ]
     },
-    "disclaimer": "The data stored in localStorage is not transmitted to or collected by my servers and is used solely to provide a personalized user experience. It remains on your device and can be cleared by you at any time via your browser settings.",
-    "lastUpdated": "Last Updated: January 2025"
+    "cookies": {
+      "title": "Cookies",
+      "description": "This website uses cookies to store your preferences and enhance your browsing experience. Specifically:",
+      "list": [
+        "**Google Analytics Cookies:** Used to track anonymized visitor activity.",
+        "**LocalStorage Data:** Used to store user preferences such as dark/light mode and language selection."
+      ],
+      "disableNotice": "You can manage or disable cookies via your web browser settings. However, doing so means I won’t be able to analyze website traffic, which helps me understand how visitors engage with the site and improve its content.",
+      "retention": "Your cookie consent choice is retained for **90 days**. After this period, you will be prompted to review your preferences again."
+    },
+    "contactForm": {
+      "title": "Contact Form",
+      "description": "When you submit a message via the contact form, the following information is collected:",
+      "list": [
+        "Your Name (to personalize responses)",
+        "Your Email Address (to reply to your message and send confirmation)",
+        "Your Message Content (to address your inquiry)"
+      ],
+      "storage": "Your message is stored securely in a MongoDB database and a confirmation email is sent to your provided email via Nodemailer.",
+      "retention": "Your message is retained for 6 months to ensure follow-ups can be processed. You may request deletion at any time."
+    },
+    "yourChoices": {
+      "title": "Your Choices",
+      "description": "You can opt out of Google Analytics tracking by installing the official Google Analytics Opt-out Browser Add-on:",
+      "optOutLink": "Google Analytics Opt-out Add-on"
+    },
+    "dataRetention": {
+      "title": "Data Retention",
+      "description": [
+        "Data collected by Google Analytics is retained for **14 months** for both user data and event data. If you interact with the website within this period, the retention timer resets.",
+        "Contact form messages are retained for **6 months** to ensure follow-ups can be processed. You may request deletion of your submitted data at any time by contacting me."
+      ]
+    },
+    "dataSecurity": {
+      "title": "Data Security",
+      "description": "I take reasonable steps to protect data collected through this website from unauthorized access, alteration, or destruction. However, no website or internet transmission is completely secure."
+    },
+    "policyChanges": {
+      "title": "Changes to This Privacy Policy",
+      "description": "This Privacy Policy may be updated periodically. Any changes will be posted on this page, and the effective date will be updated accordingly."
+    },
+    "contact": {
+      "title": "Contact",
+      "description": "If you have any questions about this Privacy Policy, feel free to reach out:",
+      "email": "email@thomastepi.com"
+    },
+    "additionalInfo": {
+      "title": "Additional Information",
+      "description": "For more details about how Google Analytics collects and processes data, refer to:",
+      "privacyLink": "Google’s Privacy Policy"
+    },
+    "lastUpdated": "Last Updated:"
   }
 }

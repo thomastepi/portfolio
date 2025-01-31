@@ -3,7 +3,7 @@ import { extendTheme } from "@chakra-ui/react";
 const theme = extendTheme({
   config: {
     useSystemColorMode: false,
-    initialColorMode: "dark",
+    initialColorMode: "light",
   },
   colors: {
     lightModeBg: "#f7f7f7",
