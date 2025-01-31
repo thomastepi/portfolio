@@ -63,7 +63,13 @@ const Header = () => {
   };
 
   const handleGoHome = () => {
-    navigate("/");
+    if (window.location.pathname === "/") {
+      if (window.scrollY > 0) {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+    } else {
+      navigate("/");
+    }
   };
 
   return (
