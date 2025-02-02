@@ -95,8 +95,8 @@
   },
 
   "consent": {
-    "message": "Ce site utilise des cookies pour collecter des données à des fins d'analyse afin d'améliorer votre expérience.",
-    "span": "En cliquant sur 'Accepter', vous consentez à l'utilisation de ces cookies.",
+    "message": "Ce site utilise des cookies pour analyser les interactions des visiteurs et améliorer l'expérience utilisateur.",
+    "span": "En cliquant sur 'Accepter', vous consentez à leur utilisation.",
     "policyButtonText": "En savoir plus dans ma Politique de Confidentialité.",
     "accept": "Accepter",
     "decline": "Refuser",
@@ -105,7 +105,7 @@
 
   "privacyPolicy": {
     "title": "Politique de Confidentialité",
-    "effectiveDate": "Date d'effet",
+    "effectiveDate": "Date d'entrée en vigueur : 31 janvier 2025",
     "introduction": {
       "title": "Introduction",
       "text": "Cette politique de confidentialité décrit comment je collecte, utilise et divulgue vos informations lorsque vous utilisez ce site web."
@@ -113,21 +113,15 @@
     "informationCollected": {
       "title": "Informations que je collecte",
       "description": "J'utilise Google Analytics pour collecter des données anonymisées sur le trafic du site web.",
-      "descriptionText": "Le suivi Google Analytics est activé uniquement si vous acceptez les cookies. En cas d'acceptation, il utilise des cookies (de petits fichiers de données placés sur votre appareil) pour suivre et analyser l'activité des visiteurs. Les données collectées peuvent inclure :",
+      "descriptionText": "Le suivi Google Analytics est activé **uniquement si vous acceptez les cookies**. En cas d'acceptation, il utilise des cookies (de petits fichiers de données placés sur votre appareil) pour suivre et analyser l'activité des visiteurs. Les données collectées peuvent inclure :",
       "list": [
-        "Adresse IP masquée (anonymisée)",
-        "Emplacement géographique approximatif",
-        "Type et version du navigateur",
-        "Pages visitées sur ce site",
-        "Temps passé sur chaque page",
-        "Interactions des utilisateurs avec le site"
+        "Informations sur l'appareil (type de navigateur, système d'exploitation, catégorie de l'appareil)",
+        "Localisation géographique approximative (pays, région et ville **uniquement**)",
+        "Interactions avec le site web (pages visitées, temps passé, clics, comportement de défilement)",
+        "Sources de trafic (liens de référence, moteurs de recherche, visites directes)"
       ],
-      "usage": "Les informations collectées sont utilisées aux fins suivantes :",
-      "usageList": [
-        "Analyser comment les visiteurs interagissent avec le site",
-        "Améliorer la performance et l'expérience utilisateur du site",
-        "Suivre le trafic du site et les tendances d'utilisation"
-      ]
+      "usage": "Ces données m'aident à analyser les interactions des visiteurs, à améliorer les performances du site web et à optimiser l'expérience utilisateur sur différents appareils.",
+      "identifiableInfo": "**Aucune information personnellement identifiable (PII) n'est collectée ou stockée**. Votre adresse IP est anonymisée et les données sont conservées pour une durée limitée."
     },
     "cookies": {
       "title": "Cookies",
@@ -145,6 +139,7 @@
       "list": [
         "Votre nom (pour personnaliser les réponses)",
         "Votre adresse e-mail (pour répondre à votre message et envoyer une confirmation)",
+        "Type de demande (pour catégoriser et prioriser les messages)",
         "Le contenu de votre message (pour traiter votre demande)"
       ],
       "storage": "Votre message est stocké de manière sécurisée dans une base de données MongoDB et un e-mail de confirmation est envoyé à votre adresse via Nodemailer.",
@@ -180,6 +175,6 @@
       "description": "Pour plus de détails sur la manière dont Google Analytics collecte et traite les données, consultez :",
       "privacyLink": "Politique de confidentialité de Google"
     },
-    "lastUpdated": "Dernière mise à jour:"
+    "lastUpdated": "Dernière mise à jour : 31 janvier 2025"
   }
 }

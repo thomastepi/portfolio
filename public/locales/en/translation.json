@@ -95,8 +95,8 @@
   },
 
   "consent": {
-    "message": "This website uses cookies to collect data for analytics purposes to help improve your experience.",
-    "span": "By clicking 'Accept', you consent to the use of these cookies.",
+    "message": "This site uses cookies to analyze visitor interactions and improve user experience.",
+    "span": "By clicking 'Accept', you consent to their use.",
     "policyButtonText": "Learn more in my Privacy Policy.",
     "accept": "Accept",
     "decline": "Decline",
@@ -105,7 +105,7 @@
 
   "privacyPolicy": {
     "title": "Privacy Policy",
-    "effectiveDate": "Effective Date",
+    "effectiveDate": "Effective Date: January 31, 2025",
     "introduction": {
       "title": "Introduction",
       "text": "This Privacy Policy describes how I collect, use, and disclose your information when you use this website."
@@ -113,21 +113,15 @@
     "informationCollected": {
       "title": "Information I Collect",
       "description": "I use Google Analytics to collect anonymized data about website traffic.",
-      "descriptionText": "Google Analytics tracking is enabled only if you accept cookies. If accepted, it uses cookies (small data files placed on your device) to track and analyze visitor activity. The data collected may include:",
+      "descriptionText": "Google Analytics tracking is enabled **only if you accept cookies**. If accepted, it uses cookies (small data files placed on your device) to track and analyze visitor activity. The data collected may include:",
       "list": [
-        "Masked (anonymized) IP address",
-        "Approximate geographic location",
-        "Browser type and version",
-        "Pages visited on this Website",
-        "Time spent on each page",
-        "User interactions with the website"
+        "Device Information (browser type, operating system, device category)",
+        "Approximate geographic location (country, region, and city level **only**)",
+        "Website Interactions (pages visited, time spent, clicks, scrolling behavior)",
+        "Traffic Sources (referral links, search engines, direct visits)"
       ],
-      "usage": "The information collected is used for the following purposes:",
-      "usageList": [
-        "Analyze how visitors interact with the website",
-        "Improve website performance and user experience",
-        "Monitor website traffic and usage trends"
-      ]
+      "usage": "This data helps me analyze visitor interactions, improve website performance, and enhance user experience across different devices.",
+      "identifiableInfo": "**No personally identifiable information (PII) is collected or stored**. Your IP address is anonymized, and data is retained for a limited period."
     },
     "cookies": {
       "title": "Cookies",
@@ -145,6 +139,7 @@
       "list": [
         "Your Name (to personalize responses)",
         "Your Email Address (to reply to your message and send confirmation)",
+        "Type of Inquiry (to categorize and prioritize messages)",
         "Your Message Content (to address your inquiry)"
       ],
       "storage": "Your message is stored securely in a MongoDB database and a confirmation email is sent to your provided email via Nodemailer.",
@@ -180,6 +175,6 @@
       "description": "For more details about how Google Analytics collects and processes data, refer to:",
       "privacyLink": "Google’s Privacy Policy"
     },
-    "lastUpdated": "Last Updated:"
+    "lastUpdated": "Last Updated: January 31, 2025"
   }
 }

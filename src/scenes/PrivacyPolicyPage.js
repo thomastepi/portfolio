@@ -8,7 +8,7 @@ import {
   Link,
   Divider,
 } from "@chakra-ui/react";
-import ReactMarkdown from "react-markdown";
+import Markdown from "react-markdown";
 import { useTranslation } from "react-i18next";
 
 const PrivacyPolicyPage = () => {
@@ -20,12 +20,7 @@ const PrivacyPolicyPage = () => {
           {t("privacyPolicy.title")}
         </Heading>
         <Text fontSize="sm" color="gray.500" mb={6}>
-          {t("privacyPolicy.effectiveDate")}:{" "}
-          {new Date().toLocaleDateString(i18n.language, {
-            year: "numeric",
-            month: "long",
-            day: "numeric",
-          })}
+          {t("privacyPolicy.effectiveDate")}{" "}
         </Text>
 
         <Divider my={4} />
@@ -44,23 +39,25 @@ const PrivacyPolicyPage = () => {
           {t("privacyPolicy.informationCollected.description")}
         </Text>
         <Text mb={4}>
-          {t("privacyPolicy.informationCollected.descriptionText")}
+          <Markdown>
+            {t("privacyPolicy.informationCollected.descriptionText")}
+          </Markdown>
         </Text>
         <UnorderedList mb={4}>
           {t("privacyPolicy.informationCollected.list", {
             returnObjects: true,
           }).map((item, index) => (
-            <ListItem key={index}>{item}</ListItem>
+            <ListItem key={index}>
+              <Markdown>{item}</Markdown>
+            </ListItem>
           ))}
         </UnorderedList>
         <Text mb={4}>{t("privacyPolicy.informationCollected.usage")}</Text>
-        <UnorderedList mb={4}>
-          {t("privacyPolicy.informationCollected.usageList", {
-            returnObjects: true,
-          }).map((item, index) => (
-            <ListItem key={index}>{item}</ListItem>
-          ))}
-        </UnorderedList>
+        <Text mb={4}>
+          <Markdown>
+            {t("privacyPolicy.informationCollected.identifiableInfo")}
+          </Markdown>
+        </Text>
 
         <Divider my={4} />
 
@@ -73,13 +70,13 @@ const PrivacyPolicyPage = () => {
             returnObjects: true,
           }).map((item, index) => (
             <ListItem key={index}>
-              <ReactMarkdown>{item}</ReactMarkdown>
+              <Markdown>{item}</Markdown>
             </ListItem>
           ))}
         </UnorderedList>
         <Text mb={4}>{t("privacyPolicy.cookies.disableNotice")} </Text>
         <Text mb={4}>
-          <ReactMarkdown>{t("privacyPolicy.cookies.retention")}</ReactMarkdown>
+          <Markdown>{t("privacyPolicy.cookies.retention")}</Markdown>
         </Text>
 
         <Divider my={4} />
@@ -121,7 +118,7 @@ const PrivacyPolicyPage = () => {
             returnObjects: true,
           }).map((item, index) => (
             <ListItem key={index}>
-              <ReactMarkdown>{item}</ReactMarkdown>
+              <Markdown>{item}</Markdown>
             </ListItem>
           ))}
         </UnorderedList>
@@ -166,11 +163,6 @@ const PrivacyPolicyPage = () => {
 
         <Text mt={6} fontSize="sm" color="gray.500">
           {t("privacyPolicy.lastUpdated")}{" "}
-          {new Date().toLocaleDateString(i18n.language, {
-            year: "numeric",
-            month: "long",
-            day: "numeric",
-          })}
         </Text>
       </Box>
     </>
