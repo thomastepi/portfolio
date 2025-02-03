@@ -12,7 +12,7 @@ import Markdown from "react-markdown";
 import { useTranslation } from "react-i18next";
 
 const PrivacyPolicyPage = () => {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   return (
     <>
       <Box maxW="800px" mx="auto" p={6}>
@@ -38,10 +38,8 @@ const PrivacyPolicyPage = () => {
         <Text mb={4}>
           {t("privacyPolicy.informationCollected.description")}
         </Text>
-        <Text mb={4}>
-          <Markdown>
-            {t("privacyPolicy.informationCollected.descriptionText")}
-          </Markdown>
+        <Text as={Markdown} mb={4}>
+          {t("privacyPolicy.informationCollected.descriptionText")}
         </Text>
         <UnorderedList mb={4}>
           {t("privacyPolicy.informationCollected.list", {
@@ -53,10 +51,8 @@ const PrivacyPolicyPage = () => {
           ))}
         </UnorderedList>
         <Text mb={4}>{t("privacyPolicy.informationCollected.usage")}</Text>
-        <Text mb={4}>
-          <Markdown>
-            {t("privacyPolicy.informationCollected.identifiableInfo")}
-          </Markdown>
+        <Text as={Markdown} mb={4}>
+          {t("privacyPolicy.informationCollected.identifiableInfo")}
         </Text>
 
         <Divider my={4} />
@@ -75,8 +71,8 @@ const PrivacyPolicyPage = () => {
           ))}
         </UnorderedList>
         <Text mb={4}>{t("privacyPolicy.cookies.disableNotice")} </Text>
-        <Text mb={4}>
-          <Markdown>{t("privacyPolicy.cookies.retention")}</Markdown>
+        <Text as={Markdown} mb={4}>
+          {t("privacyPolicy.cookies.retention")}
         </Text>
 
         <Divider my={4} />

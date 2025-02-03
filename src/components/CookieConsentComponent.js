@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 const CookieConsentComponent = ({ setAnalyticsEnabled }) => {
   const navigate = useNavigate();
   const { t } = useTranslation();
+  
   return (
     <CookieConsent
       location="bottom"
@@ -51,10 +52,8 @@ const CookieConsentComponent = ({ setAnalyticsEnabled }) => {
         <Button
           variant="link"
           color="teal.200"
-          onClick={() => {
-            navigate("/privacy-policy");
-          }}
-          style={{ textDecoration: "underline", fontSize: "12px" }}
+          onClick={() => navigate("/privacy-policy")}
+          fontSize="12px"
         >
           {t("consent.policyButtonText")}
         </Button>

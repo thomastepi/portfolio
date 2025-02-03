@@ -12,7 +12,6 @@ import ToggleColorMode from "./ToggleColorMode";
 import { useTranslation } from "react-i18next";
 import { useNavigate, useLocation } from "react-router-dom";
 import socials from "../utils/socials";
-import ReactGA from "react-ga4";
 
 const Header = () => {
   const isMobile = useBreakpointValue({ base: true, md: false });
@@ -24,11 +23,6 @@ const Header = () => {
   const toggleLanguage = () => {
     const newLanguage = i18n.language === "en" ? "fr" : "en";
     i18n.changeLanguage(newLanguage);
-    ReactGA.event({
-      category: "Language",
-      action: `Changed language to ${newLanguage}`,
-      label: newLanguage,
-    });
   };
 
   const handleClick = (anchor) => () => {
@@ -44,22 +38,6 @@ const Header = () => {
         });
       }
     }
-  };
-
-  const handleSocialsClick = (name) => {
-    ReactGA.event({
-      category: "Link",
-      action: `Clicked ${name} link`,
-      label: name,
-    });
-  };
-
-  const handleSocialsHover = (name) => {
-    ReactGA.event({
-      category: "Hover",
-      action: `Hovered over ${name} link`,
-      label: name,
-    });
   };
 
   const handleGoHome = () => {
@@ -97,8 +75,6 @@ const Header = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={`Visit my ${social.name} profile`}
-                  onClick={handleSocialsClick(social.name)}
-                  onMouseEnter={() => handleSocialsHover(social.name)}
                 >
                   {!isMobile && (
                     <FontAwesomeIcon icon={social.icon} size="2x" />
@@ -137,7 +113,6 @@ const Header = () => {
                     href="https://drive.google.com/file/d/1qq4EXVJoe9Jh-GD1WIhVFCFt8yl909d3/view?usp=drive_link"
                     target="_blank"
                     rel="noopener noreferrer"
-                    onClick={handleSocialsClick("Resume")}
                   >
                     {t("header.resume")}
                   </a>

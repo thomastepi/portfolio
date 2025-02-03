@@ -94,6 +94,12 @@
     "isCollapsed": "Afficher plus"
   },
 
+  "error": {
+    "title": "Page introuvable",
+    "text": "Désolé, la page que vous recherchez n'existe pas.",
+    "btnText": "Retour à l'accueil"
+  },
+
   "consent": {
     "message": "Ce site utilise des cookies pour analyser les interactions des visiteurs et améliorer l'expérience utilisateur.",
     "span": "En cliquant sur 'Accepter', vous consentez à leur utilisation.",

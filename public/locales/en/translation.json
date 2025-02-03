@@ -94,6 +94,12 @@
     "isCollapsed": "Read more"
   },
 
+  "error": {
+    "title": "Page Not Found",
+    "text": "Sorry, the page you are looking for does not exist.",
+    "btnText": "Go back home"
+  },
+
   "consent": {
     "message": "This site uses cookies to analyze visitor interactions and improve user experience.",
     "span": "By clicking 'Accept', you consent to their use.",

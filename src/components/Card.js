@@ -14,7 +14,6 @@ import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faGlobe } from "@fortawesome/free-solid-svg-icons";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
-import ReactGA from "react-ga4";
 
 const MotionVStack = motion(VStack);
 
@@ -25,22 +24,6 @@ const Card = ({ title, description, imageSrc, link, github }) => {
 
   const truncatedDescription =
     description.length > 100 ? `${description.slice(0, 100)}...` : description;
-
-  const handleGitHubClick = () => {
-    ReactGA.event({
-      category: "Link",
-      action: `Clicked GitHub link for ${title} project`,
-      label: `GitHub - ${title}`,
-    });
-  };
-
-  const handleLiveDemoClick = () => {
-    ReactGA.event({
-      category: "Link",
-      action: `Clicked Live Demo link for ${title} project`,
-      label: `Live Demo - ${title}`,
-    });
-  };
 
   return (
     <MotionVStack
@@ -88,7 +71,6 @@ const Card = ({ title, description, imageSrc, link, github }) => {
               href={github}
               target="_blank"
               rel="noopener noreferrer"
-              onClick={handleGitHubClick}
             >
               <FontAwesomeIcon
                 className="github-icon"
@@ -104,7 +86,6 @@ const Card = ({ title, description, imageSrc, link, github }) => {
               href={link}
               target="_blank"
               rel="noopener noreferrer"
-              onClick={handleLiveDemoClick}
             >
               <FontAwesomeIcon
                 className="globe-icon"
