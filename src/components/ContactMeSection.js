@@ -42,32 +42,61 @@ const ContactMeSection = () => {
   const formik = useFormik({
     initialValues: { name: "", email: "", type: "", comment: "" },
     onSubmit: async (values) => {
-      await submit({ ...values, language });
-      setSubmittedFirstName(values.name);
+      const sanitizedValues = {
+        ...values,
+        name: values.name.trim(),
+        email: values.email.trim(),
+        comment: values.comment.trim(),
+      };
+
+      await submit({ ...sanitizedValues, language });
+      setSubmittedFirstName(sanitizedValues.name);
     },
     validationSchema: Yup.object({
-      name: Yup.string().required(t("contactMe.validation.requiredName")),
+      name: Yup.string()
+        .trim()
+        .min(2, t("contactMe.validation.minName"))
+        .max(100, t("contactMe.validation.maxName"))
+        .matches(/^[a-zA-ZÀ-ÿ '-]+$/, t("contactMe.validation.invalidName"))
+        .required(t("contactMe.validation.requiredName")),
+
       email: Yup.string()
+        .trim()
         .email(t("contactMe.validation.invalidEmail"))
         .required(t("contactMe.validation.requiredEmail")),
-      type: Yup.string(),
+
+      type: Yup.string()
+        .oneOf(
+          ["hireMe", "feedback", "other"],
+          t("contactMe.validation.invalidType")
+        )
+        .nullable(),
+
       comment: Yup.string()
-        .required(t("contactMe.validation.requiredComment"))
-        .min(25, t("contactMe.validation.minComment")),
+        .trim()
+        .min(25, t("contactMe.validation.minComment"))
+        .max(1000, t("contactMe.validation.maxComment"))
+        .matches(
+          /^[^<>/"'`;(){}]*$/,
+          t("contactMe.validation.invalidCharacters")
+        )
+        .required(t("contactMe.validation.requiredComment")),
     }),
   });
 
   useEffect(() => {
     if (response) {
       if (response.type === "success" && submittedFirstName) {
-        var message = t("contactMe.alerts.success", {
-          name: submittedFirstName,
-        });
+        var message =
+          response.success ||
+          t("contactMe.alerts.success", {
+            name: submittedFirstName,
+          });
         var type = "success";
         onOpen(type, message);
         formik.resetForm();
       } else if (response.type === "error") {
-        var message = t("contactMe.alerts.error");
+        var message = response.message || t("contactMe.alerts.error");
         var type = "error";
         onOpen(type, message);
       }

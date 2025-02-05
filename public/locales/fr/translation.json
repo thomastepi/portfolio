@@ -43,11 +43,22 @@
       "error": "Quelque chose s'est mal passé, veuillez réessayer plus tard!"
     },
     "validation": {
-      "requiredName": "Le nom est requis",
-      "invalidEmail": "Adresse e-mail invalide",
-      "requiredEmail": "L'e-mail est requis",
-      "requiredComment": "Le message est requis",
-      "minComment": "Le message doit comporter au moins 25 caractères"
+      "requiredName": "Le nom est requis.",
+      "minName": "Le nom doit comporter au moins 2 caractères.",
+      "maxName": "Le nom ne peut pas dépasser 100 caractères.",
+      "invalidName": "Le nom ne peut contenir que des lettres, des espaces, des apostrophes et des traits d'union.",
+
+      "requiredEmail": "L'adresse e-mail est requise.",
+      "invalidEmail": "Veuillez saisir une adresse e-mail valide.",
+
+      "invalidType": "Type de demande invalide.",
+
+      "requiredComment": "Le message est requis.",
+      "minComment": "Le message doit contenir au moins 25 caractères.",
+      "maxComment": "Le message ne peut pas dépasser 1000 caractères.",
+      "invalidCharacters": "Le message contient des caractères non valides.",
+      "serverError": "Erreur interne du serveur. Veuillez réessayer plus tard.",
+      "networkError": "Erreur réseau. Veuillez vérifier votre connexion Internet."
     }
   },
 

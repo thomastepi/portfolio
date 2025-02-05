@@ -43,11 +43,23 @@
       "error": "Something went wrong, please try again later!"
     },
     "validation": {
-      "requiredName": "Name is required",
-      "invalidEmail": "Invalid email address",
-      "requiredEmail": "Email is required",
-      "requiredComment": "Message is required",
-      "minComment": "Message must be at least 25 characters long"
+      "requiredName": "Name is required.",
+      "minName": "Name must be at least 2 characters.",
+      "maxName": "Name cannot exceed 100 characters.",
+      "invalidName": "Name can only contain letters, spaces, apostrophes, and hyphens.",
+
+      "requiredEmail": "Email is required.",
+      "invalidEmail": "Enter a valid email address.",
+
+      "invalidType": "Invalid inquiry type.",
+
+      "requiredComment": "Message is required.",
+      "minComment": "Message must be at least 25 characters.",
+      "maxComment": "Message cannot exceed 1000 characters.",
+      "invalidCharacters": "Message contains invalid characters.",
+      "serverError": "Internal server error. Please try again later.",
+      "networkError": "Network error. Please check your internet connection.",
+      "timeoutError": "Request timed out. Please try again later."
     }
   },
 
