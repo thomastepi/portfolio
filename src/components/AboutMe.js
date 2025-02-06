@@ -100,7 +100,7 @@ const AboutMe = () => {
               variants={item}
               viewport={{ once: true, amount: 0.5 }}
             >
-              {t("aboutMe.paragraph1-phase1")}{" "}
+              {t("aboutMe.paragraph1")}{" "}
               <Button
                 as={Link}
                 href="https://guidefox.io"
@@ -111,8 +111,6 @@ const AboutMe = () => {
               >
                 Bluewave Guidefox
               </Button>
-              {", "}
-              {t("aboutMe.paragraph1-phase2")}
             </MotionText>
             <MotionText textAlign="justify" lineHeight="1.8" variants={item}>
               {t("aboutMe.paragraph2")}

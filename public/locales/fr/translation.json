@@ -9,9 +9,9 @@
 
   "landing": {
     "greeting": "Bonjour, je suis Thomas!",
-    "bio1": "Développeur Full Stack",
-    "bio2": "Connecter le Frontend et le Backend avec React et Node.js",
-    "btnText": "Contactez-moi"
+    "title": "Développeur Full Stack | Défenseur de l'agriculture durable",
+    "subTitle": "Créer des solutions numériques qui autonomisent les communautés locales et favorisent la durabilité environnementale.",
+    "btnText": "Me contacter"
   },
 
   "alert": {
@@ -64,10 +64,9 @@
 
   "aboutMe": {
     "heading": "À propos de moi",
-    "paragraph1-phase1": "En tant que développeur web passionné et contributeur open source, j'ai consacré mon parcours à perfectionner mes compétences en React, Node.js et aux frameworks modernes de développement web. Mes contributions à des projets open source, tels que",
-    "paragraph1-phase2": " ont renforcé à la fois mon expertise technique et ma compréhension de la création de solutions évolutives et centrées sur l'utilisateur.",
-    "paragraph2": "Je me spécialise dans la gestion du développement de fonctionnalités, l'amélioration des interactions UI/UX et la rédaction de code clair et réutilisable qui améliore la fonctionnalité et l'accessibilité des projets. Mon travail allie profondeur technique et application pratique, assurant que des fonctionnalités complexes soient intuitives pour les utilisateurs et faciles à maintenir pour les équipes.",
-    "paragraph3": "Cette combinaison de codage pratique et de travail d'équipe me permet de collaborer, de communiquer et de contribuer efficacement à des solutions web percutantes qui résonnent auprès des parties prenantes techniques et non techniques."
+    "paragraph1": "Développeur Full Stack passionné et contributeur open source, je me spécialise en React, Node.js et les frameworks modernes de développement web. Mon parcours a été dédié à la création de solutions évolutives et centrées sur l'utilisateur, avec des contributions à des projets comme",
+    "paragraph2": "Je m'épanouis dans le développement de fonctionnalités, l'amélioration des interactions UI/UX et l'écriture de code clair et maintenable qui renforce la fonctionnalité et l'accessibilité des projets. Au-delà du développement, je suis également un défenseur des technologies durables et des solutions communautaires.",
+    "paragraph3": "Mon expérience allie expertise technique et impact concret, que ce soit en développant des expériences numériques fluides ou en soutenant des initiatives qui autonomisent les communautés. Avec une solide base en collaboration et en résolution de problèmes, je suis déterminé à concevoir des technologies qui font la différence - aussi bien dans le numérique que dans le monde réel."
   },
 
   "techStack": {

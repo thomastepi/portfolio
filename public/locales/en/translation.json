@@ -9,8 +9,8 @@
 
   "landing": {
     "greeting": "Hello, I am Thomas!",
-    "bio1": "A Full Stack Developer",
-    "bio2": "Bridging the Frontend & Backend with React & Node.js",
+    "title": "Full Stack Developer | Advocate for Sustainable Agriculture",
+    "subTitle": "Building digital solutions that empower local communities and drive environmental sustainability.",
     "btnText": "Get in touch"
   },
 
@@ -65,10 +65,9 @@
 
   "aboutMe": {
     "heading": "About Me",
-    "paragraph1-phase1": "As a passionate Web Developer and Open Source Contributor, I have dedicated my journey to honing skills in React, Node.js, and modern web development frameworks. My contributions to open source projects, such as",
-    "paragraph1-phase2": "have strengthened both my technical expertise and my understanding of building user-centric, scalable solutions.",
-    "paragraph2": "I specialize in managing feature development, refining UI/UX interactions, and writing clear, reusable code that enhances project functionality and accessibility. My work bridges technical depth with practical application, ensuring complex features are intuitive for users and maintainable for teams.",
-    "paragraph3": "This combination of hands-on coding and teamwork empowers me to effectively collaborate, communicate, and contribute to impactful web solutions that resonate with both technical and non-technical stakeholders."
+    "paragraph1": "As a passionate Full Stack Developer and Open Source Contributor, I specialize in React, Node.js, and modern web development frameworks. My journey has been dedicated to building user-centric and scalable solutions, with contributions to projects like",
+    "paragraph2": "I thrive in feature development, refining UI/UX interactions, and writing clear, maintainable code that enhances project functionality and accessibility. Beyond coding, I am also an advocate for sustainable technology and community-driven solutions.",
+    "paragraph3": "My experience bridges technical expertise with real-world impact, whether it's developing seamless digital experiences or supporting initiatives that empower communities. With a strong foundation in collaboration and problem-solving, I am committed to crafting technology that makes a difference - both in the digital space and beyond."
   },
 
   "techStack": {

@@ -66,6 +66,20 @@ const LandingSection = () => {
           />
           <MotionText
             fontSize={useBreakpointValue({ base: "lg", md: "xl" })}
+            fontWeight="bold"
+            color={
+              useColorMode().colorMode === "light" ? "gray.700" : "gray.300"
+            }
+            textAlign="center"
+            maxW="700px"
+            initial={{ opacity: 0, y: -30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.8 }}
+          >
+            {t("landing.title")} 🌱
+          </MotionText>
+          <MotionText
+            fontSize={useBreakpointValue({ base: "lg", md: "xl" })}
             color={
               useColorMode().colorMode === "light" ? "gray.600" : "gray.400"
             }
@@ -75,21 +89,9 @@ const LandingSection = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, delay: 1 }}
           >
-            {t("landing.bio1")}{" "}
+            {t("landing.subTitle")}{" "}
           </MotionText>
-          <MotionText
-            fontSize={useBreakpointValue({ base: "md", md: "lg" })}
-            color={
-              useColorMode().colorMode === "light" ? "gray.500" : "gray.300"
-            }
-            textAlign="center"
-            maxW="600px"
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1, delay: 1.2 }}
-          >
-            {t("landing.bio2")}{" "}
-          </MotionText>
+
           <MotionButton
             mt={4}
             colorScheme="teal"
