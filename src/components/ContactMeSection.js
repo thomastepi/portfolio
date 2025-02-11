@@ -19,11 +19,13 @@ import FullScreenSection from "./FullScreenSection";
 import { useTranslation } from "react-i18next";
 import useSubmit from "../hooks/useSubmit";
 import { useAlertContext } from "../context/alertContext";
+import { Link } from "react-router-dom";
 
 const MotionBox = motion(Box);
 const MotionHeading = motion(Heading);
 const MotionFormControl = motion(FormControl);
 const MotionButton = motion(Button);
+const MotionSpan = motion.span;
 
 const ContactMeSection = () => {
   const { isLoading, response, submit } = useSubmit();
@@ -33,7 +35,7 @@ const ContactMeSection = () => {
 
   const language = i18n.language;
 
-  const inputBg = useColorModeValue("white", "gray.700");
+  const inputBg = useColorModeValue("gray.200", "gray.700");
   const borderColor = useColorModeValue("gray.400", "gray.500");
   const focusBorderColor = useColorModeValue("blue.500", "blue.300");
 
@@ -233,6 +235,29 @@ const ContactMeSection = () => {
               />
               <FormErrorMessage>{formik.errors.comment}</FormErrorMessage>
             </MotionFormControl>
+            <MotionSpan
+              style={{
+                fontStyle: "italic",
+                fontSize: "0.8rem",
+                textAlign: "center",
+              }}
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{ duration: 0.5, delay: 0.9 }}
+            >
+              {t("contactMe.privacyDisclaimer")}{" "}
+              <Button
+                as={Link}
+                colorScheme="teal"
+                variant="link"
+                fontSize="0.8rem"
+                to="/privacy-policy"
+              >
+                {t("privacyPolicy.title")}
+              </Button>
+              .
+            </MotionSpan>
             <MotionButton
               type="submit"
               width="full"

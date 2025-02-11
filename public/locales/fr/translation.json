@@ -59,7 +59,8 @@
       "invalidCharacters": "Le message contient des caractères non valides.",
       "serverError": "Erreur interne du serveur. Veuillez réessayer plus tard.",
       "networkError": "Erreur réseau. Veuillez vérifier votre connexion Internet."
-    }
+    },
+    "privacyDisclaimer": "En soumettant ce formulaire, vous acceptez que vos informations fournies soient stockées en toute sécurité et utilisées uniquement pour répondre à votre demande, comme indiqué dans ma"
   },
 
   "aboutMe": {

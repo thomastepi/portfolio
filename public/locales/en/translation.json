@@ -60,7 +60,8 @@
       "serverError": "Internal server error. Please try again later.",
       "networkError": "Network error. Please check your internet connection.",
       "timeoutError": "Request timed out. Please try again later."
-    }
+    },
+    "privacyDisclaimer": "By submitting this form, you agree that your provided information will be stored securely and used solely for responding to your inquiry, as outlined in my"
   },
 
   "aboutMe": {
