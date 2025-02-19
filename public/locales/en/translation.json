@@ -103,7 +103,8 @@
     "githubTooltip": "GitHub Repo",
     "websiteTooltip": "Website",
     "isExpanded": "Show less",
-    "isCollapsed": "Read more"
+    "isCollapsed": "Read more",
+    "techStack": "Tech Stack Used"
   },
 
   "error": {

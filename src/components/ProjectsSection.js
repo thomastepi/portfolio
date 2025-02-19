@@ -3,7 +3,7 @@ import FullScreenSection from "./FullScreenSection";
 import { Box, Heading } from "@chakra-ui/react";
 import Card from "./Card";
 import { useTranslation } from "react-i18next";
-import projects from "../utils/projects";
+import { projects, techStack } from "../data";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
@@ -62,6 +62,7 @@ const ProjectsSection = () => {
               imageSrc={project.imageSrc}
               link={project.link}
               github={project.github}
+              techStack={project.stack}
             />
           </MotionBox>
         ))}

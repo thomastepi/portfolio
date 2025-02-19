@@ -11,7 +11,7 @@ import DrawerPanel from "./Drawer";
 import ToggleColorMode from "./ToggleColorMode";
 import { useTranslation } from "react-i18next";
 import { useNavigate, useLocation } from "react-router-dom";
-import socials from "../utils/socials";
+import socials from "../data/socials";
 
 const Header = () => {
   const isMobile = useBreakpointValue({ base: true, md: false });

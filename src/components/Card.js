@@ -17,7 +17,7 @@ import { useTranslation } from "react-i18next";
 
 const MotionVStack = motion(VStack);
 
-const Card = ({ title, description, imageSrc, link, github }) => {
+const Card = ({ title, description, imageSrc, link, github, techStack }) => {
   const { colorMode } = useColorMode();
   const { t } = useTranslation();
   const [isExpanded, setIsExpanded] = useState(false);
@@ -64,6 +64,26 @@ const Card = ({ title, description, imageSrc, link, github }) => {
             {isExpanded ? t("card.isExpanded") : t("card.isCollapsed")}
           </Button>
         )}
+
+        {techStack && techStack.length > 0 && (
+          <VStack align="flex-start" spacing={1}>
+            <HStack flexWrap="wrap" spacing={2}>
+              {techStack.map((tech, index) => (
+                <Text
+                  key={index}
+                  fontSize="sm"
+                  color={colorMode === "light" ? "teal.800" : "whiteAlpha.700"}
+                  paddingRight={2}
+                  py={1}
+                  fontWeight="bold"
+                >
+                  {tech}
+                </Text>
+              ))}
+            </HStack>
+          </VStack>
+        )}
+
         <HStack gap={4} py={2}>
           {github && (
             <Link
