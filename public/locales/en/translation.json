@@ -100,7 +100,7 @@
   },
 
   "card": {
-    "githubTooltip": "GitHub Repo",
+    "githubTooltip": "GitHub",
     "websiteTooltip": "Website",
     "isExpanded": "Show less",
     "isCollapsed": "Read more",

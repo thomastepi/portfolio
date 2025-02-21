@@ -99,7 +99,7 @@
   },
 
   "card": {
-    "githubTooltip": "Répertoire GitHub",
+    "githubTooltip": "GitHub",
     "websiteTooltip": "Site Web",
     "isExpanded": "Afficher moins",
     "isCollapsed": "Afficher plus",
