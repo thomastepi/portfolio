@@ -123,7 +123,7 @@
 
   "privacyPolicy": {
     "title": "Politique de Confidentialité",
-    "effectiveDate": "Date d'entrée en vigueur : 31 janvier 2025",
+    "effectiveDate": "Date d'entrée en vigueur: 31 janvier 2025",
     "introduction": {
       "title": "Introduction",
       "text": "Cette politique de confidentialité décrit comment je collecte, utilise et divulgue vos informations lorsque vous utilisez ce site web."
@@ -145,8 +145,8 @@
       "title": "Cookies",
       "description": "Ce site web utilise des cookies pour stocker vos préférences et améliorer votre expérience de navigation. Plus précisément :",
       "list": [
-        "**Cookies Google Analytics :** Utilisés pour suivre l'activité des visiteurs de manière anonymisée.",
-        "**Données LocalStorage :** Utilisées pour enregistrer les préférences des utilisateurs, telles que le mode clair/sombre et la langue sélectionnée."
+        "**Cookies Google Analytics:** Utilisés pour suivre l'activité des visiteurs de manière anonymisée.",
+        "**Données LocalStorage:** Utilisées pour enregistrer les préférences des utilisateurs, telles que le mode clair/sombre et la langue sélectionnée."
       ],
       "disableNotice": "Vous pouvez gérer ou désactiver les cookies via les paramètres de votre navigateur web. Cependant, cela signifie que je ne pourrai pas analyser le trafic du site, ce qui m'aide à comprendre comment les visiteurs interagissent avec le site et à améliorer son contenu.",
       "retention": "Votre choix de consentement aux cookies est conservé pendant **90 jours**. Après cette période, vous serez invité à revoir vos préférences."
@@ -185,14 +185,20 @@
     },
     "contact": {
       "title": "Contact",
-      "description": "Si vous avez des questions concernant cette politique de confidentialité, n'hésitez pas à me contacter :",
+      "description": "Si vous avez des questions concernant cette politique de confidentialité, n'hésitez pas à me contacter:",
       "email": "email@thomastepi.com"
     },
     "additionalInfo": {
       "title": "Informations supplémentaires",
-      "description": "Pour plus de détails sur la manière dont Google Analytics collecte et traite les données, consultez :",
+      "description": "Pour plus de détails sur la manière dont Google Analytics collecte et traite les données, consultez:",
       "privacyLink": "Politique de confidentialité de Google"
     },
-    "lastUpdated": "Dernière mise à jour : 31 janvier 2025"
+    "attributions": {
+      "title": "Attributions et crédits",
+      "description": "Ce site web utilise des icônes de Flaticon. Voici les crédits pour les icônes utilisées:",
+      "quebecIcon": "Icônes du Québec créées par Md Tanvirul Haque - Flaticon",
+      "canadaIcon": "Icônes du Canada créées par rizal2109 - Flaticon"
+    },
+    "lastUpdated": "Dernière mise à jour: 31 janvier 2025"
   }
 }

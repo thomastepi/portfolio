@@ -5,6 +5,7 @@ import {
   HStack,
   useBreakpointValue,
   Button,
+  Image,
   useColorMode,
 } from "@chakra-ui/react";
 import DrawerPanel from "./Drawer";
@@ -12,6 +13,9 @@ import ToggleColorMode from "./ToggleColorMode";
 import { useTranslation } from "react-i18next";
 import { useNavigate, useLocation } from "react-router-dom";
 import socials from "../data/socials";
+
+import en_icon from "../assets/images/en.png";
+import fr_icon from "../assets/images/fr.png";
 
 const Header = () => {
   const isMobile = useBreakpointValue({ base: true, md: false });
@@ -60,7 +64,7 @@ const Header = () => {
     >
       <Box maxWidth="1280px" margin="0 auto">
         <HStack
-          px={isMobile ? 5 : 16}
+          px={isMobile ? 4 : 16}
           py={4}
           justifyContent="space-between"
           alignItems="center"
@@ -68,19 +72,22 @@ const Header = () => {
           <nav>
             <HStack spacing={8}>
               {isMobile && <DrawerPanel />}
-              {socials.map((social) => (
-                <a
-                  key={social.url}
-                  href={social.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={`Visit my ${social.name} profile`}
-                >
-                  {!isMobile && (
-                    <FontAwesomeIcon icon={social.icon} size="2x" />
-                  )}
-                </a>
-              ))}
+              {socials.map(
+                (social) =>
+                  !isMobile && (
+                    <a
+                      key={social.url}
+                      href={social.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`Visit my ${social.name} profile`}
+                    >
+                      {!isMobile && (
+                        <FontAwesomeIcon icon={social.icon} size="2x" />
+                      )}
+                    </a>
+                  )
+              )}
             </HStack>
           </nav>
           <nav>
@@ -119,7 +126,13 @@ const Header = () => {
                 </>
               )}
               <ToggleColorMode />
-              <Button p="0" size="sm" onClick={toggleLanguage}>
+              <Button px={1} size="sm" onClick={toggleLanguage}>
+                <Image
+                  src={i18n.language === "en" ? fr_icon : en_icon}
+                  alt={i18n.language === "en" ? "FR" : "EN"}
+                  boxSize="20px"
+                  mr={1}
+                />
                 {i18n.language === "en" ? "FR" : "EN"}
               </Button>
             </HStack>

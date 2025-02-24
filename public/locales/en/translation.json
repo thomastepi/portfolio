@@ -194,6 +194,12 @@
       "description": "For more details about how Google Analytics collects and processes data, refer to:",
       "privacyLink": "Google’s Privacy Policy"
     },
+    "attributions": {
+      "title": "Attributions & Credits",
+      "description": "This website uses icons from Flaticon. Below are the credits for the icons used:",
+      "quebecIcon": "Quebec icons created by Md Tanvirul Haque - Flaticon",
+      "canadaIcon": "Canada icons created by rizal2109 - Flaticon"
+    },
     "lastUpdated": "Last Updated: January 31, 2025"
   }
 }

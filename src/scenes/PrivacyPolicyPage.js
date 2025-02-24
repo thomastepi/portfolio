@@ -157,6 +157,37 @@ const PrivacyPolicyPage = () => {
           {t("privacyPolicy.additionalInfo.privacyLink")}
         </Link>
 
+        <Divider my={4} />
+
+        <Heading as="h2" size="md" mb={4}>
+          {t("privacyPolicy.attributions.title")}
+        </Heading>
+        <Text mb={4}>{t("privacyPolicy.attributions.description")}</Text>
+        <UnorderedList mb={4}>
+          <ListItem>
+            <Link
+              href="https://www.flaticon.com/free-icons/quebec"
+              title="Quebec icons"
+              color="teal.400"
+              isExternal
+            >
+              {t("privacyPolicy.attributions.quebecIcon")}
+            </Link>
+          </ListItem>
+          <ListItem>
+            <Link
+              href="https://www.flaticon.com/free-icons/canada"
+              title="Canada icons"
+              color="teal.400"
+              isExternal
+            >
+              {t("privacyPolicy.attributions.canadaIcon")}
+            </Link>
+          </ListItem>
+        </UnorderedList>
+
+        <Divider my={4} />
+
         <Text mt={6} fontSize="sm" color="gray.500">
           {t("privacyPolicy.lastUpdated")}{" "}
         </Text>
