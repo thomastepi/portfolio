@@ -159,7 +159,7 @@ const PrivacyPolicyPage = () => {
 
         <Divider my={4} />
 
-        <Heading as="h2" size="md" mb={4}>
+        {/* <Heading as="h2" size="md" mb={4}>
           {t("privacyPolicy.attributions.title")}
         </Heading>
         <Text mb={4}>{t("privacyPolicy.attributions.description")}</Text>
@@ -186,7 +186,7 @@ const PrivacyPolicyPage = () => {
           </ListItem>
         </UnorderedList>
 
-        <Divider my={4} />
+        <Divider my={4} /> */}
 
         <Text mt={6} fontSize="sm" color="gray.500">
           {t("privacyPolicy.lastUpdated")}{" "}

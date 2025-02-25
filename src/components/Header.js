@@ -4,18 +4,19 @@ import {
   Box,
   HStack,
   useBreakpointValue,
-  Button,
-  Image,
+  Menu,
+  MenuButton,
+  MenuList,
+  MenuItem,
+  Divider,
   useColorMode,
 } from "@chakra-ui/react";
+import { ChevronDownIcon } from "@chakra-ui/icons";
 import DrawerPanel from "./Drawer";
 import ToggleColorMode from "./ToggleColorMode";
 import { useTranslation } from "react-i18next";
 import { useNavigate, useLocation } from "react-router-dom";
 import socials from "../data/socials";
-
-import en_icon from "../assets/images/en.png";
-import fr_icon from "../assets/images/fr.png";
 
 const Header = () => {
   const isMobile = useBreakpointValue({ base: true, md: false });
@@ -23,11 +24,6 @@ const Header = () => {
   const { i18n, t } = useTranslation();
   const navigate = useNavigate();
   const location = useLocation();
-
-  const toggleLanguage = () => {
-    const newLanguage = i18n.language === "en" ? "fr" : "en";
-    i18n.changeLanguage(newLanguage);
-  };
 
   const handleClick = (anchor) => () => {
     const id = `${anchor}-section`;
@@ -125,16 +121,34 @@ const Header = () => {
                   </a>
                 </>
               )}
+
+              <Divider
+                borderColor={colorMode === "light" ? "gray.500" : "gray.600"}
+                h={"30px"}
+                orientation="vertical"
+              />
+
+              <Menu>
+                <MenuButton size="sm">
+                  {i18n.language === "en"
+                    ? isMobile
+                      ? "EN"
+                      : "English"
+                    : isMobile
+                    ? "FR"
+                    : "Français"}{" "}
+                  <ChevronDownIcon />
+                </MenuButton>
+                <MenuList w={"inherit"}>
+                  <MenuItem onClick={() => i18n.changeLanguage("en")}>
+                    {isMobile ? "EN" : "English"}
+                  </MenuItem>
+                  <MenuItem onClick={() => i18n.changeLanguage("fr")}>
+                    {isMobile ? "FR" : "Français"}
+                  </MenuItem>
+                </MenuList>
+              </Menu>
               <ToggleColorMode />
-              <Button px={1} size="sm" onClick={toggleLanguage}>
-                <Image
-                  src={i18n.language === "en" ? fr_icon : en_icon}
-                  alt={i18n.language === "en" ? "FR" : "EN"}
-                  boxSize="20px"
-                  mr={1}
-                />
-                {i18n.language === "en" ? "FR" : "EN"}
-              </Button>
             </HStack>
           </nav>
         </HStack>
