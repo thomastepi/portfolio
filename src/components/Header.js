@@ -25,6 +25,16 @@ const Header = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
+  const lang = i18n.language;
+
+  const handleLanguageChange = () => {
+    if (lang === "en") {
+      i18n.changeLanguage("fr");  
+    } else {
+      i18n.changeLanguage("en");
+    }
+  };
+
   const handleClick = (anchor) => () => {
     const id = `${anchor}-section`;
     if (location.pathname !== "/") {
@@ -128,26 +138,18 @@ const Header = () => {
                 orientation="vertical"
               />
 
-              <Menu>
-                <MenuButton size="sm">
-                  {i18n.language === "en"
-                    ? isMobile
-                      ? "EN"
-                      : "English"
-                    : isMobile
+              <a
+                style={{ cursor: "pointer" }}
+                onClick={() => handleLanguageChange()}
+              >
+                {lang === "en"
+                  ? isMobile
                     ? "FR"
-                    : "Français"}{" "}
-                  <ChevronDownIcon />
-                </MenuButton>
-                <MenuList w={"inherit"}>
-                  <MenuItem onClick={() => i18n.changeLanguage("en")}>
-                    {isMobile ? "EN" : "English"}
-                  </MenuItem>
-                  <MenuItem onClick={() => i18n.changeLanguage("fr")}>
-                    {isMobile ? "FR" : "Français"}
-                  </MenuItem>
-                </MenuList>
-              </Menu>
+                    : "Français"
+                  : isMobile
+                  ? "EN"
+                  : "English"}{" "}
+              </a>
               <ToggleColorMode />
             </HStack>
           </nav>
