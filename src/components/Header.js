@@ -4,14 +4,9 @@ import {
   Box,
   HStack,
   useBreakpointValue,
-  Menu,
-  MenuButton,
-  MenuList,
-  MenuItem,
   Divider,
   useColorMode,
 } from "@chakra-ui/react";
-import { ChevronDownIcon } from "@chakra-ui/icons";
 import DrawerPanel from "./Drawer";
 import ToggleColorMode from "./ToggleColorMode";
 import { useTranslation } from "react-i18next";
