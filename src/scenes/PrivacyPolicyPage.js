@@ -28,21 +28,57 @@ const PrivacyPolicyPage = () => {
         <Heading as="h2" size="md" mb={4}>
           {t("privacyPolicy.introduction.title")}
         </Heading>
-        <Text mb={4}>{t("privacyPolicy.introduction.text")}</Text>
+        <Text as={Markdown} mb={4}>
+          {t("privacyPolicy.introduction.text")}
+        </Text>
+
+        <Divider my={4} />
+
+        <Heading as="h2" size="md" mb={4}>
+          {t("privacyPolicy.scope.title")}
+        </Heading>
+        <Text mb={4}>{t("privacyPolicy.scope.subtitle")}</Text>
+        <UnorderedList mb={4}>
+          {t("privacyPolicy.scope.list", {
+            returnObjects: true,
+          }).map((item, index) => (
+            <ListItem key={index}>
+              <Markdown>{item}</Markdown>
+            </ListItem>
+          ))}
+        </UnorderedList>
+        <Text as={Markdown} mb={4}>
+          {t("privacyPolicy.scope.text")}
+        </Text>
 
         <Divider my={4} />
 
         <Heading as="h2" size="md" mb={4}>
           {t("privacyPolicy.informationCollected.title")}
         </Heading>
-        <Text mb={4}>
+        <Text as={Markdown} mb={4}>
+          {t("privacyPolicy.informationCollected.subtitle")}
+        </Text>
+        <Text as={Markdown} mb={4}>
           {t("privacyPolicy.informationCollected.description")}
         </Text>
         <Text as={Markdown} mb={4}>
-          {t("privacyPolicy.informationCollected.descriptionText")}
+          {t("privacyPolicy.informationCollected.subtext")}
         </Text>
         <UnorderedList mb={4}>
           {t("privacyPolicy.informationCollected.list", {
+            returnObjects: true,
+          }).map((item, index) => (
+            <ListItem key={index}>
+              <Markdown>{item}</Markdown>
+            </ListItem>
+          ))}
+        </UnorderedList>
+        <Text as={Markdown} mb={4}>
+          {t("privacyPolicy.informationCollected.trackingParams")}
+        </Text>
+        <UnorderedList mb={4}>
+          {t("privacyPolicy.informationCollected.trackingParamsList", {
             returnObjects: true,
           }).map((item, index) => (
             <ListItem key={index}>
@@ -80,15 +116,42 @@ const PrivacyPolicyPage = () => {
         <Heading as="h2" size="md" mb={4}>
           {t("privacyPolicy.contactForm.title")}
         </Heading>
+        <Text as={Markdown} mb={4}>
+          {t("privacyPolicy.contactForm.subtitle")}
+        </Text>
         <Text mb={4}>{t("privacyPolicy.contactForm.description")}</Text>
         <UnorderedList mb={4}>
           {t("privacyPolicy.contactForm.list", {
             returnObjects: true,
           }).map((item, index) => (
-            <ListItem key={index}>{item}</ListItem>
+            <ListItem as={Markdown} key={index}>
+              {item}
+            </ListItem>
           ))}
         </UnorderedList>
         <Text mb={4}>{t("privacyPolicy.contactForm.storage")}</Text>
+
+        <Divider my={4} />
+
+        <Heading as="h2" size="md" mb={4}>
+          {t("privacyPolicy.guestUsers.title")}
+        </Heading>
+        <Text as={Markdown} mb={4}>
+          {t("privacyPolicy.guestUsers.description")}
+        </Text>
+        <Text mb={4}>{t("privacyPolicy.guestUsers.subtext")}</Text>
+        <UnorderedList mb={4}>
+          {t("privacyPolicy.guestUsers.list", {
+            returnObjects: true,
+          }).map((item, index) => (
+            <ListItem as={Markdown} key={index}>
+              {item}
+            </ListItem>
+          ))}
+        </UnorderedList>
+        <Text as={Markdown} mb={4}>
+          {t("privacyPolicy.guestUsers.text")}
+        </Text>
 
         <Divider my={4} />
 
@@ -118,6 +181,9 @@ const PrivacyPolicyPage = () => {
             </ListItem>
           ))}
         </UnorderedList>
+        <Text as={Markdown} mb={4}>
+          {t("privacyPolicy.dataRetention.text")}
+        </Text>
 
         <Divider my={4} />
 
@@ -158,35 +224,6 @@ const PrivacyPolicyPage = () => {
         </Link>
 
         <Divider my={4} />
-
-        {/* <Heading as="h2" size="md" mb={4}>
-          {t("privacyPolicy.attributions.title")}
-        </Heading>
-        <Text mb={4}>{t("privacyPolicy.attributions.description")}</Text>
-        <UnorderedList mb={4}>
-          <ListItem>
-            <Link
-              href="https://www.flaticon.com/free-icons/quebec"
-              title="Quebec icons"
-              color="teal.400"
-              isExternal
-            >
-              {t("privacyPolicy.attributions.quebecIcon")}
-            </Link>
-          </ListItem>
-          <ListItem>
-            <Link
-              href="https://www.flaticon.com/free-icons/canada"
-              title="Canada icons"
-              color="teal.400"
-              isExternal
-            >
-              {t("privacyPolicy.attributions.canadaIcon")}
-            </Link>
-          </ListItem>
-        </UnorderedList>
-
-        <Divider my={4} /> */}
 
         <Text mt={6} fontSize="sm" color="gray.500">
           {t("privacyPolicy.lastUpdated")}{" "}

@@ -127,42 +127,76 @@
     "effectiveDate": "Effective Date: January 31, 2025",
     "introduction": {
       "title": "Introduction",
-      "text": "This Privacy Policy describes how I collect, use, and disclose your information when you use this website."
+      "text": "This Privacy Policy describes how I collect, use, and disclose your information when you use this website and any of my associated projects under the `thomastepi.com` domain, including subdomains such as `resumecraft.thomastepi.com`. By using `www.thomastepi.com` or any of its subdomains, you agree to the terms outlined in this Privacy Policy."
     },
     "informationCollected": {
       "title": "Information I Collect",
-      "description": "I use Google Analytics to collect anonymized data about website traffic.",
-      "descriptionText": "Google Analytics tracking is enabled **only if you accept cookies**. If accepted, it uses cookies (small data files placed on your device) to track and analyze visitor activity. The data collected may include:",
+      "subtitle": "**Google Analytics (Main Portfolio Site Only)**",
+      "description": "Google Analytics is **only implemented on the main portfolio site (`www.thomastepi.com`)** to collect **anonymized traffic data**, but only if you accept cookies.",
+      "subtext": "Collected data may include:",
       "list": [
         "Device Information (browser type, operating system, device category)",
         "Approximate geographic location (country, region, and city level **only**)",
         "Website Interactions (pages visited, time spent, clicks, scrolling behavior)",
         "Traffic Sources (referral links, search engines, direct visits)"
       ],
+      "trackingParams": "**Tracking Parameters in URLs**",
+      "trackingParamsList": [
+        "When clicking a project link from `www.thomastepi.com`, Google Analytics **may append tracking parameters** to the URL.",
+        "These parameters **help measure referral traffic** and **maintain session tracking** between the main site and subdomains.",
+        "**Subdomains do NOT process or store this tracking data.**",
+        "The parameters do not affect the functionality of subdomains."
+      ],
       "usage": "This data helps me analyze visitor interactions, improve website performance, and enhance user experience across different devices.",
       "identifiableInfo": "**No personally identifiable information (PII) is collected or stored**. Your IP address is anonymized, and data is retained for a limited period."
     },
+
+    "scope": {
+      "title": "Scope",
+      "subtitle": "This Privacy Policy applies to:",
+      "list": [
+        "**Main Portfolio Site:** `www.thomastepi.com`",
+        "**Resume Builder App:** `resumecraft.thomastepi.com`",
+        "**Sawyer Camp Farmers:** `sawyercamp.thomastepi.com`",
+        "**Annette's Beauty & SPA:** `annette.thomastepi.com`",
+        "**Book Mart:** `bookmart.thomastepi.com`"
+      ],
+      "text": "Each subdomain may collect **different types of data** based on its functionality, but all data handling follows the principles outlined here."
+    },
+
     "cookies": {
-      "title": "Cookies",
-      "description": "This website uses cookies to store your preferences and enhance your browsing experience. Specifically:",
+      "title": "Cookies & Local Storage",
+      "description": "The following types of cookies may be used across my projects:",
       "list": [
         "**Google Analytics Cookies:** Used to track anonymized visitor activity.",
         "**LocalStorage Data:** Used to store user preferences such as dark/light mode and language selection."
       ],
-      "disableNotice": "You can manage or disable cookies via your web browser settings. However, doing so means I won’t be able to analyze website traffic, which helps me understand how visitors engage with the site and improve its content.",
+      "disableNotice": "You can disable cookies via your browser settings, though this may affect the user experience.",
       "retention": "Your cookie consent choice is retained for **90 days**. After this period, you will be prompted to review your preferences again."
     },
     "contactForm": {
-      "title": "Contact Form",
-      "description": "When you submit a message via the contact form, the following information is collected:",
+      "title": "Contact Forms & User Data",
+      "subtitle": "Some projects under `thomastepi.com` may have their own contact or sign-up forms.",
+      "description": "When you submit a message or register an account on any subdomain, the following data may be collected:",
       "list": [
-        "Your Name (to personalize responses)",
-        "Your Email Address (to reply to your message and send confirmation)",
-        "Type of Inquiry (to categorize and prioritize messages)",
-        "Your Message Content (to address your inquiry)"
+        "**Name** (to personalize responses)",
+        "**Email Address** (for login or contact purposes)",
+        "**Inquiry Type** (to categorize messages)",
+        "**Message Content** (to process your request)",
+        "**Account Information** (if you create an account)"
       ],
-      "storage": "Your message is stored securely in a MongoDB database and a confirmation email is sent to your provided email via Nodemailer.",
+      "storage": "This information is stored securely in a database and used only for the intended purpose. It is not shared with third parties.",
       "retention": "Your message is retained for 6 months to ensure follow-ups can be processed. You may request deletion at any time."
+    },
+    "guestUsers": {
+      "title": "Guest Users & Limited Data Collection",
+      "description": "Some projects (such as `resumecraft.thomastepi.com`) allow users to **explore as a guest**.",
+      "subtext": "Guest users:",
+      "list": [
+        "Are **not required to register**.",
+        "Do **not have personal data stored** unless they manually enter it."
+      ],
+      "text": "If you sign up for an account later, only **data you provide willingly** will be stored."
     },
     "yourChoices": {
       "title": "Your Choices",
@@ -172,9 +206,11 @@
     "dataRetention": {
       "title": "Data Retention",
       "description": [
-        "Data collected by Google Analytics is retained for **14 months** for both user data and event data. If you interact with the website within this period, the retention timer resets.",
-        "Contact form messages are retained for **6 months** to ensure follow-ups can be processed. You may request deletion of your submitted data at any time by contacting me."
-      ]
+        "**Google Analytics Data:** Retained for **14 months**.",
+        "**Contact Form Submissions:** Retained for **6 months** for follow-ups.",
+        "**User Accounts (if applicable):** Stored securely for as long as you have an account."
+      ],
+      "text": "You can request **data deletion** at any time by contacting me."
     },
     "dataSecurity": {
       "title": "Data Security",
@@ -200,6 +236,6 @@
       "quebecIcon": "Quebec icons created by Md Tanvirul Haque - Flaticon",
       "canadaIcon": "Canada icons created by rizal2109 - Flaticon"
     },
-    "lastUpdated": "Last Updated: January 31, 2025"
+    "lastUpdated": "Last Updated: March 11, 2025"
   }
 }
