@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 const CookieConsentComponent = ({ setAnalyticsEnabled }) => {
   const navigate = useNavigate();
   const { t } = useTranslation();
-  
+
   return (
     <CookieConsent
       location="bottom"

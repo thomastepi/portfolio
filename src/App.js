@@ -3,7 +3,10 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Home, PrivacyPolicyPage, Error } from "./scenes";
 import Layout from "./components/layout/Layout";
 import { CookieConsentComponent } from "./components";
-import { initializeAnalytics } from "./config/analytics";
+import {
+  initializeAnalytics,
+  updateAnalyticsConsent,
+} from "./config/analytics";
 import ScrollToTop from "./utils/ScrollToTop";
 
 function App() {
@@ -11,14 +14,13 @@ function App() {
 
   useEffect(() => {
     const consentGiven = document.cookie.includes("cookieConsent=true");
-    if (consentGiven) {
-      setAnalyticsEnabled(true);
-    }
+    setAnalyticsEnabled(consentGiven);
+    initializeAnalytics();
   }, []);
 
   useEffect(() => {
-    if (analyticsEnabled) {
-      initializeAnalytics();
+    if (analyticsEnabled !== null) {
+      updateAnalyticsConsent(analyticsEnabled);
     }
   }, [analyticsEnabled]);
 
