@@ -123,7 +123,7 @@
 
   "privacyPolicy": {
     "title": "Politique de Confidentialité",
-    "effectiveDate": "Date d'entrée en vigueur : 31 janvier 2025",
+    "effectiveDate": "Date d'entrée en vigueur: 31 janvier 2025",
     "introduction": {
       "title": "Introduction",
       "text": "Cette politique de confidentialité décrit comment je collecte, utilise et divulgue vos informations lorsque vous utilisez ce site web et tous mes projets associés sous le domaine `thomastepi.com`, y compris les sous-domaines tels que `resumecraft.thomastepi.com`. En utilisant `www.thomastepi.com` ou l’un de ses sous-domaines, vous acceptez les conditions décrites dans cette politique de confidentialité."
@@ -136,7 +136,7 @@
       "list": [
         "Informations sur l'appareil (type de navigateur, système d’exploitation, catégorie d’appareil)",
         "Localisation géographique approximative (pays, région et ville uniquement)",
-        "Interactions avec le site Web (pages visitées, temps passé, clics, comportement de défilement)",
+        "Interactions avec le site web (pages visitées, temps passé, clics, comportement de défilement)",
         "Sources de trafic (liens de référence, moteurs de recherche, visites directes)"
       ],
       "trackingParams": "**Paramètres de suivi dans les URL**",
@@ -197,7 +197,7 @@
     },
     "yourChoices": {
       "title": "Vos Choix",
-      "description": "Vous pouvez refuser le suivi par Google Analytics en installant l’extension officielle Google Analytics Opt-out :",
+      "description": "Vous pouvez refuser le suivi par Google Analytics en installant l’extension officielle Google Analytics Opt-out:",
       "optOutLink": "Extension Google Analytics Opt-out"
     },
     "dataRetention": {
@@ -233,6 +233,6 @@
       "quebecIcon": "Icônes du Québec créées par Md Tanvirul Haque - Flaticon",
       "canadaIcon": "Icônes du Canada créées par rizal2109 - Flaticon"
     },
-    "lastUpdated": "Dernière mise à jour: 31 janvier 2025"
+    "lastUpdated": "Dernière mise à jour: 11 mars 2025"
   }
 }
