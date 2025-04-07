@@ -109,7 +109,7 @@ const AboutMe = () => {
                 colorScheme="teal"
                 fontStyle={"italic"}
               >
-                Bluewave Guidefox
+                Guidefox
               </Button>
             </MotionText>
             <MotionText textAlign="justify" lineHeight="1.8" variants={item}>
