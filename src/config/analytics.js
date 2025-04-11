@@ -23,7 +23,7 @@ export const initializeAnalytics = () => {
       functionality_storage: "granted",
     });
 
-    //console.log("GA4 Initialized with Default Consent Mode");
+    console.log("GA4 Initialized with Default Consent Mode");
   } else {
     console.warn("Google Analytics Measurement ID is not defined");
   }
@@ -37,7 +37,7 @@ export const updateAnalyticsConsent = (userConsent) => {
 
   if (userConsent) {
     ReactGA.send("pageview");
-    //console.log("GA4 Consent Updated: Tracking Enabled");
+    console.log("GA4 Consent Updated: Tracking Enabled");
   } else {
     console.log("GA4 Consent Updated: Tracking Disabled");
   }
