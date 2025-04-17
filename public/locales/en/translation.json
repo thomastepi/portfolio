@@ -116,7 +116,7 @@
   "consent": {
     "message": "This site uses cookies to analyze visitor interactions and improve user experience.",
     "span": "By clicking 'Accept', you consent to their use.",
-    "policyButtonText": "Learn more in my Privacy Policy.",
+    "policyButtonText": "Learn more.",
     "accept": "Accept",
     "decline": "Decline",
     "manage": "Cookie Preferences"
