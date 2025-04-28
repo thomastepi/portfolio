@@ -75,19 +75,21 @@ const Header = () => {
               {isMobile && <DrawerPanel />}
               {socials.map(
                 (social) =>
-                  !isMobile && (
-                    <a
-                      key={social.url}
-                      href={social.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label={`Visit my ${social.name} profile`}
-                    >
-                      {!isMobile && (
-                        <FontAwesomeIcon icon={social.icon} size="2x" />
-                      )}
-                    </a>
-                  )
+                  !isMobile &&
+                  social.name !==
+                    "WhatsApp" && (
+                      <a
+                        key={social.url}
+                        href={social.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`Visit my ${social.name} profile`}
+                      >
+                        {!isMobile && (
+                          <FontAwesomeIcon icon={social.icon} size="2x" />
+                        )}
+                      </a>
+                    )
               )}
             </HStack>
           </nav>

@@ -2,7 +2,8 @@ import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import {
   faGithub,
   faLinkedin,
-  faTwitter,
+  faXTwitter,
+  faWhatsapp,
 } from "@fortawesome/free-brands-svg-icons";
 
 const socials = [
@@ -23,8 +24,13 @@ const socials = [
   },
   {
     name: "Twitter",
-    icon: faTwitter,
+    icon: faXTwitter,
     url: "https://twitter.com/tomtepi",
+  },
+  {
+    name: "WhatsApp",
+    icon: faWhatsapp,
+    url: "https://wa.me/12144314816",
   },
 ];
 
