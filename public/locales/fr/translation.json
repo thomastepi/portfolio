@@ -113,7 +113,7 @@
   },
 
   "consent": {
-    "message": "Ce site utilise des cookies pour analyser les interactions des visiteurs et améliorer l'expérience utilisateur.",
+    "message": "J'utilise des cookies pour analyser le trafic et améliorer votre expérience de navigation.",
     "span": "En cliquant sur 'Accepter', vous consentez à leur utilisation.",
     "policyButtonText": "En savoir plus.",
     "accept": "Accepter",
