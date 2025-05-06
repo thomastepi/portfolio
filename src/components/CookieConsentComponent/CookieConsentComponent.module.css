@@ -1,0 +1,11 @@
+.consentContainer {
+  > div {
+    justify-content: center !important;
+    > div:nth-child(1) {
+      flex: none !important;
+      @media screen and (max-width: 768px) {
+        flex: 1 0 300px !important;
+      }
+    }
+  }
+}

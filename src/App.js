@@ -27,7 +27,6 @@ function App() {
   return (
     <Router>
       <ScrollToTop />
-      <CookieConsentComponent setAnalyticsEnabled={setAnalyticsEnabled} />
       <Layout>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -36,6 +35,7 @@ function App() {
           <Route path="*" element={<Error />} />
         </Routes>
       </Layout>
+      <CookieConsentComponent setAnalyticsEnabled={setAnalyticsEnabled} />
     </Router>
   );
 }

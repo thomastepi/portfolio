@@ -15,10 +15,10 @@ import {
 } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import * as Yup from "yup";
-import FullScreenSection from "./FullScreenSection";
+import FullScreenSection from "../FullScreenSection/FullScreenSection";
 import { useTranslation } from "react-i18next";
-import useSubmit from "../hooks/useSubmit";
-import { useAlertContext } from "../context/alertContext";
+import useSubmit from "../../hooks/useSubmit";
+import { useAlertContext } from "../../context/alertContext";
 import { Link } from "react-router-dom";
 
 const MotionBox = motion(Box);

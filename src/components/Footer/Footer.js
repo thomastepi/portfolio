@@ -9,7 +9,7 @@ import {
 import { useColorMode } from "@chakra-ui/react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
-import socials from "../data/socials";
+import socials from "../../data/socials";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Footer = () => {

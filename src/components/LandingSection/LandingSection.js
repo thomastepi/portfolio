@@ -12,7 +12,7 @@ import {
 } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
-import FullScreenSection from "./FullScreenSection";
+import FullScreenSection from "../FullScreenSection/FullScreenSection";
 
 const MotionHeading = motion(Heading);
 const MotionAvatar = motion(Avatar);

@@ -11,7 +11,7 @@ import {
   Button,
 } from "@chakra-ui/react";
 import { motion } from "framer-motion";
-import FullScreenSection from "./FullScreenSection";
+import FullScreenSection from "../FullScreenSection/FullScreenSection";
 import { useTranslation } from "react-i18next";
 
 const MotionBox = motion(Box);

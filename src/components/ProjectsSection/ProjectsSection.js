@@ -1,9 +1,9 @@
 import React from "react";
-import FullScreenSection from "./FullScreenSection";
+import FullScreenSection from "../FullScreenSection/FullScreenSection";
 import { Box, Heading } from "@chakra-ui/react";
-import Card from "./Card";
+import Card from "../Card/Card";
 import { useTranslation } from "react-i18next";
-import { projects, techStack } from "../data";
+import { projects, techStack } from "../../data";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 

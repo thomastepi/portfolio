@@ -6,7 +6,7 @@ import {
   AlertDialogOverlay,
   useColorModeValue,
 } from "@chakra-ui/react";
-import { useAlertContext } from "../context/alertContext";
+import { useAlertContext } from "../../context/alertContext";
 import { useRef } from "react";
 import { useTranslation } from "react-i18next";
 

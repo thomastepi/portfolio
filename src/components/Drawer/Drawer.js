@@ -15,7 +15,7 @@ import {
   Text,
 } from "@chakra-ui/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import socials from "../data/socials";
+import socials from "../../data/socials";
 
 const DrawerPanel = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();

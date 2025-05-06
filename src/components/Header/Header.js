@@ -7,11 +7,11 @@ import {
   Divider,
   useColorMode,
 } from "@chakra-ui/react";
-import DrawerPanel from "./Drawer";
-import ToggleColorMode from "./ToggleColorMode";
+import DrawerPanel from "../Drawer/Drawer";
+import ToggleColorMode from "../ToggleColorMode/ToggleColorMode";
 import { useTranslation } from "react-i18next";
 import { useNavigate, useLocation } from "react-router-dom";
-import socials from "../data/socials";
+import socials from "../../data/socials";
 
 const Header = () => {
   const isMobile = useBreakpointValue({ base: true, md: false });
@@ -24,7 +24,7 @@ const Header = () => {
 
   const handleLanguageChange = () => {
     if (lang === "en") {
-      i18n.changeLanguage("fr");  
+      i18n.changeLanguage("fr");
     } else {
       i18n.changeLanguage("en");
     }
@@ -76,20 +76,19 @@ const Header = () => {
               {socials.map(
                 (social) =>
                   !isMobile &&
-                  social.name !==
-                    "WhatsApp" && (
-                      <a
-                        key={social.url}
-                        href={social.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label={`Visit my ${social.name} profile`}
-                      >
-                        {!isMobile && (
-                          <FontAwesomeIcon icon={social.icon} size="2x" />
-                        )}
-                      </a>
-                    )
+                  social.name !== "WhatsApp" && (
+                    <a
+                      key={social.url}
+                      href={social.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`Visit my ${social.name} profile`}
+                    >
+                      {!isMobile && (
+                        <FontAwesomeIcon icon={social.icon} size="2x" />
+                      )}
+                    </a>
+                  )
               )}
             </HStack>
           </nav>
