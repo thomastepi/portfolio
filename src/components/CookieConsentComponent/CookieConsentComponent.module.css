@@ -5,6 +5,7 @@
       flex: none !important;
       @media screen and (max-width: 768px) {
         flex: 1 0 300px !important;
+        text-align: center;
       }
     }
   }

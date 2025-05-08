@@ -23,7 +23,7 @@ const socials = [
     url: "https://www.linkedin.com/in/thomastepi",
   },
   {
-    name: "Twitter",
+    name: "Twitter (X)",
     icon: faXTwitter,
     url: "https://twitter.com/tomtepi",
   },
