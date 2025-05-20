@@ -114,13 +114,19 @@
 
   "consent": {
     "message": "J'utilise des cookies pour analyser le trafic et améliorer votre expérience de navigation.",
-    "span": "En cliquant sur 'Accepter', vous consentez à leur utilisation.",
-    "policyButtonText": "En savoir plus.",
-    "accept": "Accepter",
-    "decline": "Refuser",
+    "span": "En cliquant sur 'Autoriser', ou en continuant à utiliser ce site, vous acceptez l'utilisation des cookies.",
+    "policyButtonText": "En savoir plus",
+    "acceptBtn": "Autoriser",
+    "preferenceBtn": "Modifier les préférences",
     "manage": "Préférences de cookies"
   },
 
+  "preferencesModal": {
+    "title": "Préférences des cookies",
+    "essentialLabel": "Cookies essentiels (obligatoires)",
+    "analyticsLabel": "Cookies de performance",
+    "saveButton": "Enregistrer les préférences"
+  },
   "privacyPolicy": {
     "title": "Politique de Confidentialité",
     "effectiveDate": "Date d'entrée en vigueur: 31 janvier 2025",

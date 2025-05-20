@@ -115,11 +115,18 @@
 
   "consent": {
     "message": "I use cookies to analyze traffic and improve your browsing experience.",
-    "span": "By clicking 'Accept', you agree to their use.",
-    "policyButtonText": "Learn more.",
-    "accept": "Accept",
-    "decline": "Decline",
+    "span": "By clicking 'Allow', or continuing to use this site, you agree to their use.",
+    "policyButtonText": "Learn more",
+    "acceptBtn": "Allow",
+    "preferenceBtn": "Modify Preferences",
     "manage": "Cookie Preferences"
+  },
+
+  "preferencesModal": {
+    "title": "Cookie Preferences",
+    "essentialLabel": "Essential Cookies (required)",
+    "analyticsLabel": "Performance Cookies",
+    "saveButton": "Save Preferences"
   },
 
   "privacyPolicy": {

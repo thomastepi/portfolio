@@ -35,7 +35,7 @@ const theme = extendTheme({
         border: "none!important",
       },
       button: {
-        border: "none!important",
+        //border: "none!important",
         borderRadius: "0!important",
       },
       "a:hover": {

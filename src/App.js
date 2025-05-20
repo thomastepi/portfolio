@@ -13,7 +13,7 @@ function App() {
   const [analyticsEnabled, setAnalyticsEnabled] = useState(false);
 
   useEffect(() => {
-    const consentGiven = document.cookie.includes("cookieConsent=true");
+    const consentGiven = document.cookie.includes("CookieConsent=true");
     setAnalyticsEnabled(consentGiven);
     initializeAnalytics();
   }, []);

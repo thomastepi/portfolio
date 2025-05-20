@@ -1,4 +1,4 @@
-.consentContainer {
+/* .consentContainer {
   > div {
     justify-content: center !important;
     > div:nth-child(1) {
@@ -8,5 +8,25 @@
         text-align: center;
       }
     }
+  }
+} */
+
+.btnContainer {
+  display: flex;
+  gap: 1.5rem;
+  @media screen and (max-width: 768px) {
+    gap: 1rem;
+  }
+}
+
+.cookieConsentContent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
   }
 }
