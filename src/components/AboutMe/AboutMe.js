@@ -15,23 +15,12 @@ import { motion } from "framer-motion";
 import FullScreenSection from "../FullScreenSection/FullScreenSection";
 import { useTranslation } from "react-i18next";
 
-const MotionBox = motion(Box);
 const MotionHeading = motion(Heading);
 const MotionText = motion(Text);
 const MotionImage = motion(Image);
 
 const AboutMe = () => {
   const { t } = useTranslation();
-
-  const container = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.3,
-      },
-    },
-  };
 
   const item = {
     hidden: { opacity: 0, y: 20 },
@@ -57,16 +46,12 @@ const AboutMe = () => {
           {t("aboutMe.heading")}
         </MotionHeading>
       </TitleWrapper>
-      <MotionBox
+      <Box
         spacing={8}
         maxW="1200px"
         alignItems="center"
         justifyContent="center"
         flexWrap="wrap"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.5 }}
-        variants={container}
       >
         <Grid
           templateColumns={{ base: "1fr", md: "1fr 1fr" }}
@@ -118,7 +103,7 @@ const AboutMe = () => {
             </VStack>
           </GridItem>
         </Grid>
-      </MotionBox>
+      </Box>
     </FullScreenSection>
   );
 };
