@@ -1,9 +1,7 @@
-import React from "react";
 import {
   Heading,
   Grid,
   VStack,
-  Center,
   Text,
   useBreakpointValue,
   HStack,
@@ -48,40 +46,28 @@ const TechStackSection = () => {
   ];
 
   return (
-    <Center pb="100px" w="100%">
-      <Center w="100%">
-        <VStack w="80%">
-          <Heading size="lg" mb={4}>
-            {t("techStack.techStackTitle")}
-          </Heading>
-          <Text align="center" mb={6}>
-            {t("techStack.techStackSubtitle")}
-          </Text>
-          <Grid
-            pt="50px"
-            w="90%"
-            templateColumns={`repeat(${columns}, 1fr)`}
-            gap={6}
-          >
-            {techStack.map((category, index) => (
-              <VStack key={index}>
-                <Heading size="md" mb={4}>
-                  {category.title}
-                </Heading>
-                <VStack align="start">
-                  {category.items.map((item, idx) => (
-                    <HStack key={idx}>
-                      <FontAwesomeIcon icon={item.icon} />
-                      <Text ml={2}>{item.name}</Text>
-                    </HStack>
-                  ))}
-                </VStack>
-              </VStack>
-            ))}
-          </Grid>
-        </VStack>
-      </Center>
-    </Center>
+    <>
+      <Text align="center" mb={6}>
+        {t("techStack.techStackSubtitle")}
+      </Text>
+      <Grid w="90%" templateColumns={`repeat(${columns}, 1fr)`} gap={6}>
+        {techStack.map((category, index) => (
+          <VStack key={index}>
+            <Heading size="md" mb={4}>
+              {category.title}
+            </Heading>
+            <VStack align="start">
+              {category.items.map((item, idx) => (
+                <HStack key={idx}>
+                  <FontAwesomeIcon icon={item.icon} />
+                  <Text ml={2}>{item.name}</Text>
+                </HStack>
+              ))}
+            </VStack>
+          </VStack>
+        ))}
+      </Grid>
+    </>
   );
 };
 

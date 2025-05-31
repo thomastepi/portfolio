@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import {
   Button,
   Modal,
@@ -8,6 +8,7 @@ import {
   ModalFooter,
   ModalBody,
   ModalCloseButton,
+  Text,
   Switch,
   FormControl,
   FormLabel,
@@ -45,29 +46,39 @@ const PreferenceModal = ({
         <ModalCloseButton />
         <ModalBody>
           <VStack align="start" spacing={4}>
-            <FormControl display="flex" alignItems="center" isDisabled>
-              <FormLabel htmlFor="essential-switch" mb="0">
-                {t("preferencesModal.essentialLabel")}
-              </FormLabel>
-              <Switch
-                id="essential-switch"
-                colorScheme="teal"
-                isChecked
-                isReadOnly
-              />
-            </FormControl>
+            <div>
+              <FormControl display="flex" alignItems="center" isDisabled>
+                <FormLabel htmlFor="essential-switch" mb="0">
+                  {t("preferencesModal.essentialLabel")}
+                </FormLabel>
+                <Switch
+                  id="essential-switch"
+                  colorScheme="teal"
+                  isChecked
+                  isReadOnly
+                />
+              </FormControl>
+              <Text fontSize="sm" color="gray.600">
+                {t("preferencesModal.essentialDescription")}
+              </Text>
+            </div>
 
-            <FormControl display="flex" alignItems="center">
-              <FormLabel htmlFor="analytics-switch" mb="0">
-                {t("preferencesModal.analyticsLabel")}
-              </FormLabel>
-              <Switch
-                id="analytics-switch"
-                isChecked={analyticsConsent}
-                colorScheme="teal"
-                onChange={(e) => setAnalyticsConsent(e.target.checked)}
-              />
-            </FormControl>
+            <div>
+              <FormControl display="flex" alignItems="center">
+                <FormLabel htmlFor="analytics-switch" mb="0">
+                  {t("preferencesModal.analyticsLabel")}
+                </FormLabel>
+                <Switch
+                  id="analytics-switch"
+                  isChecked={analyticsConsent}
+                  colorScheme="teal"
+                  onChange={(e) => setAnalyticsConsent(e.target.checked)}
+                />
+              </FormControl>
+              <Text fontSize="sm" color="gray.600">
+                {t("preferencesModal.analyticsDescription")}
+              </Text>
+            </div>
           </VStack>
         </ModalBody>
 

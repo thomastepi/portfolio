@@ -21,6 +21,7 @@
 
   "contactMe": {
     "heading": "Envoyez-moi un message",
+    "intro": "Une question, une idée de projet ou simplement envie de dire bonjour ? Je serais ravi d’échanger avec vous. Remplissez le formulaire et je vous répondrai dans les plus brefs délais.",
     "required": "*",
     "optional": "(Facultatif)",
     "labels": {
@@ -125,6 +126,8 @@
     "title": "Préférences des cookies",
     "essentialLabel": "Cookies essentiels (obligatoires)",
     "analyticsLabel": "Cookies de performance",
+    "essentialDescription": "Nécessaires au bon fonctionnement du site et ne peuvent pas être désactivés (par exemple, l’enregistrement de votre choix de consentement).",
+    "analyticsDescription": "Utilisés pour collecter des données anonymes afin d’améliorer votre expérience (par exemple, le type d’appareil ou la taille de l’écran).",
     "saveButton": "Enregistrer les préférences"
   },
   "privacyPolicy": {

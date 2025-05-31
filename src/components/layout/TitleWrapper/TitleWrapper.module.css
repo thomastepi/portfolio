@@ -1,0 +1,14 @@
+.section-title {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+  }
+  
+  .section-title::before,
+  .section-title::after {
+    content: "";
+    flex: 1;
+    /* border-bottom: 1px solid #1A202C; */
+    margin: 0 10px;
+  }

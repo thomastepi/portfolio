@@ -1,15 +1,16 @@
-import React from "react";
 import {
   Box,
   VStack,
-  HStack,
   Heading,
-  useBreakpointValue,
   Text,
   Image,
   Link,
   Button,
+  Grid,
+  GridItem,
 } from "@chakra-ui/react";
+import TitleWrapper from "../layout/TitleWrapper/TitleWrapper";
+import TechStackSection from "../TechStackSection/TechStackSection";
 import { motion } from "framer-motion";
 import FullScreenSection from "../FullScreenSection/FullScreenSection";
 import { useTranslation } from "react-i18next";
@@ -38,52 +39,48 @@ const AboutMe = () => {
   };
 
   return (
-    <FullScreenSection
-      justifyContent="center"
-      alignItems="center"
-      isDarkBackground
-      px={8}
-      py={16}
-    >
-      <MotionHeading
-        id="about-me-section"
-        as="h2"
-        size="xl"
-        mb={8}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.5 }}
-        transition={{ duration: 0.8 }}
-        variants={{
-          hidden: { opacity: 0, y: -20 },
-          visible: { opacity: 1, y: 0 },
-        }}
-      >
-        {t("aboutMe.heading")}
-      </MotionHeading>
+    <FullScreenSection w="90%" my="6rem">
+      <TitleWrapper my="6rem">
+        <MotionHeading
+          id="about-me-section"
+          as="h2"
+          size="xl"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 0.8 }}
+          variants={{
+            hidden: { opacity: 0, y: -20 },
+            visible: { opacity: 1, y: 0 },
+          }}
+        >
+          {t("aboutMe.heading")}
+        </MotionHeading>
+      </TitleWrapper>
       <MotionBox
         spacing={8}
         maxW="1200px"
         alignItems="center"
-        flexWrap="wrap"
         justifyContent="center"
+        flexWrap="wrap"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.5 }}
         variants={container}
       >
-        <HStack
-          spacing={8}
-          alignItems="center"
-          justifyContent="center"
-          flexDir={useBreakpointValue({ base: "column", md: "row" })}
+        <Grid
+          templateColumns={{ base: "1fr", md: "1fr 1fr" }}
+          gap={9}
+          alignItems="stretch"
         >
-          <MotionBox flexShrink={0} variants={item}>
+          <GridItem>
             <MotionImage
               src="https://ik.imagekit.io/thormars/portfolio/selfie.jpg"
               alt="Thomas Tepi"
-              borderRadius="full"
-              boxSize="300px"
+              borderRadius="5px"
+              width="100%"
+              height="100%"
+              maxH="500px"
               objectFit="cover"
               boxShadow="lg"
               initial={{ scale: 0 }}
@@ -91,35 +88,36 @@ const AboutMe = () => {
               viewport={{ once: true, amount: 0.5 }}
               transition={{ duration: 1.5 }}
             />
-          </MotionBox>
+          </GridItem>
 
-          <VStack spacing={4} alignItems="flex-start" maxW="700px">
-            <MotionText
-              textAlign="justify"
-              lineHeight="1.8"
-              variants={item}
-              viewport={{ once: true, amount: 0.5 }}
-            >
-              {t("aboutMe.paragraph1")}{" "}
-              <Button
-                as={Link}
-                href="https://guidefox.io"
-                variant="link"
-                isExternal
-                colorScheme="teal"
-                fontStyle={"italic"}
-              >
-                Guidefox
-              </Button>
-            </MotionText>
-            <MotionText textAlign="justify" lineHeight="1.8" variants={item}>
-              {t("aboutMe.paragraph2")}
-            </MotionText>
-            <MotionText textAlign="justify" lineHeight="1.8" variants={item}>
-              {t("aboutMe.paragraph3")}
-            </MotionText>
-          </VStack>
-        </HStack>
+          <GridItem>
+            <VStack spacing={4} align="flex-start" h="100%">
+              <MotionText textAlign="justify" lineHeight="1.8" variants={item}>
+                {t("aboutMe.paragraph1")}{" "}
+                <Button
+                  as={Link}
+                  href="https://guidefox.io"
+                  variant="link"
+                  isExternal
+                  colorScheme="teal"
+                  fontStyle={"italic"}
+                >
+                  Guidefox
+                </Button>
+              </MotionText>
+              <MotionText textAlign="justify" lineHeight="1.8" variants={item}>
+                {t("aboutMe.paragraph2")}
+              </MotionText>
+              <MotionText textAlign="justify" lineHeight="1.8" variants={item}>
+                {t("aboutMe.paragraph3")}
+              </MotionText>
+              <Box mt="auto">
+                {" "}
+                <TechStackSection />
+              </Box>
+            </VStack>
+          </GridItem>
+        </Grid>
       </MotionBox>
     </FullScreenSection>
   );

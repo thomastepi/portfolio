@@ -21,6 +21,7 @@
 
   "contactMe": {
     "heading": "Contact me",
+    "intro": "Have a question, project idea, or just want to say hello? I’d love to hear from you. Fill out the form and I’ll get back to you as soon as possible.",
     "required": "*",
     "optional": "(Optional)",
     "labels": {
@@ -126,6 +127,8 @@
     "title": "Cookie Preferences",
     "essentialLabel": "Essential Cookies (required)",
     "analyticsLabel": "Performance Cookies",
+    "essentialDescription": "Required for the website to function properly and cannot be disabled (e.g. saving your cookie consent choice).",
+    "analyticsDescription": "Used to collect anonymous data to improve your experience (e.g. detecting your device type or screen size).",
     "saveButton": "Save Preferences"
   },
 

@@ -10,9 +10,11 @@ import {
   Input,
   Select,
   Textarea,
+  Text,
   VStack,
   useColorModeValue,
 } from "@chakra-ui/react";
+import TitleWrapper from "../layout/TitleWrapper/TitleWrapper";
 import { motion } from "framer-motion";
 import * as Yup from "yup";
 import FullScreenSection from "../FullScreenSection/FullScreenSection";
@@ -106,32 +108,32 @@ const ContactMeSection = () => {
   }, [response, submittedFirstName]);
 
   return (
-    <FullScreenSection
-      isDarkBackground
-      css={{
-        "@media (max-width: 768px)": {
-          width: "90%",
-        },
-        width: "50%",
-      }}
-      pt={5}
-      pb={16}
-      spacing={8}
-    >
-      <MotionHeading
-        textAlign={"center"}
-        as="h1"
-        id="contactme-section"
-        initial={{ opacity: 0, y: -20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.5 }}
-        transition={{ duration: 0.8 }}
+    <FullScreenSection w="90%" my="6rem" spacing={8}>
+      <TitleWrapper my="4rem">
+        <MotionHeading
+          textAlign={"center"}
+          id="contactme-section"
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 0.8 }}
+        >
+          {t("contactMe.heading")}
+        </MotionHeading>
+      </TitleWrapper>
+      <Text
+        textAlign="center"
+        fontSize="lg"
+        maxW="600px"
+        mx="auto"
+        px={4}
+        color={useColorModeValue("gray.700", "gray.300")}
       >
-        {t("contactMe.heading")}
-      </MotionHeading>
+        {t("contactMe.intro")}
+      </Text>
       <MotionBox
         p="30px"
-        w="100%"
+        w={{ base: "100%", md: "80%", lg: "60%" }}
         initial={{ opacity: 0, scale: 0.95 }}
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true, amount: 0.5 }}

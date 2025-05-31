@@ -1,9 +1,9 @@
-import React from "react";
 import FullScreenSection from "../FullScreenSection/FullScreenSection";
 import { Box, Heading } from "@chakra-ui/react";
 import Card from "../Card/Card";
+import TitleWrapper from "../layout/TitleWrapper/TitleWrapper";
 import { useTranslation } from "react-i18next";
-import { projects, techStack } from "../../data";
+import { projects } from "../../data";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
@@ -26,10 +26,10 @@ const ProjectsSection = () => {
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
 
   return (
-    <FullScreenSection isDarkBackground p={8} spacing={8}>
-      <Heading id="projects-section" mb={6}>
-        {t("projects.heading")}
-      </Heading>
+    <FullScreenSection w="90%" spacing={8} my="6rem">
+      <TitleWrapper my="5rem">
+        <Heading id="projects-section">{t("projects.heading")}</Heading>
+      </TitleWrapper>
       <MotionBox
         ref={ref}
         display="grid"
@@ -39,7 +39,7 @@ const ProjectsSection = () => {
             gridGap: 20,
           },
           gridTemplateColumns: "repeat(2, minmax(0, 1fr))",
-          gridGap: 40,
+          gridGap: 50,
         }}
         initial="hidden"
         animate={inView ? "visible" : "hidden"}
