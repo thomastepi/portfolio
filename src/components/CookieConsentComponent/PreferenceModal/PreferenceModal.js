@@ -13,6 +13,7 @@ import {
   FormControl,
   FormLabel,
   VStack,
+  useColorMode,
 } from "@chakra-ui/react";
 import { useTranslation } from "react-i18next";
 
@@ -26,6 +27,8 @@ const PreferenceModal = ({
 }) => {
   const [analyticsConsent, setAnalyticsConsent] = useState(true);
   const { t } = useTranslation();
+  const { colorMode } = useColorMode();
+  const isDarkMode = colorMode === "dark";
 
   const handleSavePreferences = () => {
     setAnalyticsEnabled(analyticsConsent);
@@ -58,7 +61,7 @@ const PreferenceModal = ({
                   isReadOnly
                 />
               </FormControl>
-              <Text fontSize="sm" color="gray.600">
+              <Text fontSize="sm" color={isDarkMode ? "gray.300" : "gray.600"}>
                 {t("preferencesModal.essentialDescription")}
               </Text>
             </div>
@@ -75,7 +78,7 @@ const PreferenceModal = ({
                   onChange={(e) => setAnalyticsConsent(e.target.checked)}
                 />
               </FormControl>
-              <Text fontSize="sm" color="gray.600">
+              <Text fontSize="sm" color={isDarkMode ? "gray.300" : "gray.600"}>
                 {t("preferencesModal.analyticsDescription")}
               </Text>
             </div>

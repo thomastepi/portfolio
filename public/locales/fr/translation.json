@@ -21,20 +21,20 @@
 
   "contactMe": {
     "heading": "Envoyez-moi un message",
-    "intro": "Une question, une idée de projet ou simplement envie de dire bonjour ? Je serais ravi d’échanger avec vous. Remplissez le formulaire et je vous répondrai dans les plus brefs délais.",
+    "intro": "Une question, une idée de projet ou simplement envie de dire bonjour? Je serais ravi d’échanger avec vous. Remplissez le formulaire et je vous répondrai dans les plus brefs délais.",
     "required": "*",
     "optional": "(Facultatif)",
     "labels": {
       "name": "Votre Nom",
       "email": "Votre Email",
-      "type": "Type de demande",
+      "type": "De quoi s'agit-il?",
       "message": "Votre Message"
     },
     "placeholders": {
       "select": "-- Sélectionner --",
-      "hireMe": "Proposition de projet freelance",
-      "feedback": "Retour d'information",
-      "other": "Autre"
+      "hireMe": "Collaboration sur un projet",
+      "feedback": "Retour d’expérience",
+      "other": "Juste un petit bonjour"
     },
     "buttons": {
       "send": "Envoyer"
@@ -80,7 +80,7 @@
   },
 
   "projects": {
-    "heading": "Projets en vedette",
+    "heading": "Mes Projets",
     "sawyerCamp": {
       "title": "Sawyer-Camp Farmers CIG",
       "description": "Développé et lancé un site web pour Sawyer Camp Farmers Common Initiative Group, permettant aux agriculteurs locaux au Cameroun de présenter leurs produits et leurs pratiques agricoles durables. Conception conviviale et navigation fluide pour améliorer l'expérience utilisateur."
@@ -115,7 +115,7 @@
 
   "consent": {
     "message": "J'utilise des cookies pour analyser le trafic et améliorer votre expérience de navigation.",
-    "span": "En cliquant sur 'Autoriser', ou en continuant à utiliser ce site, vous acceptez l'utilisation des cookies.",
+    "span": "En cliquant sur 'Autoriser' ou en continuant à utiliser ce site, vous acceptez l'utilisation des cookies.",
     "policyButtonText": "En savoir plus",
     "acceptBtn": "Autoriser",
     "preferenceBtn": "Modifier les préférences",

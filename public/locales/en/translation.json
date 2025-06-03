@@ -20,21 +20,21 @@
   },
 
   "contactMe": {
-    "heading": "Contact me",
+    "heading": "Let's Connect",
     "intro": "Have a question, project idea, or just want to say hello? I’d love to hear from you. Fill out the form and I’ll get back to you as soon as possible.",
     "required": "*",
     "optional": "(Optional)",
     "labels": {
       "name": "Your Name",
       "email": "Your Email",
-      "type": "Type of inquiry",
+      "type": "What's this about?",
       "message": "Your Message"
     },
     "placeholders": {
       "select": "-- Select --",
-      "hireMe": "Freelance project proposal",
+      "hireMe": "Project collaboration",
       "feedback": "Feedback",
-      "other": "Other"
+      "other": "Just saying hello"
     },
     "buttons": {
       "send": "Send"
@@ -81,7 +81,7 @@
   },
 
   "projects": {
-    "heading": "Featured Projects",
+    "heading": "My Work",
     "sawyerCamp": {
       "title": "Sawyer-Camp Farmers CIG",
       "description": "Developed and launched a website for Sawyer Camp Farmers Common Initiative Group, empowering local farmers in Cameroon by showcasing their products and sustainable farming practices. Implemented user-friendly design and seamless navigation to enhance user experience and engagement."
@@ -116,7 +116,7 @@
 
   "consent": {
     "message": "I use cookies to analyze traffic and improve your browsing experience.",
-    "span": "By clicking 'Allow', or continuing to use this site, you agree to their use.",
+    "span": "By clicking 'Allow' or continuing to use this site, you agree to their use.",
     "policyButtonText": "Learn more",
     "acceptBtn": "Allow",
     "preferenceBtn": "Modify Preferences",

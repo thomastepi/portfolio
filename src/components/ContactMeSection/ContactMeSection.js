@@ -21,13 +21,13 @@ import FullScreenSection from "../FullScreenSection/FullScreenSection";
 import { useTranslation } from "react-i18next";
 import useSubmit from "../../hooks/useSubmit";
 import { useAlertContext } from "../../context/alertContext";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 const MotionBox = motion(Box);
 const MotionHeading = motion(Heading);
 const MotionFormControl = motion(FormControl);
 const MotionButton = motion(Button);
-const MotionSpan = motion.span;
+// const MotionSpan = motion.span;
 
 const ContactMeSection = () => {
   const { isLoading, response, submit } = useSubmit();
@@ -192,7 +192,12 @@ const ContactMeSection = () => {
               viewport={{ once: true, amount: 0.5 }}
               transition={{ duration: 0.5, delay: 0.6 }}
             >
-              <FormLabel htmlFor="type">{t("contactMe.labels.type")}</FormLabel>
+              <FormLabel htmlFor="type">
+                {t("contactMe.labels.type")}{" "}
+                <span style={{ fontStyle: "italic", fontWeight: "normal" }}>
+                  {t("contactMe.optional")}
+                </span>
+              </FormLabel>
               <Select
                 id="type"
                 name="type"
@@ -237,7 +242,7 @@ const ContactMeSection = () => {
               />
               <FormErrorMessage>{formik.errors.comment}</FormErrorMessage>
             </MotionFormControl>
-            <MotionSpan
+            {/* <MotionSpan
               style={{
                 fontStyle: "italic",
                 fontSize: "0.8rem",
@@ -259,7 +264,7 @@ const ContactMeSection = () => {
                 {t("privacyPolicy.title")}
               </Button>
               .
-            </MotionSpan>
+            </MotionSpan> */}
             <MotionButton
               type="submit"
               width="full"

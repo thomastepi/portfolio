@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import CookieConsent, { Cookies } from "react-cookie-consent";
 import { updateAnalyticsConsent } from "../../config/analytics";
 import { useTranslation } from "react-i18next";
-import { Button, useDisclosure } from "@chakra-ui/react";
+import { Button, useDisclosure, useColorMode } from "@chakra-ui/react";
 import PreferenceModal from "./PreferenceModal/PreferenceModal";
 import { useNavigate } from "react-router-dom";
 import styles from "./CookieConsentComponent.module.css";
@@ -11,6 +11,8 @@ const CookieConsentComponent = ({ setAnalyticsEnabled }) => {
   const [consentVisible, setConsentVisible] = useState("hidden");
   const navigate = useNavigate();
   const { t } = useTranslation();
+  const { colorMode } = useColorMode();
+  const isDarkMode = colorMode === "dark";
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   function handleAccept() {
@@ -87,8 +89,8 @@ const CookieConsentComponent = ({ setAnalyticsEnabled }) => {
         cookieName="CookieConsent"
         expires={90}
         style={{
-          background: "#2C2F33",
-          color: "#E2E8F0",
+          background: isDarkMode ? "#F7FAFC" : "#2C2F33",
+          color: isDarkMode ? "#2C2F33" : "#F7FAFC",
           fontSize: "14px",
           padding: "5px",
           zIndex: 2000,
@@ -104,7 +106,7 @@ const CookieConsentComponent = ({ setAnalyticsEnabled }) => {
             {t("consent.span")}{" "}
             <Button
               variant="link"
-              color="teal.200"
+              color={isDarkMode ? "teal.400" : "teal.200"}
               onClick={() => navigate("/privacy-policy")}
               fontSize="12px"
             >
@@ -115,10 +117,10 @@ const CookieConsentComponent = ({ setAnalyticsEnabled }) => {
         <div className={styles.btnContainer}>
           <Button
             variant="outline"
-            color="teal.200"
+            color={isDarkMode ? "teal.400" : "teal.200"}
             fontSize="14px"
-            borderColor="#81E6D9"
-            _hover={{ bg: "#3D3D3D" }}
+            borderColor={isDarkMode ? "teal.400" : "teal.200"}
+            _hover={{ bg: isDarkMode ? "#F5F7F8" : "#3D3D3D" }}
             onClick={onOpen}
             aria-label="Modify cookie preferences"
           >
