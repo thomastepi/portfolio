@@ -42,7 +42,7 @@ const PreferenceModal = ({
   };
 
   return (
-    <Modal isOpen={isOpen} onClose={onClose} isCentered>
+    <Modal zIndex="2000" isOpen={isOpen} onClose={onClose} isCentered>
       <ModalOverlay />
       <ModalContent>
         <ModalHeader>{t("preferencesModal.title")}</ModalHeader>

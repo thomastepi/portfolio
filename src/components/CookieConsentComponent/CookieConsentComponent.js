@@ -93,7 +93,7 @@ const CookieConsentComponent = ({ setAnalyticsEnabled }) => {
           color: isDarkMode ? "#2C2F33" : "#F7FAFC",
           fontSize: "14px",
           padding: "5px",
-          zIndex: 2000,
+          zIndex: 1000,
           alignItems: "center",
         }}
         buttonStyle={{
